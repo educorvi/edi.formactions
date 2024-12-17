@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.formactions.AddEmailHandler"
+        title="edi.formactions: Add EmailHandler"
+    />
+
+
+    <permission
         id="edi.formactions.AddButtonHandler"
         title="edi.formactions: Add ButtonHandler"
     />

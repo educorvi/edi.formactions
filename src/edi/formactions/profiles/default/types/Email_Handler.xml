@@ -1,38 +1,30 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Button Handler"
+    name="Email Handler"
     meta_type="Dexterity FTI"
     i18n:domain="edi.formactions">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Button Handler</property>
+      name="title">Email Handler</property>
   <property
       i18n:translate=""
-      name="description">Add this to choose a specific handler for a button, e.g. an Email-Handler or Save-to-database-Handler</property>
+      name="description">Add a button with an Email Action for a edi.jsonforms form</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Button Handler</property>
-  <property name="icon_expr">string:box</property>
+  <property name="factory">Email Handler</property>
+  <property name="icon_expr">string:envelope-at</property>
   <property name="link_target"></property>
 
   <!-- Hierarchy control -->
-  <property name="global_allow">True</property>
-  <property name="filter_content_types">False</property>
-  <property name="allowed_content_types">
-    <element value="Email Handler" />
-      <!--
-    <element value="Document" />
-    <element value="File" />
-  -->
-  </property>
+  <property name="global_allow">False</property>
   <!-- Schema, class and security -->
-  <property name="add_permission">edi.formactions.AddButtonHandler</property>
-  <property name="klass">edi.formactions.content.button_handler.ButtonHandler</property>
+  <property name="add_permission">edi.formactions.AddEmailHandler</property>
+  <property name="klass">edi.formactions.content.email_handler.EmailHandler</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">edi.formactions.content.button_handler.IButtonHandler</property>
+  <property name="schema">edi.formactions.content.email_handler.IEmailHandler</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
@@ -54,14 +46,10 @@
     <!--<element value="plone.tableofcontents"/>-->
     <!--<element value="plone.versioning" />-->
     <!--<element value="plone.translatable" />-->
-    <!--<element value="plone.nextprevioustoggle" />-->
-    <!--<element value="plone.nextpreviousenabled" />-->
-    <!--<element value="plone.navigationroot" />-->
-    <!--<element value="plone.selectablecontrainstypes" />-->
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Button Handler</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Email Handler</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>
