@@ -30,6 +30,14 @@ class IEmailHandler(model.Schema):
     subject = schema.TextLine(title=_('Subject'),
                                    description=_('The subject of the email'),
                                    required=False)
+    
+    email_text = schema.Text(title=_('Email Body'),
+                                 required=False)
+    
+    button_label = schema.TextLine(title=_('Label of the button'),
+                                   description=_('What is displayed inside the button.'),
+                                   required=True,
+                                   default="Send email")
 
 
     # directives.widget(level=RadioFieldWidget)

@@ -6,16 +6,17 @@ from plone.dexterity.content import Container
 from plone.supermodel import model
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
-# from zope import schema
+from zope import schema
 from zope.interface import implementer
 
 
-# from edi.formactions import _
+from edi.formactions import _
 
 
 class IButtonHandler(model.Schema):
     """ Marker interface and Dexterity Python Schema for ButtonHandler
     """
+
     # If you want, you can load a xml model created TTW here
     # and customize it in Python:
 
