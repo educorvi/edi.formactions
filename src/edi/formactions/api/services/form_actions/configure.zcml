@@ -1,0 +1,25 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:plone="http://namespaces.plone.org/plone">
+
+  <adapter factory=".get.FormActions" name="form_actions"/>
+
+  <plone:service
+    method="GET"
+    for="zope.interface.Interface"
+    factory=".get.FormActionsGet"
+    name="@form_actions"
+    permission="zope2.View"
+    />
+
+  <plone:service
+    method="POST"
+    for="edi.jsonforms.content.form.IForm"
+    factory=".post.FormActionsEmailHandlerPost"
+    name="@send-email"
+    permission="zope2.View"
+    />
+
+
+
+</configure>
