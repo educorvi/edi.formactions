@@ -9,9 +9,14 @@ from zExceptions import BadRequest
 from zope.component import getUtility
 from Products.MailHost.interfaces import IMailHost
 from plone.api import portal
-from Products.CMFPlone.utils import safe_unicode
+from plone.base.utils import safe_text
+
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 import json
+
+from edi.formactions import _
 
 
 # @implementer(IExpandableElement)
@@ -63,8 +68,9 @@ import json
 
 class FormActionsEmailHandlerPost(Service):
 
+    default_sender = 'noreply@plone.org'
+
     def reply(self):
-        print("hallo")
         data = self.request.get('BODY', None)
         if not data:
             raise BadRequest("No data provided.")
@@ -76,32 +82,28 @@ class FormActionsEmailHandlerPost(Service):
             payload = json.loads(data)
         except json.JSONDecodeError:
             raise BadRequest("Invalid JSON format.")
-        
-        # Extract the required fields from the payload
-        recipient = payload.get('recipient')    # TODO enter correct location in json
-        sender = payload.get('sender', 'ninamuecke@gmx.com')
-        subject = payload.get('subject', 'No Subject')
-        message = payload.get('message', 'No Message')
-        message += "\n" + data
+
+        recipient = self.request.form.get('to_address')
+        reply_to = self.request.form.get('reply_to_address', None)
+        subject = self.request.form.get('subject', _('No Subject'))
+        message = self.request.form.get('email_text', '') + '\n'
+
+        message += data
 
         if not recipient:
             raise BadRequest("Recipient email address is required.")
 
         # Send email
-        self.send_email(recipient, sender, subject, message)
+        response = self.send_email(recipient, self.default_sender, reply_to, subject, message)
 
         self.request.response.setStatus(201)
-        print("yay")
-        return {
-            'text': 'IT WORKS!',
-            'sent data': data
-        }
+        return response
     
-    def send_email(self, recipient, sender, subject, message):
+    def send_email(self, recipient, sender, reply_to_adress, subject, message):
         """Helper method to send email."""
         # Get the MailHost utility
-        mail_host = getUtility(IMailHost)
-        import pdb; pdb.set_trace()
+        # mail_host = getUtility(IMailHost)
+        mail_host = portal.get_tool(name='MailHost')
         
         # Construct the email
         # portal_obj = portal.get()
@@ -109,18 +111,28 @@ class FormActionsEmailHandlerPost(Service):
         # if not sender:
         #     raise ValueError("Portal email_from_address is not set.")
         
-        subject = safe_unicode(subject)
-        message_body = f"Subject: {subject}\n\n{message}"
+        subject = safe_text(subject)
+
+        messageText = MIMEMultipart()
+        messageText.attach(MIMEText(message, 'plain', 'utf-8'))
+        if reply_to_adress:
+            messageText['Reply-To'] = reply_to_adress
         
         # Send the email
         try:
-            mail_host.send(
-                message_body,
-                recipient,
-                sender,
+            return mail_host.send(
+                messageText=messageText,
+                mto=recipient,
+                mfrom=sender,
                 subject=subject,
                 charset='utf-8',
+                immediate=True
             )
+            # portal.send_email(
+            #     recipient=recipient,
+            #     subject=subject,
+            #     body=message_body
+            # )
         except Exception as e:
             raise BadRequest(f"Failed to send email: {str(e)}")
         
