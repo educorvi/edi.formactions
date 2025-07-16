@@ -6,56 +6,34 @@ from plone.dexterity.content import Container
 from plone.supermodel import model
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
-# from zope import schema
+from zope import schema
 from zope.interface import implementer
 
 
-# from edi.formactions import _
+from edi.formactions import _
 
 
 class IEndpoint(model.Schema):
     """ Marker interface and Dexterity Python Schema for Endpoint
     """
-    # If you want, you can load a xml model created TTW here
-    # and customize it in Python:
 
-    # model.load('endpoint.xml')
+    url = schema.TextLine(
+        title=_("Endpoint URL"),
+        description=_("The URL of the endpoint to which requests will be sent."),
+        required=True,
+    )
 
-    # directives.widget(level=RadioFieldWidget)
-    # level = schema.Choice(
-    #     title=_(u'Sponsoring Level'),
-    #     vocabulary=LevelVocabulary,
-    #     required=True
-    # )
+    api_key_header_name = schema.TextLine(
+        title=_("Header Name for API Key"),
+        description=_("The name of the header where the API key will be sent."),
+        required=False,
+    )
 
-    # text = RichText(
-    #     title=_(u'Text'),
-    #     required=False
-    # )
-
-    # url = schema.URI(
-    #     title=_(u'Link'),
-    #     required=False
-    # )
-
-    # fieldset('Images', fields=['logo', 'advertisement'])
-    # logo = namedfile.NamedBlobImage(
-    #     title=_(u'Logo'),
-    #     required=False,
-    # )
-
-    # advertisement = namedfile.NamedBlobImage(
-    #     title=_(u'Advertisement (Gold-sponsors and above)'),
-    #     required=False,
-    # )
-
-    # directives.read_permission(notes='cmf.ManagePortal')
-    # directives.write_permission(notes='cmf.ManagePortal')
-    # notes = RichText(
-    #     title=_(u'Secret Notes (only for site-admins)'),
-    #     required=False
-    # )
-
+    api_key = schema.TextLine(
+        title=_("API Key"),
+        description=_("The API key to be used for this endpoint."),
+        required=False,
+    )
 
 @implementer(IEndpoint)
 class Endpoint(Container):
