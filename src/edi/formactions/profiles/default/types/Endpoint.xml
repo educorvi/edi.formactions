@@ -1,38 +1,37 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Webservice Handler"
+    name="Endpoint"
     meta_type="Dexterity FTI"
     i18n:domain="edi.formactions">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Webservice Handler</property>
+      name="title">Endpoint</property>
   <property
       i18n:translate=""
-      name="description">A handler which can contain endpoints. When clicked, the content of the form is sent to all endpoints.</property>
+      name="description">An Endpoint to which the content of the form is sent.</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Webservice Handler</property>
-  <property name="icon_expr">string:envelope-arrow-up</property>
+  <property name="factory">Endpoint</property>
+  <property name="icon_expr">string:envelope</property>
   <property name="link_target"></property>
 
   <!-- Hierarchy control -->
   <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
-    <element value="Endpoint" />
-      <!--
+  <!--
     <element value="Document" />
     <element value="File" />
   -->
   </property>
   <!-- Schema, class and security -->
-  <property name="add_permission">edi.formactions.AddWebserviceHandler</property>
-  <property name="klass">edi.formactions.content.webservice_handler.WebserviceHandler</property>
+  <property name="add_permission">edi.formactions.AddEndpoint</property>
+  <property name="klass">edi.formactions.content.endpoint.Endpoint</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">edi.formactions.content.webservice_handler.IWebserviceHandler</property>
+  <property name="schema">edi.formactions.content.endpoint.IEndpoint</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
@@ -61,7 +60,7 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Webservice Handler</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Endpoint</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>

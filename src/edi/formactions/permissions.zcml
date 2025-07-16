@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.formactions.AddEndpoint"
+        title="edi.formactions: Add Endpoint"
+    />
+
+
+    <permission
         id="edi.formactions.AddWebserviceHandler"
         title="edi.formactions: Add WebserviceHandler"
     />

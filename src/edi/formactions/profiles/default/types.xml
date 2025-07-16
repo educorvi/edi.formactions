@@ -6,4 +6,5 @@
   <object name="Email Handler" meta_type="Dexterity FTI"/>
   <object name="Reset Button" meta_type="Dexterity FTI"/>
   <object name="Webservice Handler" meta_type="Dexterity FTI"/>
+  <object name="Endpoint" meta_type="Dexterity FTI"/>
 </object>
