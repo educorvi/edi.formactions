@@ -10,6 +10,7 @@ from zope.component import getUtility
 from Products.MailHost.interfaces import IMailHost
 from plone.api import portal
 from plone.base.utils import safe_text
+import requests
 
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -96,7 +97,7 @@ class FormActionsEmailHandlerPost(Service):
         # Send email
         response = self.send_email(recipient, self.default_sender, reply_to, subject, message)
 
-        self.request.response.setStatus(201)
+        self.request.response.setStatus(200)
         return response
     
     def send_email(self, recipient, sender, reply_to_adress, subject, message):
@@ -135,4 +136,56 @@ class FormActionsEmailHandlerPost(Service):
             # )
         except Exception as e:
             raise BadRequest(f"Failed to send email: {str(e)}")
+
+class FormActionsWebserviceHandlerPost(Service):
+
+    def reply(self):
+        data = self.request.get('BODY', None)
+        if not data:
+            raise BadRequest("No data provided.")
         
+        if isinstance(data, bytes):
+            data = data.decode('utf-8')
+        
+        try:
+            payload = json.loads(data)
+        except json.JSONDecodeError:
+            raise BadRequest("Invalid JSON format.")
+
+        endpoints = []
+        i = 1
+        while True:
+            if f'endpoint_{i}_url' not in self.request.form:
+                break
+            url = self.request.form.get(f'endpoint_{i}_url')
+            endpoint = {
+                'url': url,
+            }
+            api_key_header_name = self.request.form.get(f'endpoint_{i}_api_key_header_name', None)
+            api_key = self.request.form.get(f'endpoint_{i}_api_key', None)
+            if api_key_header_name and api_key:
+                endpoint[api_key_header_name] = api_key
+            endpoints.append(endpoint)
+            i += 1
+
+        self.request.response.setStatus(200)
+        status = 'success'
+        message = 'Web service request sent successfully.'
+        error_message = f"Error sending request to: "
+        for endpoint in endpoints:
+            headers={k: v for k, v in endpoint.items() if k != 'url'}
+            headers['Referer'] = "https://plone.org" # self.context.absolute_url()
+            response = requests.post(url=endpoint['url'],
+                                     headers=headers,
+                                     data=json.dumps(payload)
+            )
+
+            if response.status_code != 200:
+                self.request.response.setStatus(400)
+                status = 'error'
+                error_message += f"{endpoint['url']}: {response.text}, "
+
+                pass
+                # TODO error handling
+
+        return {'status': status, 'message': message}
