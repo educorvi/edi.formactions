@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.formactions.AddWebserviceHandler"
+        title="edi.formactions: Add WebserviceHandler"
+    />
+
+
+    <permission
         id="edi.formactions.AddResetButton"
         title="edi.formactions: Add ResetButton"
     />
