@@ -17,7 +17,7 @@ class IEndpoint(model.Schema):
     """ Marker interface and Dexterity Python Schema for Endpoint
     """
 
-    url = schema.TextLine(
+    url = schema.URI(
         title=_("Endpoint URL"),
         description=_("The URL of the endpoint to which requests will be sent."),
         required=True,
