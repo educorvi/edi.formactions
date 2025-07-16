@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.formactions.AddResetButton"
+        title="edi.formactions: Add ResetButton"
+    />
+
+
+    <permission
         id="edi.formactions.AddEmailHandler"
         title="edi.formactions: Add EmailHandler"
     />

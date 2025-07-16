@@ -38,7 +38,7 @@ class IEmailHandler(model.Schema):
     button_label = schema.TextLine(title=_('Label of the button'),
                                    description=_('What is displayed inside the button.'),
                                    required=True,
-                                   default="Send email")
+                                   default=_("Send email"))
 
 
 
