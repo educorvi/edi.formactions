@@ -11,9 +11,11 @@ from zope.interface import implementer
 
 
 from edi.formactions import _
+from edi.jsonforms.content.common import IFormElement
 
 
-class IButtonHandler(model.Schema):
+# class IButtonHandler(model.Schema):
+class IButtonHandler(IFormElement):
     """ Marker interface and Dexterity Python Schema for ButtonHandler
     """
 
