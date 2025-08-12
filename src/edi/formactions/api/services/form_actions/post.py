@@ -168,10 +168,13 @@ class FormActionsWebserviceHandlerPost(Service):
             endpoints.append(endpoint)
             i += 1
 
+        page_after_success = self.request.form.get('page_after_success', None)
+
         self.request.response.setStatus(200)
         status = 'success'
-        message = 'Web service request sent successfully.'
-        error_message = f"Error sending request to: "
+        message = _('Web service request sent successfully.')
+        error_message = _('Error sending request to: ')
+        error_occurred = False
         for endpoint in endpoints:
             headers={k: v for k, v in endpoint.items() if k != 'url'}
             headers['Referer'] = "https://plone.org" # self.context.absolute_url()
@@ -181,11 +184,14 @@ class FormActionsWebserviceHandlerPost(Service):
             )
 
             if response.status_code != 200:
+                error_occurred = True
                 self.request.response.setStatus(400)
                 status = 'error'
                 error_message += f"{endpoint['url']}: {response.text}, "
 
-                pass
-                # TODO error handling
-
-        return {'status': status, 'message': message}
+        if error_occurred:
+            api.portal.show_message(message=error_message, request=self.request, type='error')
+        elif page_after_success:
+            self.request.response.redirect(page_after_success)
+        else:
+            return {'status': status, 'message': message}

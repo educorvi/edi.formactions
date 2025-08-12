@@ -20,6 +20,13 @@ class IWebserviceHandler(model.Schema):
                                    description=_('What is displayed inside the button.'),
                                    required=True,
                                    default=_("Send request(s)"))
+    
+    page_after_success = schema.URI(
+        title=_('Page after success'),
+        description=_('The page to redirect to after a successful request.'),
+        required=False,
+        default='about:blank',
+    )
 
 
 @implementer(IWebserviceHandler)
