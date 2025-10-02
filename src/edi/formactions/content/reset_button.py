@@ -21,7 +21,11 @@ class IResetButton(model.Schema):
                                    description=_('What is displayed inside the button.'),
                                    required=True,
                                    default=_("Reset form"))
-
+    button_variant = schema.Choice(title=_('Color variant of the button'),
+                                   description=_('The color variant of the button.'),
+                                   required=True,
+                                   default='danger',
+                                   vocabulary='plone.app.widgets.buttons:BUTTON_VARIANTS')
 
 @implementer(IResetButton)
 class ResetButton(Container):

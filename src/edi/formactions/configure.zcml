@@ -43,6 +43,13 @@
 
   <!-- -*- extra stuff goes here -*- -->
 
+  <!-- Register vocabularies -->
+  <utility
+      provides="zope.schema.interfaces.IVocabularyFactory"
+      factory=".vocabularies.ButtonVariantsVocabulary"
+      name="plone.app.widgets.buttons:BUTTON_VARIANTS"
+      />
+
   <include package=".api" />
 
 </configure>
