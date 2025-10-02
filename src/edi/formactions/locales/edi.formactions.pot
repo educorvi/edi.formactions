@@ -1,0 +1,238 @@
+#--- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+#SOME DESCRIPTIVE TITLE.
+#FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-10-02 13:46+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: edi.formactions\n"
+
+#: ../profiles/default/types/Reset_Button.xml
+msgid "A button to reset the form."
+msgstr ""
+
+#: ../profiles/default/types/Webservice_Handler.xml
+msgid "A handler which can contain endpoints. When clicked, the content of the form is sent to all endpoints."
+msgstr ""
+
+#: ../content/endpoint.py:33
+msgid "API Key"
+msgstr ""
+
+#: ../profiles/default/types/Email_Handler.xml
+msgid "Add a button with an Email Action for a edi.jsonforms form"
+msgstr ""
+
+#: ../profiles/default/types/Button_Handler.xml
+msgid "Add this to choose a specific handler for a button, e.g. an Email-Handler or Save-to-database-Handler"
+msgstr ""
+
+#: ../profiles/default/types/Endpoint.xml
+msgid "An Endpoint to which the content of the form is sent."
+msgstr ""
+
+#: ../profiles/default/types/Button_Handler.xml
+msgid "Button Handler"
+msgstr ""
+
+#: ../content/email_handler.py:42
+#: ../content/reset_button.py:24
+#: ../content/webservice_handler.py:24
+msgid "Color variant of the button"
+msgstr ""
+
+#: ../vocabularies.py:13
+msgid "Danger"
+msgstr ""
+
+#: ../vocabularies.py:18
+msgid "Danger Outline"
+msgstr ""
+
+#: ../vocabularies.py:22
+msgid "Dark"
+msgstr ""
+
+#: ../content/email_handler.py:34
+msgid "Email Body"
+msgstr ""
+
+#: ../profiles/default/types/Email_Handler.xml
+msgid "Email Handler"
+msgstr ""
+
+#: ../profiles/default/types/Endpoint.xml
+msgid "Endpoint"
+msgstr ""
+
+#: ../content/endpoint.py:21
+msgid "Endpoint URL"
+msgstr ""
+
+#: ../api/services/form_actions/post.py:174
+msgid "Error sending request to: "
+msgstr ""
+
+#: ../content/endpoint.py:27
+msgid "Header Name for API Key"
+msgstr ""
+
+#: ../vocabularies.py:20
+msgid "Info"
+msgstr ""
+
+#: ../configure.zcml:28
+msgid "Installs the edi.formactions add-on."
+msgstr ""
+
+#: ../content/email_handler.py:38
+#: ../content/reset_button.py:20
+#: ../content/webservice_handler.py:19
+msgid "Label of the button"
+msgstr ""
+
+#: ../vocabularies.py:21
+msgid "Light"
+msgstr ""
+
+#: ../api/services/form_actions/post.py:89
+msgid "No Subject"
+msgstr ""
+
+#: ../content/webservice_handler.py:31
+msgid "Page after success"
+msgstr ""
+
+#: ../vocabularies.py:10
+msgid "Primary"
+msgstr ""
+
+#: ../vocabularies.py:15
+msgid "Primary Outline"
+msgstr ""
+
+#: ../content/email_handler.py:26
+msgid "Reply-to address"
+msgstr ""
+
+#: ../profiles/default/types/Reset_Button.xml
+msgid "Reset Button"
+msgstr ""
+
+#: ../content/reset_button.py:23
+msgid "Reset form"
+msgstr ""
+
+#: ../vocabularies.py:11
+msgid "Secondary"
+msgstr ""
+
+#: ../vocabularies.py:16
+msgid "Secondary Outline"
+msgstr ""
+
+#: ../content/email_handler.py:41
+msgid "Send email"
+msgstr ""
+
+#: ../content/webservice_handler.py:22
+msgid "Send request(s)"
+msgstr ""
+
+#: ../content/email_handler.py:30
+msgid "Subject"
+msgstr ""
+
+#: ../vocabularies.py:12
+msgid "Success"
+msgstr ""
+
+#: ../vocabularies.py:17
+msgid "Success Outline"
+msgstr ""
+
+#: ../content/endpoint.py:34
+msgid "The API key to be used for this endpoint."
+msgstr ""
+
+#: ../content/endpoint.py:22
+msgid "The URL of the endpoint to which requests will be sent."
+msgstr ""
+
+#: ../content/email_handler.py:35
+msgid "The body of the email. The content of the form will be appended to this text."
+msgstr ""
+
+#: ../content/email_handler.py:43
+#: ../content/reset_button.py:25
+#: ../content/webservice_handler.py:25
+msgid "The color variant of the button."
+msgstr ""
+
+#: ../content/email_handler.py:23
+msgid "The email address of the recipient"
+msgstr ""
+
+#: ../content/email_handler.py:27
+msgid "The email address to which replies should be sent."
+msgstr ""
+
+#: ../content/endpoint.py:28
+msgid "The name of the header where the API key will be sent."
+msgstr ""
+
+#: ../content/webservice_handler.py:32
+msgid "The page to redirect to after a successful request."
+msgstr ""
+
+#: ../content/email_handler.py:31
+msgid "The subject of the email."
+msgstr ""
+
+#: ../content/email_handler.py:22
+msgid "To address"
+msgstr ""
+
+#: ../configure.zcml:37
+msgid "Uninstalls the edi.formactions add-on."
+msgstr ""
+
+#: ../vocabularies.py:14
+msgid "Warning"
+msgstr ""
+
+#: ../vocabularies.py:19
+msgid "Warning Outline"
+msgstr ""
+
+#: ../api/services/form_actions/post.py:173
+msgid "Web service request sent successfully."
+msgstr ""
+
+#: ../profiles/default/types/Webservice_Handler.xml
+msgid "Webservice Handler"
+msgstr ""
+
+#: ../content/email_handler.py:39
+#: ../content/reset_button.py:21
+#: ../content/webservice_handler.py:20
+msgid "What is displayed inside the button."
+msgstr ""
+
+#: ../configure.zcml:28
+msgid "edi.formactions"
+msgstr ""
+
+#: ../configure.zcml:37
+msgid "edi.formactions (uninstall)"
+msgstr ""
