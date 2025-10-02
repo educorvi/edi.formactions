@@ -32,7 +32,7 @@ msgstr "Fügt einen Button mit einer E-Mail-Aktion zu einem edi.jsonforms-Formul
 
 #: ../profiles/default/types/Button_Handler.xml
 msgid "Add this to choose a specific handler for a button, e.g. an Email-Handler or Save-to-database-Handler"
-msgstr "Fügen Sie dies hinzu, um einen spezifischen Handler für einen Button zu wählen, z. B. einen E-Mail-Handler oder einen Speichern-in-Datenbank-Handler."
+msgstr "Fügen Sie dies hinzu, um einen spezifischen Handler für einen Button zu wählen, z. B. einen E-Mail-Handler oder einen Datenbank-Handler."
 
 #: ../profiles/default/types/Endpoint.xml
 msgid "An Endpoint to which the content of the form is sent."
