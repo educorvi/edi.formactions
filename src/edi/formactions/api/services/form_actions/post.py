@@ -75,10 +75,10 @@ class FormActionsEmailHandlerPost(Service):
         data = self.request.get('BODY', None)
         if not data:
             raise BadRequest("No data provided.")
-        
+
         if isinstance(data, bytes):
             data = data.decode('utf-8')
-        
+
         try:
             payload = json.loads(data)
         except json.JSONDecodeError:
@@ -99,33 +99,31 @@ class FormActionsEmailHandlerPost(Service):
 
         self.request.response.setStatus(200)
         return response
-    
+
     def send_email(self, recipient, sender, reply_to_adress, subject, message):
         """Helper method to send email."""
         # Get the MailHost utility
         # mail_host = getUtility(IMailHost)
         mail_host = portal.get_tool(name='MailHost')
-        
+
         # Construct the email
         # portal_obj = portal.get()
         # sender = portal_obj.getProperty('email_from_address')
         # if not sender:
         #     raise ValueError("Portal email_from_address is not set.")
-        
-        subject = safe_text(subject)
 
         messageText = MIMEMultipart()
         messageText.attach(MIMEText(message, 'plain', 'utf-8'))
+        messageText["Subject"] = subject
         if reply_to_adress:
             messageText['Reply-To'] = reply_to_adress
-        
+
         # Send the email
         try:
             return mail_host.send(
-                messageText=messageText,
+                messageText=messageText.as_string(),
                 mto=recipient,
                 mfrom=sender,
-                subject=subject,
                 charset='utf-8',
                 immediate=True
             )
@@ -143,10 +141,10 @@ class FormActionsWebserviceHandlerPost(Service):
         data = self.request.get('BODY', None)
         if not data:
             raise BadRequest("No data provided.")
-        
+
         if isinstance(data, bytes):
             data = data.decode('utf-8')
-        
+
         try:
             payload = json.loads(data)
         except json.JSONDecodeError:
