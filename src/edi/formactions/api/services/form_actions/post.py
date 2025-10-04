@@ -140,6 +140,7 @@ class FormActionsEmailHandlerPost(Service):
 class FormActionsWebserviceHandlerPost(Service):
 
     def reply(self):
+
         data = self.request.get('BODY', None)
         if not data:
             raise BadRequest("No data provided.")
@@ -152,46 +153,53 @@ class FormActionsWebserviceHandlerPost(Service):
         except json.JSONDecodeError:
             raise BadRequest("Invalid JSON format.")
 
-        endpoints = []
-        i = 1
-        while True:
-            if f'endpoint_{i}_url' not in self.request.form:
-                break
-            url = self.request.form.get(f'endpoint_{i}_url')
-            endpoint = {
+        endpointlist = []
+        endpoints = self.context.getFolderContents()
+        for endpoint in endpoints:
+            if endpoint.portal_type != 'Endpoint':
+                continue
+            endpoint = endpoint.getObject()
+            url = endpoint.url
+            endpoint_dict = {
                 'url': url,
+                'body':payload
             }
-            api_key_header_name = self.request.form.get(f'endpoint_{i}_api_key_header_name', None)
-            api_key = self.request.form.get(f'endpoint_{i}_api_key', None)
+            api_key_header_name = endpoint.api_key_header_name
+            api_key = endpoint.api_key
             if api_key_header_name and api_key:
-                endpoint[api_key_header_name] = api_key
-            endpoints.append(endpoint)
-            i += 1
+                endpoint_dict[api_key_header_name] = api_key
+            if endpoint.staticbody:
+                for bodypart in endpoint.staticbody:
+                    keyvalue = bodypart.split(':')
+                    endpoint_dict['body'][keyvalue[0]] = keyvalue[1].strip()
+            endpointlist.append(endpoint_dict)
 
-        page_after_success = self.request.form.get('page_after_success', None)
+        page_after_success = self.context.page_after_success
 
         self.request.response.setStatus(200)
         status = 'success'
         message = _('Web service request sent successfully.')
         error_message = _('Error sending request to: ')
         error_occurred = False
-        for endpoint in endpoints:
-            headers={k: v for k, v in endpoint.items() if k != 'url'}
+        for endpoint in endpointlist:
+            headers={k: v for k, v in endpoint.items() if k not in ['url', 'body']}
             headers['Referer'] = "https://plone.org" # self.context.absolute_url()
+            headers['Content-Type'] = 'application/json'
             response = requests.post(url=endpoint['url'],
                                      headers=headers,
                                      data=json.dumps(payload)
             )
-
-            if response.status_code != 200:
+            if response.status_code != 201:
                 error_occurred = True
-                self.request.response.setStatus(400)
+                self.request.response.setStatus(response.status_code)
                 status = 'error'
                 error_message += f"{endpoint['url']}: {response.text}, "
 
+
         if error_occurred:
             api.portal.show_message(message=error_message, request=self.request, type='error')
-        elif page_after_success:
-            self.request.response.redirect(page_after_success)
         else:
-            return {'status': status, 'message': message}
+            api.portal.show_message(message=message, request=self.request, type='info')
+
+        url = api.portal.get().absolute_url()
+        return self.request.response.redirect(url)

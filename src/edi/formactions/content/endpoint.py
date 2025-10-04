@@ -23,6 +23,13 @@ class IEndpoint(model.Schema):
         required=True,
     )
 
+    staticbody = schema.List(
+        title=_("Additional Static Body-Data"),
+        description=_("You can add static Body-Data as key:value pairs, one per line"),
+        required=False,
+        value_type=schema.TextLine()
+        )
+
     api_key_header_name = schema.TextLine(
         title=_("Header Name for API Key"),
         description=_("The name of the header where the API key will be sent."),
