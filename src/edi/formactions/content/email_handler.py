@@ -18,29 +18,32 @@ class IEmailHandler(model.Schema):
     """
     # If you want, you can load a xml model created TTW here
     # and customize it in Python:
-    
+
     to_address = schema.TextLine(title=_('To address'),
                                    description=_('The email address of the recipient'),
                                    required=True)
-    
+
     reply_to_address = schema.TextLine(title=_('Reply-to address'),
                                        description=_('The email address to which replies should be sent.'),
                                        required=False)
-    
+
     email_subject = schema.TextLine(title=_('Subject'),
                                    description=_('The subject of the email.'),
                                    required=False)
-    
+
     email_text = schema.Text(title=_('Email Body'),
                              description=_('The body of the email. The content of the form will be appended to this text.'),
                              required=False)
-    
+
     button_label = schema.TextLine(title=_('Label of the button'),
                                    description=_('What is displayed inside the button.'),
                                    required=True,
                                    default=_("Send email"))
-
-
+    button_variant = schema.Choice(title=_('Color variant of the button'),
+                                   description=_('The color variant of the button.'),
+                                   required=True,
+                                   default='primary',
+                                   vocabulary='plone.app.widgets.buttons:BUTTON_VARIANTS')
 
 
 @implementer(IEmailHandler)

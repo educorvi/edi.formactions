@@ -9,227 +9,227 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
+"Language-Code: de\n"
+"Language-Name: German\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
 #: ../profiles/default/types/Reset_Button.xml
 msgid "A button to reset the form."
-msgstr ""
+msgstr "Ein Button zum Zurücksetzen des Formulars."
 
 #: ../profiles/default/types/Webservice_Handler.xml
 msgid "A handler which can contain endpoints. When clicked, the content of the form is sent to all endpoints."
-msgstr ""
+msgstr "Ein Handler, der mehrere Endpunkte enthalten kann. Beim Klicken wird der Formularinhalt an alle Endpunkte gesendet."
 
 #: ../content/endpoint.py:33
 msgid "API Key"
-msgstr ""
+msgstr "API-Key"
 
 #: ../profiles/default/types/Email_Handler.xml
 msgid "Add a button with an Email Action for a edi.jsonforms form"
-msgstr ""
+msgstr "Fügt einen Button mit einer E-Mail-Aktion zu einem edi.jsonforms-Formular hinzu"
 
 #: ../profiles/default/types/Button_Handler.xml
 msgid "Add this to choose a specific handler for a button, e.g. an Email-Handler or Save-to-database-Handler"
-msgstr ""
+msgstr "Fügen Sie dies hinzu, um einen spezifischen Handler für einen Button zu wählen, z. B. einen E-Mail-Handler oder einen Datenbank-Handler."
 
 #: ../profiles/default/types/Endpoint.xml
 msgid "An Endpoint to which the content of the form is sent."
-msgstr ""
+msgstr "Ein Endpunkt, an den der Inhalt des Formulars gesendet wird."
 
 #: ../profiles/default/types/Button_Handler.xml
 msgid "Button Handler"
-msgstr ""
+msgstr "Button-Handler"
 
 #: ../content/email_handler.py:42
 #: ../content/reset_button.py:24
 #: ../content/webservice_handler.py:24
 msgid "Color variant of the button"
-msgstr ""
+msgstr "Farbvariante des Buttons"
 
 #: ../vocabularies.py:13
 msgid "Danger"
-msgstr ""
+msgstr "Gefahr"
 
 #: ../vocabularies.py:18
 msgid "Danger Outline"
-msgstr ""
+msgstr "Gefahr (Outline)"
 
 #: ../vocabularies.py:22
 msgid "Dark"
-msgstr ""
+msgstr "Dunkel"
 
 #: ../content/email_handler.py:34
 msgid "Email Body"
-msgstr ""
+msgstr "E-Mail-Text"
 
 #: ../profiles/default/types/Email_Handler.xml
 msgid "Email Handler"
-msgstr ""
+msgstr "E-Mail-Handler"
 
 #: ../profiles/default/types/Endpoint.xml
 msgid "Endpoint"
-msgstr ""
+msgstr "Endpunkt"
 
 #: ../content/endpoint.py:21
 msgid "Endpoint URL"
-msgstr ""
+msgstr "Endpunkt-URL"
 
 #: ../api/services/form_actions/post.py:174
 msgid "Error sending request to: "
-msgstr ""
+msgstr "Fehler beim Senden der Anfrage an: "
 
 #: ../content/endpoint.py:27
 msgid "Header Name for API Key"
-msgstr ""
+msgstr "Header-Name für API-Key"
 
 #: ../vocabularies.py:20
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 #: ../configure.zcml:28
 msgid "Installs the edi.formactions add-on."
-msgstr ""
+msgstr "Installiert das Add-on edi.formactions."
 
 #: ../content/email_handler.py:38
 #: ../content/reset_button.py:20
 #: ../content/webservice_handler.py:19
 msgid "Label of the button"
-msgstr ""
+msgstr "Beschriftung des Buttons"
 
 #: ../vocabularies.py:21
 msgid "Light"
-msgstr ""
+msgstr "Hell"
 
 #: ../api/services/form_actions/post.py:89
 msgid "No Subject"
-msgstr ""
+msgstr "Kein Betreff"
 
 #: ../content/webservice_handler.py:31
 msgid "Page after success"
-msgstr ""
+msgstr "Seite nach Erfolg"
 
 #: ../vocabularies.py:10
 msgid "Primary"
-msgstr ""
+msgstr "Primär"
 
 #: ../vocabularies.py:15
 msgid "Primary Outline"
-msgstr ""
+msgstr "Primär (Outline)"
 
 #: ../content/email_handler.py:26
 msgid "Reply-to address"
-msgstr ""
+msgstr "Antwortadresse"
 
 #: ../profiles/default/types/Reset_Button.xml
 msgid "Reset Button"
-msgstr ""
+msgstr "Zurücksetzen-Button"
 
 #: ../content/reset_button.py:23
 msgid "Reset form"
-msgstr ""
+msgstr "Formular zurücksetzen"
 
 #: ../vocabularies.py:11
 msgid "Secondary"
-msgstr ""
+msgstr "Sekundär"
 
 #: ../vocabularies.py:16
 msgid "Secondary Outline"
-msgstr ""
+msgstr "Sekundär (Outline)"
 
 #: ../content/email_handler.py:41
 msgid "Send email"
-msgstr ""
+msgstr "E-Mail senden"
 
 #: ../content/webservice_handler.py:22
 msgid "Send request(s)"
-msgstr ""
+msgstr "Anfrage(n) senden"
 
 #: ../content/email_handler.py:30
 msgid "Subject"
-msgstr ""
+msgstr "Betreff"
 
 #: ../vocabularies.py:12
 msgid "Success"
-msgstr ""
+msgstr "Erfolg"
 
 #: ../vocabularies.py:17
 msgid "Success Outline"
-msgstr ""
+msgstr "Erfolg (Outline)"
 
 #: ../content/endpoint.py:34
 msgid "The API key to be used for this endpoint."
-msgstr ""
+msgstr "Der für diesen Endpunkt zu verwendende API-Schlüssel."
 
 #: ../content/endpoint.py:22
 msgid "The URL of the endpoint to which requests will be sent."
-msgstr ""
+msgstr "Die URL des Endpunkts, an den die Anfragen gesendet werden."
 
 #: ../content/email_handler.py:35
 msgid "The body of the email. The content of the form will be appended to this text."
-msgstr ""
+msgstr "Der Text der E-Mail. Der Inhalt des Formulars wird an diesen Text angehängt."
 
 #: ../content/email_handler.py:43
 #: ../content/reset_button.py:25
 #: ../content/webservice_handler.py:25
 msgid "The color variant of the button."
-msgstr ""
+msgstr "Die Farbvariante des Buttons."
 
 #: ../content/email_handler.py:23
 msgid "The email address of the recipient"
-msgstr ""
+msgstr "Die E-Mail-Adresse des Empfängers"
 
 #: ../content/email_handler.py:27
 msgid "The email address to which replies should be sent."
-msgstr ""
+msgstr "Die E-Mail-Adresse, an die Antworten gesendet werden sollen."
 
 #: ../content/endpoint.py:28
 msgid "The name of the header where the API key will be sent."
-msgstr ""
+msgstr "Der Name des Headers, in dem der API-Schlüssel gesendet wird."
 
 #: ../content/webservice_handler.py:32
 msgid "The page to redirect to after a successful request."
-msgstr ""
+msgstr "Die Seite, zu der nach einer erfolgreichen Anfrage weitergeleitet wird."
 
 #: ../content/email_handler.py:31
 msgid "The subject of the email."
-msgstr ""
+msgstr "Der Betreff der E-Mail."
 
 #: ../content/email_handler.py:22
 msgid "To address"
-msgstr ""
+msgstr "Empfängeradresse"
 
 #: ../configure.zcml:37
 msgid "Uninstalls the edi.formactions add-on."
-msgstr ""
+msgstr "Deinstalliert das Add-on edi.formactions."
 
 #: ../vocabularies.py:14
 msgid "Warning"
-msgstr ""
+msgstr "Warnung"
 
 #: ../vocabularies.py:19
 msgid "Warning Outline"
-msgstr ""
+msgstr "Warnung (Outline)"
 
 #: ../api/services/form_actions/post.py:173
 msgid "Web service request sent successfully."
-msgstr ""
+msgstr "Webdienst-Anfrage erfolgreich gesendet."
 
 #: ../profiles/default/types/Webservice_Handler.xml
 msgid "Webservice Handler"
-msgstr ""
+msgstr "Webservice-Handler"
 
 #: ../content/email_handler.py:39
 #: ../content/reset_button.py:21
 #: ../content/webservice_handler.py:20
 msgid "What is displayed inside the button."
-msgstr ""
+msgstr "Was innerhalb des Button angezeigt wird."
 
 #: ../configure.zcml:28
 msgid "edi.formactions"
-msgstr ""
+msgstr "edi.formactions"
 
 #: ../configure.zcml:37
 msgid "edi.formactions (uninstall)"
-msgstr ""
+msgstr "edi.formactions (Deinstallation)"
