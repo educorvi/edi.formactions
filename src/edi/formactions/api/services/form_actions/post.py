@@ -5,73 +5,24 @@ from plone.restapi.services import Service
 from zope.component import adapter
 from zope.interface import Interface
 from zope.interface import implementer
+from zope.interface import alsoProvides
 from zExceptions import BadRequest
 from zope.component import getUtility
 from Products.MailHost.interfaces import IMailHost
 from plone.api import portal
 from plone.base.utils import safe_text
+from plone.protect.interfaces import IDisableCSRFProtection
 import requests
-
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
 import json
-
 from edi.formactions import _
-
-
-# @implementer(IExpandableElement)
-# @adapter(Interface, Interface)
-# class FormActions(object):
-
-#     def __init__(self, context, request):
-#         self.context = context.aq_explicit
-#         self.request = request
-
-#     def __call__(self, expand=False):
-#         result = {
-#             'form_actions': {
-#                 '@id': '{}/@form_actions'.format(
-#                     self.context.absolute_url(),
-#                 ),
-#             },
-#         }
-#         if not expand:
-#             return result
-
-#         # === Your custom code comes here ===
-
-#         # Example:
-#         try:
-#             subjects = self.context.Subject()
-#         except Exception as e:
-#             print(e)
-#             subjects = []
-#         query = {}
-#         query['portal_type'] = "Document"
-#         query['Subject'] = {
-#             'query': subjects,
-#             'operator': 'or',
-#         }
-#         brains = api.content.find(**query)
-#         items = []
-#         for brain in brains:
-#             # obj = brain.getObject()
-#             # parent = obj.aq_inner.aq_parent
-#             items.append({
-#                 'title': brain.Title,
-#                 'description': brain.Description,
-#                 '@id': brain.getURL(),
-#             })
-#         result['form_actions']['items'] = items
-#         return result
-
 
 class FormActionsEmailHandlerPost(Service):
 
-    default_sender = 'noreply@plone.org'
-
     def reply(self):
+        alsoProvides(self.request, IDisableCSRFProtection)
+        default_sender = api.portal.get_registry_record('plone.email_from_address', default='noreply@plone.org')
         data = self.request.get('BODY', None)
         if not data:
             raise BadRequest("No data provided.")
@@ -95,22 +46,13 @@ class FormActionsEmailHandlerPost(Service):
             raise BadRequest("Recipient email address is required.")
 
         # Send email
-        response = self.send_email(recipient, self.default_sender, reply_to, subject, message)
+        response = self.send_email(recipient, default_sender, reply_to, subject, message)
 
         self.request.response.setStatus(200)
         return response
 
     def send_email(self, recipient, sender, reply_to_adress, subject, message):
         """Helper method to send email."""
-        # Get the MailHost utility
-        # mail_host = getUtility(IMailHost)
-        mail_host = portal.get_tool(name='MailHost')
-
-        # Construct the email
-        # portal_obj = portal.get()
-        # sender = portal_obj.getProperty('email_from_address')
-        # if not sender:
-        #     raise ValueError("Portal email_from_address is not set.")
 
         messageText = MIMEMultipart()
         messageText.attach(MIMEText(message, 'plain', 'utf-8'))
@@ -120,18 +62,14 @@ class FormActionsEmailHandlerPost(Service):
 
         # Send the email
         try:
-            return mail_host.send(
-                messageText=messageText.as_string(),
-                mto=recipient,
-                mfrom=sender,
-                charset='utf-8',
-                immediate=True
-            )
-            # portal.send_email(
-            #     recipient=recipient,
-            #     subject=subject,
-            #     body=message_body
-            # )
+            api.portal.send_email(
+                recipient=recipient,
+                sender=sender,
+                subject=subject,
+                body=messageText,
+                )
+            return
+
         except Exception as e:
             raise BadRequest(f"Failed to send email: {str(e)}")
 
