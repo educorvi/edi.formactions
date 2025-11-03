@@ -88,21 +88,21 @@ class FormActionsWebserviceHandlerPost(Service):
         except json.JSONDecodeError:
             raise BadRequest("Invalid JSON format.")
 
-        endpoints = []
-        i = 1
-        while True:
-            if f'endpoint_{i}_url' not in self.request.form:
-                break
-            url = self.request.form.get(f'endpoint_{i}_url')
-            endpoint = {
-                'url': url,
-            }
-            api_key_header_name = self.request.form.get(f'endpoint_{i}_api_key_header_name', None)
-            api_key = self.request.form.get(f'endpoint_{i}_api_key', None)
-            if api_key_header_name and api_key:
-                endpoint[api_key_header_name] = api_key
-            endpoints.append(endpoint)
-            i += 1
+        #endpoints = []
+        #i = 1
+        #while True:
+        #    if f'endpoint_{i}_url' not in self.request.form:
+        #        break
+        #    url = self.request.form.get(f'endpoint_{i}_url')
+        #    endpoint = {
+        #        'url': url,
+        #    }
+        #    api_key_header_name = self.request.form.get(f'endpoint_{i}_api_key_header_name', None)
+        #    api_key = self.request.form.get(f'endpoint_{i}_api_key', None)
+        #    if api_key_header_name and api_key:
+        #        endpoint[api_key_header_name] = api_key
+        #    endpoints.append(endpoint)
+        #    i += 1
 
         page_after_success = self.request.form.get('page_after_success', None)
 
@@ -111,15 +111,43 @@ class FormActionsWebserviceHandlerPost(Service):
         message = _('Web service request sent successfully.')
         error_message = _('Error sending request to: ')
         error_occurred = False
+
+        payload = {
+            "workflowName": "MeldungDatenschutzverletzung",
+            "verarbeitungstaetigkeit": "Pre-Aut-Servcie",
+            "data": {
+                "artDerMeldung": {
+                    "neumeldungvom": "2025-11-03",
+                    "aktenzeichen": "BAS-2025-XYZ"
+                    },
+                "verantwortlicheStelle": {
+                    "traegerName": "Berufsgenossenschaft Verkehrswirtschaft Post-Logistik Telekommunikation",
+                    "strasseUHausnummer": "Ottenser Hauptstraße 54",
+                    "plz": "22765",
+                    "ort": "Hamburg"
+                    },
+                "meldendePerson": {
+                    "name": "Max Mustermann",
+                    "telefon": "+49 123 456789",
+                    "email": "max@example.com",
+                    "funktionMeldender": "Mitarbeitende"
+                    }
+                }
+             }
+
+        endpoints = [brain.getObject() for brain in self.context.getFolderContents() if brain.portal_type == 'Endpoint']
+
         for endpoint in endpoints:
-            headers={k: v for k, v in endpoint.items() if k != 'url'}
-            headers['Referer'] = "https://plone.org" # self.context.absolute_url()
-            response = requests.post(url=endpoint['url'],
+            headers = {}
+            #headers['Referer'] = api.portal.get().absolute_url()
+            headers[endpoint.api_key_header_name] = endpoint.api_key
+            headers['Content-Type'] = 'application/json'
+            response = requests.post(url=endpoint.url,
                                      headers=headers,
                                      data=json.dumps(payload)
             )
 
-            if response.status_code != 200:
+            if response.status_code != 201:
                 error_occurred = True
                 self.request.response.setStatus(400)
                 status = 'error'

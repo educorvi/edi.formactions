@@ -22,7 +22,7 @@
 
   <plone:service
     method="POST"
-    for="edi.jsonforms.content.form.IForm"
+    for="*"
     factory=".post.FormActionsWebserviceHandlerPost"
     name="@webservice-request"
     permission="zope2.View"
