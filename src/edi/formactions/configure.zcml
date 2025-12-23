@@ -52,4 +52,6 @@
 
   <include package=".api" />
 
+   <include package=".behaviors" />
+
 </configure>
