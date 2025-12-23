@@ -3,6 +3,7 @@ from zope.interface import provider
 from edi.formactions import _
 from plone.supermodel import model
 from plone.supermodel.directives import fieldset
+from plone.autoform.interfaces import IFormFieldProvider
 
 from plone.app.textfield import RichText
 from zope.interface.declarations import implementer
@@ -13,6 +14,7 @@ from plone.base.utils import safe_hasattr
 class ISuccessPageMarker(Interface):
     pass
 
+@provider(IFormFieldProvider)
 class ISuccessPage(model.Schema):
 
     fieldset(
