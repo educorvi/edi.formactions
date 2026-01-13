@@ -11,9 +11,10 @@ from zope.interface import implementer
 
 
 from edi.formactions import _
+from edi.formactions.content.generic_handler import IGenericHandler, GenericHandler
 
 
-class IEmailHandler(model.Schema):
+class IEmailHandler(IGenericHandler):
     """ Marker interface and Dexterity Python Schema for EmailHandler
     """
     # If you want, you can load a xml model created TTW here
@@ -35,18 +36,7 @@ class IEmailHandler(model.Schema):
                              description=_('The body of the email. The content of the form will be appended to this text.'),
                              required=False)
 
-    button_label = schema.TextLine(title=_('Label of the button'),
-                                   description=_('What is displayed inside the button.'),
-                                   required=True,
-                                   default=_("Send email"))
-    button_variant = schema.Choice(title=_('Color variant of the button'),
-                                   description=_('The color variant of the button.'),
-                                   required=True,
-                                   default='primary',
-                                   vocabulary='plone.app.widgets.buttons:BUTTON_VARIANTS')
-
-
 @implementer(IEmailHandler)
-class EmailHandler(Container):
+class EmailHandler(GenericHandler):
     """ Content-type class for IEmailHandler
     """
