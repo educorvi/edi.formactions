@@ -14,7 +14,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='edi.formactions',
-    version='0.9',
+    version='0.10.dev0',
     description="Action package for edi.jsonforms",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
