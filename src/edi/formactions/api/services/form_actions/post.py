@@ -17,28 +17,37 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import json
 from edi.formactions import _
+from edi.formactions.annotations import FormActionsAnnotationStorage
+
+
+def load_form_action_data(handler_post: Service) -> dict:
+    """Helper function to load form action data from the request"""
+    data = handler_post.request.get("BODY", None)
+    if not data:
+        raise BadRequest("No data provided.")
+
+    if isinstance(data, bytes):
+        data = data.decode("utf-8")
+
+    return data
+
 
 class FormActionsEmailHandlerPost(Service):
-
     def reply(self):
         alsoProvides(self.request, IDisableCSRFProtection)
-        default_sender = api.portal.get_registry_record('plone.email_from_address', default='noreply@plone.org')
-        data = self.request.get('BODY', None)
-        if not data:
-            raise BadRequest("No data provided.")
+        default_sender = api.portal.get_registry_record(
+            "plone.email_from_address", default="noreply@plone.org"
+        )
+        data = load_form_action_data(self)
 
-        if isinstance(data, bytes):
-            data = data.decode('utf-8')
-
-        try:
-            payload = json.loads(data)
-        except json.JSONDecodeError:
-            raise BadRequest("Invalid JSON format.")
-
-        recipient = self.request.form.get('to_address')
-        reply_to = self.request.form.get('reply_to_address', None)
-        subject = self.request.form.get('subject', _('No Subject'))
-        message = self.request.form.get('email_text', '') + '\n'
+        # try:
+        #     payload = json.loads(data)
+        # except json.JSONDecodeError:
+        #     raise BadRequest("Invalid JSON format.")
+        recipient = self.request.form.get("to_address")
+        reply_to = self.request.form.get("reply_to_address", None)
+        subject = self.request.form.get("subject", _("No Subject"))
+        message = self.request.form.get("email_text", "") + "\n"
 
         message += data
 
@@ -46,7 +55,9 @@ class FormActionsEmailHandlerPost(Service):
             raise BadRequest("Recipient email address is required.")
 
         # Send email
-        response = self.send_email(recipient, default_sender, reply_to, subject, message)
+        response = self.send_email(
+            recipient, default_sender, reply_to, subject, message
+        )
 
         self.request.response.setStatus(200)
         return response
@@ -55,10 +66,10 @@ class FormActionsEmailHandlerPost(Service):
         """Helper method to send email."""
 
         messageText = MIMEMultipart()
-        messageText.attach(MIMEText(message, 'plain', 'utf-8'))
+        messageText.attach(MIMEText(message, "plain", "utf-8"))
         messageText["Subject"] = subject
         if reply_to_adress:
-            messageText['Reply-To'] = reply_to_adress
+            messageText["Reply-To"] = reply_to_adress
 
         # Send the email
         try:
@@ -67,21 +78,17 @@ class FormActionsEmailHandlerPost(Service):
                 sender=sender,
                 subject=subject,
                 body=messageText,
-                )
+            )
             return
 
         except Exception as e:
             raise BadRequest(f"Failed to send email: {str(e)}")
 
+
 class FormActionsWebserviceHandlerPost(Service):
-
     def reply(self):
-        data = self.request.get('BODY', None)
-        if not data:
-            raise BadRequest("No data provided.")
-
-        if isinstance(data, bytes):
-            data = data.decode('utf-8')
+        alsoProvides(self.request, IDisableCSRFProtection)
+        data = load_form_action_data(self)
 
         try:
             payload = json.loads(data)
@@ -91,43 +98,68 @@ class FormActionsWebserviceHandlerPost(Service):
         endpoints = []
         i = 1
         while True:
-            if f'endpoint_{i}_url' not in self.request.form:
+            if f"endpoint_{i}_url" not in self.request.form:
                 break
-            url = self.request.form.get(f'endpoint_{i}_url')
+            url = self.request.form.get(f"endpoint_{i}_url")
             endpoint = {
-                'url': url,
+                "url": url,
             }
-            api_key_header_name = self.request.form.get(f'endpoint_{i}_api_key_header_name', None)
-            api_key = self.request.form.get(f'endpoint_{i}_api_key', None)
+            api_key_header_name = self.request.form.get(
+                f"endpoint_{i}_api_key_header_name", None
+            )
+            api_key = self.request.form.get(f"endpoint_{i}_api_key", None)
             if api_key_header_name and api_key:
                 endpoint[api_key_header_name] = api_key
             endpoints.append(endpoint)
             i += 1
 
-        page_after_success = self.request.form.get('page_after_success', None)
+        page_after_success = self.request.form.get("page_after_success", None)
 
         self.request.response.setStatus(200)
-        status = 'success'
-        message = _('Web service request sent successfully.')
-        error_message = _('Error sending request to: ')
+        status = "success"
+        message = _("Web service request sent successfully.")
+        error_message = _("Error sending request to: ")
         error_occurred = False
         for endpoint in endpoints:
-            headers={k: v for k, v in endpoint.items() if k != 'url'}
-            headers['Referer'] = "https://plone.org" # self.context.absolute_url()
-            response = requests.post(url=endpoint['url'],
-                                     headers=headers,
-                                     data=json.dumps(payload)
+            headers = {k: v for k, v in endpoint.items() if k != "url"}
+            headers["Referer"] = "https://plone.org"  # self.context.absolute_url()
+            response = requests.post(
+                url=endpoint["url"], headers=headers, data=json.dumps(payload)
             )
 
             if response.status_code != 200:
                 error_occurred = True
                 self.request.response.setStatus(400)
-                status = 'error'
+                status = "error"
                 error_message += f"{endpoint['url']}: {response.text}, "
 
         if error_occurred:
-            api.portal.show_message(message=error_message, request=self.request, type='error')
+            api.portal.show_message(
+                message=error_message, request=self.request, type="error"
+            )
         elif page_after_success:
             self.request.response.redirect(page_after_success)
         else:
-            return {'status': status, 'message': message}
+            return {"status": status, "message": message}
+
+
+class FormActionsStorageHandlerPost(Service):
+    def reply(self):
+        alsoProvides(self.request, IDisableCSRFProtection)
+        data = load_form_action_data(self)
+
+        try:
+            payload = json.loads(data)
+        except json.JSONDecodeError:
+            raise BadRequest("Invalid JSON format.")
+
+        annotation_storage = FormActionsAnnotationStorage(self.context)
+        annotation_storage.store_as_annotation(payload)
+
+        page_after_success = self.request.form.get("page_after_success", None)
+
+        self.request.response.setStatus(200)
+        if page_after_success:
+            self.request.response.redirect(page_after_success)
+        else:
+            return {"status": "success", "message": _("Data stored successfully.")}
