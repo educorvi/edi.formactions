@@ -7,4 +7,5 @@
   <object name="Reset Button" meta_type="Dexterity FTI"/>
   <object name="Webservice Handler" meta_type="Dexterity FTI"/>
   <object name="Endpoint" meta_type="Dexterity FTI"/>
+  <object name="Storage Handler" meta_type="Dexterity FTI"/>
 </object>

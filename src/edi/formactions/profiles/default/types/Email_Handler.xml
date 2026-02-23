@@ -10,7 +10,7 @@
       name="title">Email Handler</property>
   <property
       i18n:translate=""
-      name="description">Add a button with an Email Action for a edi.jsonforms form</property>
+      name="description">Adds a button with an Email Action for a edi.jsonforms form</property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">Email Handler</property>

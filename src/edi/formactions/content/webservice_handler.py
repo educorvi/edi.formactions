@@ -10,11 +10,9 @@ from edi.formactions.content.generic_handler import IGenericHandler, GenericHand
 
 
 class IWebserviceHandler(IGenericHandler):
-    """ Marker interface and Dexterity Python Schema for WebserviceHandler
-    """
+    """Marker interface and Dexterity Python Schema for WebserviceHandler"""
 
 
 @implementer(IWebserviceHandler)
 class WebserviceHandler(GenericHandler):
-    """ Content-type class for IWebserviceHandler
-    """
+    """Content-type class for IWebserviceHandler"""

@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.formactions.AddStorageHandler"
+        title="edi.formactions: Add StorageHandler"
+    />
+
+
+    <permission
         id="edi.formactions.AddEndpoint"
         title="edi.formactions: Add Endpoint"
     />

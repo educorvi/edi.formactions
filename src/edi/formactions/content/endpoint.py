@@ -2,8 +2,10 @@
 # from plone.app.textfield import RichText
 # from plone.autoform import directives
 from plone.dexterity.content import Container
+
 # from plone.namedfile import field as namedfile
 from plone.supermodel import model
+
 # from plone.supermodel.directives import fieldset
 # from z3c.form.browser.radio import RadioFieldWidget
 from zope import schema
@@ -14,8 +16,7 @@ from edi.formactions import _
 
 
 class IEndpoint(model.Schema):
-    """ Marker interface and Dexterity Python Schema for Endpoint
-    """
+    """Marker interface and Dexterity Python Schema for Endpoint"""
 
     url = schema.URI(
         title=_("Endpoint URL"),
@@ -35,7 +36,7 @@ class IEndpoint(model.Schema):
         required=False,
     )
 
+
 @implementer(IEndpoint)
 class Endpoint(Container):
-    """ Content-type class for IEndpoint
-    """
+    """Content-type class for IEndpoint"""

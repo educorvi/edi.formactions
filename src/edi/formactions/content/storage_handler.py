@@ -13,17 +13,16 @@ from zope.interface import implementer
 
 
 from edi.formactions import _
-from edi.jsonforms.content.common import IFormElement
+from edi.formactions.content.generic_handler import IGenericHandler, GenericHandler
 
 
-# class IButtonHandler(model.Schema):
-class IButtonHandler(IFormElement):
-    """Marker interface and Dexterity Python Schema for ButtonHandler"""
+class IStorageHandler(IGenericHandler):
+    """Marker interface and Dexterity Python Schema for StorageHandler"""
 
     # If you want, you can load a xml model created TTW here
     # and customize it in Python:
 
-    # model.load('button_handler.xml')
+    # model.load('storage_handler.xml')
 
     # directives.widget(level=RadioFieldWidget)
     # level = schema.Choice(
@@ -61,6 +60,6 @@ class IButtonHandler(IFormElement):
     # )
 
 
-@implementer(IButtonHandler)
-class ButtonHandler(Container):
-    """Content-type class for IButtonHandler"""
+@implementer(IStorageHandler)
+class StorageHandler(GenericHandler):
+    """Content-type class for IStorageHandler"""
