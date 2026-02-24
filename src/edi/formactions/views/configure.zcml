@@ -8,6 +8,15 @@
  <!-- -*- extra stuff goes here -*- -->
 
   <browser:page
+    name="json-forms-document-view"
+    for="edi.formactions.content.json_forms_document.IJsonFormsDocument"
+    class=".json_forms_document_view.JsonFormsDocumentView"
+    template="json_forms_document_view.pt"
+    permission="zope2.View"
+    layer="edi.formactions.interfaces.IEdiFormactionsLayer"
+    />
+
+  <browser:page
     name="annotations-view"
     for="edi.jsonforms.content.form.IForm"
     class=".annotations_view.AnnotationsView"
