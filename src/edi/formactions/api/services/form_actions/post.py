@@ -20,6 +20,9 @@ from edi.formactions import _
 from edi.formactions.annotations import FormActionsAnnotationStorage
 from jinja2 import Template, Environment, meta
 
+from edi.jsonforms.views.json_schema_view import JsonSchemaView
+from edi.jsonforms.views.ui_schema_view import UiSchemaView
+
 
 def load_form_action_data(handler_post: Service) -> dict:
     """Helper function to load form action data from the request"""
@@ -219,8 +222,38 @@ class FormActionsFileStorageHandlerPost(Service):
 
         # set fields of the created object
         jsonformsdocument.json_data = payload
-        jsonformsdocument.json_schema = {}  # TODO von seite holen und view aufrufen?
-        jsonformsdocument.ui_schema = {}  # TODO
+        jsonformsdocument.json_schema = json.loads(
+            JsonSchemaView(self.context, self.request)()
+        )
+        ui_schema = json.loads(UiSchemaView(self.context, self.request)())
+        # remove all buttongroups
+        for i, element in enumerate(ui_schema.get("layout", []).get("elements", [])):
+            if element.get("type") == "Buttongroup":
+                ui_schema["layout"]["elements"].pop(i)
+        # put new buttongroup into the ui schema to enable editing the created JsonFormsDocument
+        new_button_group = {
+            "type": "Buttongroup",
+            "buttons": [
+                {
+                    "type": "Button",
+                    "buttonType": "submit",
+                    "text": _("Save"),
+                    "options": {
+                        "action": "request",
+                        "request": {
+                            "url": f"{jsonformsdocument.absolute_url()}/@edit-jsonformsdocument",
+                            "method": "POST",
+                            "headers": {
+                                "Accept": "application/json",
+                                "Content-Type": "application/json",
+                            },
+                        },
+                    },
+                }
+            ],
+        }
+        ui_schema["layout"]["elements"].append(new_button_group)
+        jsonformsdocument.ui_schema = ui_schema
 
         page_after_success = self.request.form.get("page_after_success", None)
 
