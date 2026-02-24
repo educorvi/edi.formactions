@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+from plone.app.z3cform.widget import RelatedItemsFieldWidget
+
 # from plone.app.textfield import RichText
-# from plone.autoform import directives
+from plone.autoform import directives
 from plone.dexterity.content import Container
 
 # from plone.namedfile import field as namedfile
@@ -14,18 +16,20 @@ from zope.interface import implementer
 
 
 from edi.formactions import _
+from edi.formactions.content.generic_handler import IGenericHandler
+from edi.formactions.content.generic_handler import GenericHandler
 
 
-class IFileStorageHandler(model.Schema):
+class IFileStorageHandler(IGenericHandler):
     """Marker interface and Dexterity Python Schema for FileStorageHandler"""
 
-    dependencies = RelationChoice(
+    file_path = RelationChoice(
         title=_("Target folder for file storage"),
         description=_(
             "Select the folder where the json data of the filled form will be stored."
         ),
         vocabulary="plone.app.vocabularies.Catalog",
-        required=False,
+        required=True,
     )
 
     content_object_title = schema.TextLine(
@@ -36,7 +40,14 @@ class IFileStorageHandler(model.Schema):
         required=False,
     )
 
+    directives.widget(
+        "file_path",
+        RelatedItemsFieldWidget,
+        vocabulary="plone.app.vocabularies.Catalog",
+        pattern_options={"selectableTypes": ["Folder"]},
+    )
+
 
 @implementer(IFileStorageHandler)
-class FileStorageHandler(Container):
+class FileStorageHandler(GenericHandler):
     """Content-type class for IFileStorageHandler"""
