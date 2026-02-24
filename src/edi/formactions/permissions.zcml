@@ -7,6 +7,12 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.formactions.AddFileStorageHandler"
+        title="edi.formactions: Add FileStorageHandler"
+    />
+
+
+    <permission
         id="edi.formactions.AddStorageHandler"
         title="edi.formactions: Add StorageHandler"
     />
