@@ -222,9 +222,7 @@ class FormActionsFileStorageHandlerPost(Service):
 
         # set fields of the created object
         jsonformsdocument.json_data = payload
-        jsonformsdocument.json_schema = json.loads(
-            JsonSchemaView(self.context, self.request)()
-        )
+        jsonformsdocument.json_schema = JsonSchemaView(self.context, self.request)()
         ui_schema = json.loads(UiSchemaView(self.context, self.request)())
         # remove all buttongroups
         for i, element in enumerate(ui_schema.get("layout", []).get("elements", [])):
@@ -239,13 +237,16 @@ class FormActionsFileStorageHandlerPost(Service):
                     "buttonType": "submit",
                     "text": _("Save"),
                     "options": {
-                        "action": "request",
-                        "request": {
-                            "url": f"{jsonformsdocument.absolute_url()}/@edit-jsonformsdocument",
-                            "method": "POST",
-                            "headers": {
-                                "Accept": "application/json",
-                                "Content-Type": "application/json",
+                        "variant": "secondary",
+                        "submitOptions": {
+                            "action": "request",
+                            "request": {
+                                "url": f"{jsonformsdocument.absolute_url()}/@edit-jsonformsdocument",
+                                "method": "POST",
+                                "headers": {
+                                    "Accept": "application/json",
+                                    "Content-Type": "application/json",
+                                },
                             },
                         },
                     },
@@ -253,7 +254,9 @@ class FormActionsFileStorageHandlerPost(Service):
             ],
         }
         ui_schema["layout"]["elements"].append(new_button_group)
-        jsonformsdocument.ui_schema = ui_schema
+        jsonformsdocument.ui_schema = json.dumps(
+            ui_schema, ensure_ascii=False, indent=4
+        )
 
         page_after_success = self.request.form.get("page_after_success", None)
 
