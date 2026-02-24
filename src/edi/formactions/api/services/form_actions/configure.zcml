@@ -44,6 +44,12 @@
     permission="zope2.View"
     />
 
-
+  <plone:service
+    method="POST"
+    for="edi.formactions.content.json_forms_document.IJsonFormsDocument"
+    factory=".post.FormActionsEditJsonFormsDocumentPost"
+    name="@edit-jsonformsdocument"
+    permission="zope2.View"
+    />
 
 </configure>

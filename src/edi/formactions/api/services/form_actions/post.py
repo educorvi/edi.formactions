@@ -265,3 +265,25 @@ class FormActionsFileStorageHandlerPost(Service):
                 "status": "success",
                 "message": _("Data stored in folder successfully."),
             }
+
+
+class FormActionsEditJsonFormsDocumentPost(Service):
+    """Endpoint to edit a JsonFormsDocument created by the FormActionsFileStorageHandler"""
+
+    def reply(self):
+        alsoProvides(self.request, IDisableCSRFProtection)
+        import pdb
+
+        pdb.set_trace()
+        data = load_form_action_data(self)
+
+        try:
+            payload = json.loads(data)
+        except json.JSONDecodeError:
+            raise BadRequest("Invalid JSON format.")
+
+        # update json_data field of the context JsonFormsDocument with the new data
+        self.context.json_data = payload
+
+        self.request.response.setStatus(200)
+        return {"status": "success", "message": _("Data updated successfully.")}
