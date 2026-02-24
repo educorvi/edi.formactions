@@ -36,6 +36,14 @@
     permission="zope2.View"
     />
 
+  <plone:service
+    method="POST"
+    for="edi.jsonforms.content.form.IForm"
+    factory=".post.FormActionsFileStorageHandlerPost"
+    name="@store-as-file"
+    permission="zope2.View"
+    />
+
 
 
 </configure>

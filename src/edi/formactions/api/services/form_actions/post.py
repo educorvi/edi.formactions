@@ -10,7 +10,7 @@ from zExceptions import BadRequest
 from zope.component import getUtility
 from Products.MailHost.interfaces import IMailHost
 from plone.api import portal
-from plone.base.utils import safe_text
+from plone.base.utils import getToolByName, safe_text
 from plone.protect.interfaces import IDisableCSRFProtection
 import requests
 from email.mime.multipart import MIMEMultipart
@@ -18,6 +18,7 @@ from email.mime.text import MIMEText
 import json
 from edi.formactions import _
 from edi.formactions.annotations import FormActionsAnnotationStorage
+from jinja2 import Template, Environment, meta
 
 
 def load_form_action_data(handler_post: Service) -> dict:
@@ -163,3 +164,71 @@ class FormActionsStorageHandlerPost(Service):
             self.request.response.redirect(page_after_success)
         else:
             return {"status": "success", "message": _("Data stored successfully.")}
+
+
+class FormActionsFileStorageHandlerPost(Service):
+    """Handler for storing form data in a file inside a folder in the Plone site."""
+
+    def reply(self):
+        alsoProvides(self.request, IDisableCSRFProtection)
+        data = load_form_action_data(self)
+
+        try:
+            payload = json.loads(data)
+        except json.JSONDecodeError:
+            raise BadRequest("Invalid JSON format.")
+
+        # get target folder from request form and validate it
+        folder_path = self.request.form.get("folder_path")
+        if not folder_path:
+            raise BadRequest("File path is required.")
+        folder = api.content.get(path=folder_path)
+        if folder is None:
+            raise BadRequest("Folder path is invalid.")
+
+        # get content object title from request form, validate it and render it as jinja2 template with form data as variables
+        content_object_title = self.request.form.get(
+            "content_object_title", _("Form submission")
+        )
+        env = Environment()
+        ast = env.parse(content_object_title)
+        variables = meta.find_undeclared_variables(ast)
+        obj_title = Template(content_object_title)
+        render_vars = {var: payload[var] for var in variables if var in payload}
+        obj_title = obj_title.render(**render_vars)
+        if not obj_title or obj_title.isspace():
+            obj_title = _("Form submission")
+        obj_id = safe_text(obj_title.lower().replace(" ", "-"))
+
+        # create JsonFormsDocument inside the target folder but bypass permission checks
+        # necessary because not logged in users can also submit forms
+        portal_types = getToolByName(portal, "portal_types")
+        type_info = portal_types.getTypeInfo("JsonFormsDocument")
+        # test if object with id already exists in folder, append a number if necessary
+        obj_path = f"{folder_path}/{obj_id}"
+        if api.content.get(path=obj_path):
+            i = 1
+            while True:
+                obj_id = f"{obj_id}-{i}"
+                if not api.content.get(path=f"{folder_path}/{obj_id}"):
+                    break
+                i += 1
+        jsonformsdocument = type_info._constructInstance(
+            folder, obj_id, title=obj_title
+        )
+
+        # set fields of the created object
+        jsonformsdocument.json_data = payload
+        jsonformsdocument.json_schema = {}  # TODO von seite holen und view aufrufen?
+        jsonformsdocument.ui_schema = {}  # TODO
+
+        page_after_success = self.request.form.get("page_after_success", None)
+
+        self.request.response.setStatus(200)
+        if page_after_success:
+            self.request.response.redirect(page_after_success)
+        else:
+            return {
+                "status": "success",
+                "message": _("Data stored in folder successfully."),
+            }
