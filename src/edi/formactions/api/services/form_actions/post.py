@@ -221,7 +221,7 @@ class FormActionsFileStorageHandlerPost(Service):
         )
 
         # set fields of the created object
-        jsonformsdocument.json_data = payload
+        jsonformsdocument.json_data = json.dumps(payload, ensure_ascii=False, indent=4)
         jsonformsdocument.json_schema = JsonSchemaView(self.context, self.request)()
         ui_schema = json.loads(UiSchemaView(self.context, self.request)())
         # remove all buttongroups
@@ -286,7 +286,7 @@ class FormActionsEditJsonFormsDocumentPost(Service):
             raise BadRequest("Invalid JSON format.")
 
         # update json_data field of the context JsonFormsDocument with the new data
-        self.context.json_data = payload
+        self.context.json_data = json.dumps(payload, ensure_ascii=False, indent=4)
 
         self.request.response.setStatus(200)
         return {"status": "success", "message": _("Data updated successfully.")}

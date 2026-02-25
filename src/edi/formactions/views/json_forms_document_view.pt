@@ -7,9 +7,9 @@
 <body>
 
   <metal:block fill-slot="content-core">
-      <div class="m-3" tal:define="json context/json_schema; ui context/ui_schema">
+      <div class="m-3" tal:define="json context/json_schema; ui context/ui_schema; data context/json_data">
 
-        <vue-json-form tal:attributes="json-schema json; ui-schema ui" return-data-as-scopes="false"></vue-json-form>
+        <vue-json-form tal:attributes="json-schema json; ui-schema ui; preset-data data" return-data-as-scopes="false"></vue-json-form>
 
       </div>
     </metal:block>
