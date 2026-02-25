@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from jinja2 import Environment, TemplateSyntaxError
+from jinja2 import TemplateSyntaxError
+from jinja2.sandbox import SandboxedEnvironment
 from plone.app.z3cform.widget import RelatedItemsFieldWidget
 from plone.autoform import directives
 from plone.dexterity.content import Container
@@ -28,7 +29,7 @@ class IFileStorageHandler(IGenericHandler):
     content_object_title = schema.TextLine(
         title=_("Title for stored content objects"),
         description=_(
-            "Define a title for the content objects that will be created to store the json data of the filled form. Use the jinja2 language to define dynamic titles. E.g. 'Form submission from {{id_of_field_x}} on {{id_of_field_y}}'. The id of the fields must be from fields of the form (the fields cannot be inside an array or object, but can be inside a fieldset). If ids are invalid, the button will be disabled."
+            "Define a title for the content objects that will be created to store the JSON data of the filled form. Use the Jinja2 language to define dynamic titles. For example: 'Form submission from {{data['id_of_field_x']}} on {{data['id_of_field_y']}}', to use the value of field x and y in the title. This also works if the field is inside a fieldset, but if you want to access a field inside an object, write {{data['id_of_object']['id_of_field']}}. The field IDs must come from the form fields. In addition to field values, you can use the username via '{{user}}'."
         ),
         required=False,
     )
@@ -54,7 +55,7 @@ class IFileStorageHandler(IGenericHandler):
         """Validate that the content_object_title field contains valid jinja2 syntax."""
         if data.content_object_title:
             try:
-                Environment().from_string(data.content_object_title)
+                SandboxedEnvironment().from_string(data.content_object_title)
             except TemplateSyntaxError as e:
                 raise Invalid(
                     _(

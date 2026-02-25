@@ -18,7 +18,8 @@ from email.mime.text import MIMEText
 import json
 from edi.formactions import _
 from edi.formactions.annotations import FormActionsAnnotationStorage
-from jinja2 import Template, Environment, meta
+from jinja2 import Template, meta
+from jinja2.sandbox import SandboxedEnvironment
 
 from edi.jsonforms.views.json_schema_view import JsonSchemaView
 from edi.jsonforms.views.ui_schema_view import UiSchemaView
@@ -193,12 +194,16 @@ class FormActionsFileStorageHandlerPost(Service):
         content_object_title = self.request.form.get(
             "content_object_title", _("Form submission")
         )
-        env = Environment()
-        ast = env.parse(content_object_title)
-        variables = meta.find_undeclared_variables(ast)
-        obj_title = Template(content_object_title)
-        render_vars = {var: payload[var] for var in variables if var in payload}
-        obj_title = obj_title.render(**render_vars)
+        env = SandboxedEnvironment()
+        obj_title = env.from_string(content_object_title).render(
+            data=payload, user=api.user.get_current()
+        )
+
+        # ast = env.parse(content_object_title)
+        # variables = meta.find_undeclared_variables(ast)
+        # obj_title = Template(content_object_title)
+        # render_vars = {"data": payload, "user": api.user.get_current()}
+        # obj_title = obj_title.render(**render_vars)
         if not obj_title or obj_title.isspace():
             obj_title = _("Form submission")
         obj_id = safe_text(obj_title.lower().replace(" ", "-"))
