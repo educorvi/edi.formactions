@@ -33,6 +33,15 @@ class IFileStorageHandler(IGenericHandler):
         required=False,
     )
 
+    redirect_to_new_object = schema.Bool(
+        title=_("Redirect to created content object after submission"),
+        description=_(
+            "If enabled, the user will be redirected to the created content object after form submission and the configuration of the page after success is ignored."
+        ),
+        required=False,
+        default=True,
+    )
+
     directives.widget(
         "target_folder",
         RelatedItemsFieldWidget,

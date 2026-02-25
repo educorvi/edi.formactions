@@ -262,11 +262,17 @@ class FormActionsFileStorageHandlerPost(Service):
 
         self.request.response.setStatus(200)
         if page_after_success:
-            self.request.response.redirect(page_after_success)
+            if page_after_success == "redirect_to_new_object":
+                self.request.response.redirect(jsonformsdocument.absolute_url())
+            else:
+                self.request.response.redirect(page_after_success)
         else:
             return {
                 "status": "success",
                 "message": _("Data stored in folder successfully."),
+                "edi.jsonforms": {
+                    "redirect_to": jsonformsdocument.absolute_url(),
+                },
             }
 
 
@@ -275,9 +281,6 @@ class FormActionsEditJsonFormsDocumentPost(Service):
 
     def reply(self):
         alsoProvides(self.request, IDisableCSRFProtection)
-        import pdb
-
-        pdb.set_trace()
         data = load_form_action_data(self)
 
         try:
