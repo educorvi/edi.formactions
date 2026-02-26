@@ -264,6 +264,14 @@ class FormActionsFileStorageHandlerPost(Service):
             ui_schema, ensure_ascii=False, indent=4
         )
 
+        # set state to private so only admins and the creator can see the created object
+        # bypass permission checks to make transition also as anonymous user
+        with api.env.adopt_roles(["Manager"]):
+            try:
+                api.content.transition(obj=jsonformsdocument, transition="hide")
+            except Exception:
+                pass
+
         page_after_success = self.request.form.get("page_after_success", None)
 
         self.request.response.setStatus(200)
