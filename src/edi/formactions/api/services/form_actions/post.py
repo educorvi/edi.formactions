@@ -213,7 +213,7 @@ class FormActionsFileStorageHandlerPost(Service):
         # test if object with id already exists in folder, append a number if necessary
         # Use elevated permissions since anonymous users can submit forms but can't view objects
         obj_path = f"{folder_path}/{obj_id}"
-        with api.env.adopt_roles(['Manager']):
+        with api.env.adopt_roles(["Manager"]):
             if api.content.get(path=obj_path):
                 original_obj_id = obj_id
                 i = 1
@@ -291,6 +291,15 @@ class FormActionsEditJsonFormsDocumentPost(Service):
         except json.JSONDecodeError:
             raise BadRequest("Invalid JSON format.")
 
+        # check that self.context was created by the current user
+        # if user is anonymous, content cannot be edited
+        user = api.user.get_current()
+        if not user:
+            raise BadRequest("Anonymous users cannot edit content.")
+        if self.context.Creator() != user.getUserId() and not api.user.has_permission(
+            "Modify portal content", obj=self.context
+        ):
+            raise BadRequest("You can only edit content created by yourself.")
         # update json_data field of the context JsonFormsDocument with the new data
         self.context.json_data = json.dumps(payload, ensure_ascii=False, indent=4)
 
