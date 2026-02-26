@@ -211,14 +211,17 @@ class FormActionsFileStorageHandlerPost(Service):
         portal_types = getToolByName(portal, "portal_types")
         type_info = portal_types.getTypeInfo("JsonFormsDocument")
         # test if object with id already exists in folder, append a number if necessary
+        # Use elevated permissions since anonymous users can submit forms but can't view objects
         obj_path = f"{folder_path}/{obj_id}"
-        if api.content.get(path=obj_path):
-            i = 1
-            while True:
-                obj_id = f"{obj_id}-{i}"
-                if not api.content.get(path=f"{folder_path}/{obj_id}"):
-                    break
-                i += 1
+        with api.env.adopt_roles(['Manager']):
+            if api.content.get(path=obj_path):
+                original_obj_id = obj_id
+                i = 1
+                while True:
+                    obj_id = f"{original_obj_id}-{i}"
+                    if not api.content.get(path=f"{folder_path}/{obj_id}"):
+                        break
+                    i += 1
         jsonformsdocument = type_info._constructInstance(
             folder, obj_id, title=obj_title
         )
