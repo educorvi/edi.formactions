@@ -20,9 +20,14 @@ from edi.formactions import _
 from edi.formactions.annotations import FormActionsAnnotationStorage
 from jinja2 import Template, TemplateSyntaxError, meta
 from jinja2.sandbox import SandboxedEnvironment
+import logging
 
 from edi.jsonforms.views.json_schema_view import JsonSchemaView
+
+logger = logging.getLogger(__name__)
 from edi.jsonforms.views.ui_schema_view import UiSchemaView
+
+logger = logging.getLogger(__name__)
 
 
 def load_form_action_data(handler_post: Service) -> dict:
@@ -269,8 +274,12 @@ class FormActionsFileStorageHandlerPost(Service):
         with api.env.adopt_roles(["Manager"]):
             try:
                 api.content.transition(obj=jsonformsdocument, transition="hide")
-            except Exception:
-                pass
+                if api.content.get_state(jsonformsdocument) != "private":
+                    api.content.transition(obj=jsonformsdocument, to_state="private")
+            except Exception as e:
+                logging.debug(
+                    "Failed to transition JsonFormsDocument to 'private' state: %s", e
+                )
 
         page_after_success = self.request.form.get("page_after_success", None)
 
