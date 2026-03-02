@@ -23,8 +23,6 @@ from jinja2.sandbox import SandboxedEnvironment
 import logging
 
 from edi.jsonforms.views.json_schema_view import JsonSchemaView
-
-logger = logging.getLogger(__name__)
 from edi.jsonforms.views.ui_schema_view import UiSchemaView
 
 logger = logging.getLogger(__name__)
@@ -202,9 +200,13 @@ class FormActionsFileStorageHandlerPost(Service):
         env = SandboxedEnvironment()
         try:
             obj_title = env.from_string(content_object_title).render(
-                data=payload, user=api.user.get_current()
+                data=payload,
+                user=api.user.get_current().id
+                if api.user.get_current()
+                else "anonymous",
             )
         except Exception as e:
+            logging.error(f"Error rendering content object title template: {e}")
             obj_title = _("Form submission")
 
         if not obj_title or obj_title.isspace():
