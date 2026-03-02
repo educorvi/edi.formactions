@@ -18,6 +18,9 @@ class IJsonFormsDocumentView(Interface):
 @implementer(IJsonFormsDocumentView)
 class JsonFormsDocumentView(BrowserView):
     def __call__(self):
+        return self.index()
+
+    def get_ui_schema(self):
         disable_save_button = False
         user = api.user.get_current()
         if not user:
@@ -41,10 +44,8 @@ class JsonFormsDocumentView(BrowserView):
                         ui_schema["layout"]["elements"][-1]["buttons"][0]["options"][
                             "disabled"
                         ] = disable_save_button  # disable the save button if the user is not allowed to edit the content
-                        self.context.ui_schema = json.dumps(
-                            ui_schema,
-                            ensure_ascii=False,
-                            indent=4,
-                        )
-
-        return self.index()
+        return json.dumps(
+            ui_schema,
+            ensure_ascii=False,
+            indent=4,
+        )
