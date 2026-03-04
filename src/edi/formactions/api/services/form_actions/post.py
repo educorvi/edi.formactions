@@ -220,38 +220,46 @@ class FormActionsFileStorageHandlerPost(Service):
         jsonformsdocument.json_schema = JsonSchemaView(self.context, self.request)()
         ui_schema = json.loads(UiSchemaView(self.context, self.request)())
         # remove all buttongroups
-        for i, element in enumerate(ui_schema.get("layout", []).get("elements", [])):
-            if element.get("type") == "Buttongroup":
-                ui_schema["layout"]["elements"].pop(i)
-        # put new buttongroup into the ui schema to enable editing the created JsonFormsDocument
-        new_button_group = {
-            "type": "Buttongroup",
-            "buttons": [
-                {
-                    "type": "Button",
-                    "buttonType": "submit",
-                    "text": _("Save"),
-                    "options": {
-                        "variant": "secondary",
-                        "submitOptions": {
-                            "action": "request",
-                            "request": {
-                                "url": f"{jsonformsdocument.absolute_url()}/@edit-jsonformsdocument",
-                                "method": "POST",
-                                "headers": {
-                                    "Accept": "application/json",
-                                    "Content-Type": "application/json",
+        try:
+            new_list = []
+            for element in ui_schema.get("layout", []).get("elements", []):
+                if element.get("type") == "Buttongroup":
+                    continue
+                else:
+                    new_list.append(element)
+            ui_schema["layout"]["elements"] = new_list
+            # put new buttongroup into the ui schema to enable editing the created JsonFormsDocument
+            new_button_group = {
+                "type": "Buttongroup",
+                "buttons": [
+                    {
+                        "type": "Button",
+                        "buttonType": "submit",
+                        "text": _("Save"),
+                        "options": {
+                            "variant": "secondary",
+                            "submitOptions": {
+                                "action": "request",
+                                "request": {
+                                    "url": f"{jsonformsdocument.absolute_url()}/@edit-jsonformsdocument",
+                                    "method": "POST",
+                                    "headers": {
+                                        "Accept": "application/json",
+                                        "Content-Type": "application/json",
+                                    },
                                 },
                             },
                         },
-                    },
-                }
-            ],
-        }
-        ui_schema["layout"]["elements"].append(new_button_group)
-        jsonformsdocument.ui_schema = json.dumps(
-            ui_schema, ensure_ascii=False, indent=4
-        )
+                    }
+                ],
+            }
+            ui_schema["layout"]["elements"].append(new_button_group)
+            jsonformsdocument.ui_schema = json.dumps(
+                ui_schema, ensure_ascii=False, indent=4
+            )
+        except Exception as e:
+            logging.error(f"Error processing UI schema: {e}")
+            raise BadRequest("Error processing UI schema.")
 
         # set state to private so only admins and the creator can see the created object
         # bypass permission checks to make transition also as anonymous user
