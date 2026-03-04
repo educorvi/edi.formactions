@@ -28,6 +28,28 @@
     permission="zope2.View"
     />
 
+  <plone:service
+    method="POST"
+    for="edi.jsonforms.content.form.IForm"
+    factory=".post.FormActionsStorageHandlerPost"
+    name="@store-as-annotation"
+    permission="zope2.View"
+    />
 
+  <plone:service
+    method="POST"
+    for="edi.jsonforms.content.form.IForm"
+    factory=".post.FormActionsFileStorageHandlerPost"
+    name="@store-as-file"
+    permission="zope2.View"
+    />
+
+  <plone:service
+    method="POST"
+    for="edi.formactions.content.json_forms_document.IJsonFormsDocument"
+    factory=".post.FormActionsEditJsonFormsDocumentPost"
+    name="@edit-jsonformsdocument"
+    permission="zope2.View"
+    />
 
 </configure>

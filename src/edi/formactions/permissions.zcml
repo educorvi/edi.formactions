@@ -7,6 +7,18 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
+        id="edi.formactions.AddFileStorageHandler"
+        title="edi.formactions: Add FileStorageHandler"
+    />
+
+
+    <permission
+        id="edi.formactions.AddStorageHandler"
+        title="edi.formactions: Add StorageHandler"
+    />
+
+
+    <permission
         id="edi.formactions.AddEndpoint"
         title="edi.formactions: Add Endpoint"
     />
@@ -35,7 +47,10 @@
         title="edi.formactions: Add ButtonHandler"
     />
 
-
+    <permission
+        id="edi.formactions.AddJsonFormsDocument"
+        title="edi.formactions: Add JsonFormsDocument"
+    />
 
   </configure>
 

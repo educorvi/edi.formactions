@@ -3,6 +3,22 @@
   <permissions>
   <!-- -*- extra stuff goes here -*- -->
 
+    <permission name="edi.formactions: Add FileStorageHandler" acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+
+
+    <permission name="edi.formactions: Add StorageHandler" acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+
+
     <permission name="edi.formactions: Add Endpoint" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
@@ -42,6 +58,12 @@
       <role name="Contributor"/>
     </permission>
 
+    <permission name="edi.formactions: Add JsonFormsDocument" acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
 
   </permissions>
 </rolemap>

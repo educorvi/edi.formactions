@@ -1,34 +1,37 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Email Handler"
+    name="JsonFormsDocument"
     meta_type="Dexterity FTI"
     i18n:domain="edi.formactions">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Email Handler</property>
+      name="title">JsonFormsDocument</property>
   <property
       i18n:translate=""
-      name="description">Adds a button with an Email Action for a edi.jsonforms form</property>
+      name="description">A container to hold the json data of a form. This content type is created automatically on submit of a form with a file storage handler.</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Email Handler</property>
-  <property name="icon_expr">string:envelope-at</property>
+  <property name="factory">JsonFormsDocument</property>
+  <property name="icon_expr">string:puzzle</property>
   <property name="link_target"></property>
 
   <!-- Hierarchy control -->
   <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
-    <!---->
+  <!--
+    <element value="Document" />
+    <element value="File" />
+  -->
   </property>
   <!-- Schema, class and security -->
-  <property name="add_permission">edi.formactions.AddEmailHandler</property>
-  <property name="klass">edi.formactions.content.email_handler.EmailHandler</property>
+  <property name="add_permission">edi.formactions.AddJsonFormsDocument</property>
+  <property name="klass">edi.formactions.content.json_forms_document.JsonFormsDocument</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">edi.formactions.content.email_handler.IEmailHandler</property>
+  <property name="schema">edi.formactions.content.json_forms_document.IJsonFormsDocument</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
@@ -50,15 +53,19 @@
     <!--<element value="plone.tableofcontents"/>-->
     <!--<element value="plone.versioning" />-->
     <!--<element value="plone.translatable" />-->
+    <!--<element value="plone.nextprevioustoggle" />-->
+    <!--<element value="plone.nextpreviousenabled" />-->
+    <!--<element value="plone.navigationroot" />-->
+    <!--<element value="plone.selectablecontrainstypes" />-->
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Email Handler</property>
-  <property name="default_view">view</property>
+  <property name="add_view_expr">string:${folder_url}/++add++JsonFormsDocument</property>
+  <property name="default_view">json-forms-document-view</property>
   <property name="default_view_fallback">False</property>
-  <property name="immediate_view">view</property>
+  <property name="immediate_view">json-forms-document-view</property>
   <property name="view_methods">
-    <element value="view"/>
+    <element value="json-forms-document-view"/>
   </property>
 
   <!-- Method aliases -->
