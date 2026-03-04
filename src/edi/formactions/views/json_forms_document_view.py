@@ -25,7 +25,7 @@ class JsonFormsDocumentView(BrowserView):
         user = api.user.get_current()
         if not user:
             disable_save_button = True
-        if self.context.Creator() != user.getUserId() and not api.user.has_permission(
+        elif self.context.Creator() != user.getUserId() and not api.user.has_permission(
             "Modify portal content", obj=self.context
         ):
             disable_save_button = True

@@ -1,14 +1,10 @@
 # -*- coding: utf-8 -*-
 from plone import api
-from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services import Service
-from zope.component import adapter
-from zope.interface import Interface
-from zope.interface import implementer
 from zope.interface import alsoProvides
 from zExceptions import BadRequest
-from zope.component import getUtility
-from Products.MailHost.interfaces import IMailHost
+
+# from Products.MailHost.interfaces import IMailHost
 from plone.api import portal
 from plone.base.utils import getToolByName, safe_text
 from plone.protect.interfaces import IDisableCSRFProtection
@@ -28,7 +24,7 @@ from edi.jsonforms.views.ui_schema_view import UiSchemaView
 logger = logging.getLogger(__name__)
 
 
-def load_form_action_data(handler_post: Service) -> dict:
+def load_form_action_data(handler_post: Service) -> str:
     """Helper function to load form action data from the request"""
     data = handler_post.request.get("BODY", None)
     if not data:
@@ -48,10 +44,6 @@ class FormActionsEmailHandlerPost(Service):
         )
         data = load_form_action_data(self)
 
-        # try:
-        #     payload = json.loads(data)
-        # except json.JSONDecodeError:
-        #     raise BadRequest("Invalid JSON format.")
         recipient = self.request.form.get("to_address")
         reply_to = self.request.form.get("reply_to_address", None)
         subject = self.request.form.get("subject", _("No Subject"))
@@ -63,12 +55,10 @@ class FormActionsEmailHandlerPost(Service):
             raise BadRequest("Recipient email address is required.")
 
         # Send email
-        response = self.send_email(
-            recipient, default_sender, reply_to, subject, message
-        )
+        self.send_email(recipient, default_sender, reply_to, subject, message)
 
         self.request.response.setStatus(200)
-        return response
+        return {"status": "success", "message": _("Email sent successfully.")}
 
     def send_email(self, recipient, sender, reply_to_adress, subject, message):
         """Helper method to send email."""
@@ -87,7 +77,6 @@ class FormActionsEmailHandlerPost(Service):
                 subject=subject,
                 body=messageText,
             )
-            return
 
         except Exception as e:
             raise BadRequest(f"Failed to send email: {str(e)}")
@@ -188,7 +177,7 @@ class FormActionsFileStorageHandlerPost(Service):
         # get target folder from request form and validate it
         folder_path = self.request.form.get("folder_path")
         if not folder_path:
-            raise BadRequest("File path is required.")
+            raise BadRequest("Folder path is required.")
         folder = api.content.get(path=folder_path)
         if folder is None:
             raise BadRequest("Folder path is invalid.")
