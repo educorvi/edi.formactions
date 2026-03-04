@@ -10,4 +10,5 @@
   <object name="Storage Handler" meta_type="Dexterity FTI"/>
   <object name="File Storage Handler" meta_type="Dexterity FTI"/>
   <object name="JsonFormsDocument" meta_type="Dexterity FTI"/>
+  <object name="Folder" meta_type="Dexterity FTI"/>
 </object>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    name="Folder"
+    meta_type="Dexterity FTI"
+    i18n:domain="plone">
+
+  <!-- Allow JsonFormsDocument to be added inside Folder containers -->
+  <property name="filter_content_types">True</property>
+  <property name="allowed_content_types" purge="false">
+    <element value="JsonFormsDocument" />
+  </property>
+
+</object>

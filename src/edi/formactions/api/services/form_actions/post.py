@@ -211,27 +211,20 @@ class FormActionsFileStorageHandlerPost(Service):
 
         if not obj_title or obj_title.isspace():
             obj_title = _("Form submission")
-        obj_id = safe_text(obj_title.lower().replace(" ", "-"))
 
         # create JsonFormsDocument inside the target folder but bypass permission checks
         # necessary because not logged in users can also submit forms
-        portal_types = getToolByName(portal, "portal_types")
-        type_info = portal_types.getTypeInfo("JsonFormsDocument")
-        # test if object with id already exists in folder, append a number if necessary
-        # Use elevated permissions since anonymous users can submit forms but can't view objects
-        obj_path = f"{folder_path}/{obj_id}"
         with api.env.adopt_roles(["Manager"]):
-            if api.content.get(path=obj_path):
-                original_obj_id = obj_id
-                i = 1
-                while True:
-                    obj_id = f"{original_obj_id}-{i}"
-                    if not api.content.get(path=f"{folder_path}/{obj_id}"):
-                        break
-                    i += 1
-        jsonformsdocument = type_info._constructInstance(
-            folder, obj_id, title=obj_title
-        )
+            container = api.content.get(path=folder_path)
+            if container is None:
+                logging.error(f"Container not found at path: {folder_path}")
+                raise BadRequest("Container not found at specified folder path.")
+            jsonformsdocument = api.content.create(
+                container=container,
+                type="JsonFormsDocument",
+                title=obj_title,
+                safe_id=True,
+            )
 
         # set fields of the created object
         jsonformsdocument.json_data = json.dumps(payload, ensure_ascii=False, indent=4)

@@ -47,7 +47,10 @@
         title="edi.formactions: Add ButtonHandler"
     />
 
-
+    <permission
+        id="edi.formactions.AddJsonFormsDocument"
+        title="edi.formactions: Add JsonFormsDocument"
+    />
 
   </configure>
 
