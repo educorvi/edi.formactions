@@ -17,6 +17,8 @@ from edi.formactions.annotations import FormActionsAnnotationStorage
 from jinja2 import Template, TemplateSyntaxError, meta
 from jinja2.sandbox import SandboxedEnvironment
 import logging
+from plone.base.utils import unrestricted_construct_instance
+from zope.container.interfaces import INameChooser
 
 from edi.jsonforms.views.json_schema_view import JsonSchemaView
 from edi.jsonforms.views.ui_schema_view import UiSchemaView
@@ -178,7 +180,8 @@ class FormActionsFileStorageHandlerPost(Service):
         folder_path = self.request.form.get("folder_path")
         if not folder_path:
             raise BadRequest("Folder path is required.")
-        folder = api.content.get(path=folder_path)
+        with api.env.adopt_roles(["Manager"]):
+            folder = api.content.get(path=folder_path)
         if folder is None:
             raise BadRequest("Folder path is invalid.")
 
@@ -201,19 +204,22 @@ class FormActionsFileStorageHandlerPost(Service):
         if not obj_title or obj_title.isspace():
             obj_title = _("Form submission")
 
-        # create JsonFormsDocument inside the target folder but bypass permission checks
-        # necessary because not logged in users can also submit forms
+        # create JsonFormsDocument inside the target folder but bypass checks (don't use api.content.create)
         with api.env.adopt_roles(["Manager"]):
             container = api.content.get(path=folder_path)
             if container is None:
                 logging.error(f"Container not found at path: {folder_path}")
                 raise BadRequest("Container not found at specified folder path.")
-            jsonformsdocument = api.content.create(
-                container=container,
-                type="JsonFormsDocument",
-                title=obj_title,
-                safe_id=True,
-            )
+
+            chooser = INameChooser(container)
+            new_id = chooser.chooseName(obj_title, container)  # create unique id
+            try:
+                jsonformsdocument = unrestricted_construct_instance(
+                    "JsonFormsDocument", container, new_id, title=obj_title
+                )
+            except Exception as e:
+                logging.error(f"Error creating JsonFormsDocument: {e}")
+                raise BadRequest("Error creating content object.")
 
         # set fields of the created object
         jsonformsdocument.json_data = json.dumps(payload, ensure_ascii=False, indent=4)
