@@ -197,8 +197,8 @@ class FormActionsFileStorageHandlerPost(Service):
         try:
             obj_title = env.from_string(content_object_title).render(
                 data=payload,
-                user=api.user.get_current().id
-                if api.user.get_current()
+                user=api.user.get_current().getUserId()
+                if api.user.get_current() and not api.user.is_anonymous()
                 else "anonymous",
             )
         except Exception as e:
