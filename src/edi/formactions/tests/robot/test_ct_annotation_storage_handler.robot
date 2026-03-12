@@ -4,7 +4,7 @@
 #
 # Run this robot test stand-alone:
 #
-#  $ bin/test -s edi.formactions -t test_storage_handler.robot --all
+#  $ bin/test -s edi.formactions -t test_annotation_storage_handler.robot --all
 #
 # Run this robot test with robot server (which is faster):
 #
@@ -14,7 +14,7 @@
 #
 # 2) Run robot tests:
 #
-# $ bin/robot /src/edi/formactions/tests/robot/test_storage_handler.robot
+# $ bin/robot /src/edi/formactions/tests/robot/test_annotation_storage_handler.robot
 #
 # See the http://docs.plone.org for further details (search for robot
 # framework).
@@ -34,18 +34,18 @@ Test Teardown  Close all browsers
 
 *** Test Cases ***************************************************************
 
-Scenario: As a site administrator I can add a Storage Handler
+Scenario: As a site administrator I can add a Annotation Storage Handler
   Given a logged-in site administrator
-    and an add Button Handler form
-   When I type 'My Storage Handler' into the title field
+    and an add Button form
+   When I type 'My Annotation Storage Handler' into the title field
     and I submit the form
-   Then a Storage Handler with the title 'My Storage Handler' has been created
+   Then a Annotation Storage Handler with the title 'My Annotation Storage Handler' has been created
 
-Scenario: As a site administrator I can view a Storage Handler
+Scenario: As a site administrator I can view a Annotation Storage Handler
   Given a logged-in site administrator
-    and a Storage Handler 'My Storage Handler'
-   When I go to the Storage Handler view
-   Then I can see the Storage Handler title 'My Storage Handler'
+    and a Annotation Storage Handler 'My Annotation Storage Handler'
+   When I go to the Annotation Storage Handler view
+   Then I can see the Annotation Storage Handler title 'My Annotation Storage Handler'
 
 
 *** Keywords *****************************************************************
@@ -55,11 +55,11 @@ Scenario: As a site administrator I can view a Storage Handler
 a logged-in site administrator
   Enable autologin as  Site Administrator
 
-an add Button Handler form
-  Go To  ${PLONE_URL}/++add++Button Handler
+an add Button form
+  Go To  ${PLONE_URL}/++add++Button
 
-a Storage Handler 'My Storage Handler'
-  Create content  type=Button Handler  id=my-storage_handler  title=My Storage Handler
+a Annotation Storage Handler 'My Annotation Storage Handler'
+  Create content  type=Button  id=my-annotation_storage_handler  title=My Annotation Storage Handler
 
 # --- WHEN -------------------------------------------------------------------
 
@@ -69,18 +69,18 @@ I type '${title}' into the title field
 I submit the form
   Click Button  Save
 
-I go to the Storage Handler view
-  Go To  ${PLONE_URL}/my-storage_handler
+I go to the Annotation Storage Handler view
+  Go To  ${PLONE_URL}/my-annotation_storage_handler
   Wait until page contains  Site Map
 
 
 # --- THEN -------------------------------------------------------------------
 
-a Storage Handler with the title '${title}' has been created
+a Annotation Storage Handler with the title '${title}' has been created
   Wait until page contains  Site Map
   Page should contain  ${title}
   Page should contain  Item created
 
-I can see the Storage Handler title '${title}'
+I can see the Annotation Storage Handler title '${title}'
   Wait until page contains  Site Map
   Page should contain  ${title}

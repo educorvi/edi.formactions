@@ -36,7 +36,7 @@ Test Teardown  Close all browsers
 
 Scenario: As a site administrator I can add a JsonFormsDocument
   Given a logged-in site administrator
-    and an add Folder form
+    and an add  form
    When I type 'My JsonFormsDocument' into the title field
     and I submit the form
    Then a JsonFormsDocument with the title 'My JsonFormsDocument' has been created
@@ -55,11 +55,11 @@ Scenario: As a site administrator I can view a JsonFormsDocument
 a logged-in site administrator
   Enable autologin as  Site Administrator
 
-an add Folder form
-  Go To  ${PLONE_URL}/++add++Folder
+an add  form
+  Go To  ${PLONE_URL}/++add++
 
 a JsonFormsDocument 'My JsonFormsDocument'
-  Create content  type=Folder  id=my-json_forms_document  title=My JsonFormsDocument
+  Create content  type=  id=my-json_forms_document  title=My JsonFormsDocument
 
 # --- WHEN -------------------------------------------------------------------
 

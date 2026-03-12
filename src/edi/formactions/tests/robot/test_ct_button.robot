@@ -4,7 +4,7 @@
 #
 # Run this robot test stand-alone:
 #
-#  $ bin/test -s edi.formactions -t test_reset_button.robot --all
+#  $ bin/test -s edi.formactions -t test_button.robot --all
 #
 # Run this robot test with robot server (which is faster):
 #
@@ -14,7 +14,7 @@
 #
 # 2) Run robot tests:
 #
-# $ bin/robot /src/edi/formactions/tests/robot/test_reset_button.robot
+# $ bin/robot /src/edi/formactions/tests/robot/test_button.robot
 #
 # See the http://docs.plone.org for further details (search for robot
 # framework).
@@ -34,18 +34,18 @@ Test Teardown  Close all browsers
 
 *** Test Cases ***************************************************************
 
-Scenario: As a site administrator I can add a Reset Button
+Scenario: As a site administrator I can add a Button
   Given a logged-in site administrator
     and an add Button Group form
-   When I type 'My Reset Button' into the title field
+   When I type 'My Button' into the title field
     and I submit the form
-   Then a Reset Button with the title 'My Reset Button' has been created
+   Then a Button with the title 'My Button' has been created
 
-Scenario: As a site administrator I can view a Reset Button
+Scenario: As a site administrator I can view a Button
   Given a logged-in site administrator
-    and a Reset Button 'My Reset Button'
-   When I go to the Reset Button view
-   Then I can see the Reset Button title 'My Reset Button'
+    and a Button 'My Button'
+   When I go to the Button view
+   Then I can see the Button title 'My Button'
 
 
 *** Keywords *****************************************************************
@@ -58,8 +58,8 @@ a logged-in site administrator
 an add Button Group form
   Go To  ${PLONE_URL}/++add++Button Group
 
-a Reset Button 'My Reset Button'
-  Create content  type=Button Group  id=my-reset_button  title=My Reset Button
+a Button 'My Button'
+  Create content  type=Button Group  id=my-button  title=My Button
 
 # --- WHEN -------------------------------------------------------------------
 
@@ -69,18 +69,18 @@ I type '${title}' into the title field
 I submit the form
   Click Button  Save
 
-I go to the Reset Button view
-  Go To  ${PLONE_URL}/my-reset_button
+I go to the Button view
+  Go To  ${PLONE_URL}/my-button
   Wait until page contains  Site Map
 
 
 # --- THEN -------------------------------------------------------------------
 
-a Reset Button with the title '${title}' has been created
+a Button with the title '${title}' has been created
   Wait until page contains  Site Map
   Page should contain  ${title}
   Page should contain  Item created
 
-I can see the Reset Button title '${title}'
+I can see the Button title '${title}'
   Wait until page contains  Site Map
   Page should contain  ${title}

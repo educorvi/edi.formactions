@@ -36,7 +36,7 @@ Test Teardown  Close all browsers
 
 Scenario: As a site administrator I can add a File Storage Handler
   Given a logged-in site administrator
-    and an add Button Handler form
+    and an add Button form
    When I type 'My File Storage Handler' into the title field
     and I submit the form
    Then a File Storage Handler with the title 'My File Storage Handler' has been created
@@ -55,11 +55,11 @@ Scenario: As a site administrator I can view a File Storage Handler
 a logged-in site administrator
   Enable autologin as  Site Administrator
 
-an add Button Handler form
-  Go To  ${PLONE_URL}/++add++Button Handler
+an add Button form
+  Go To  ${PLONE_URL}/++add++Button
 
 a File Storage Handler 'My File Storage Handler'
-  Create content  type=Button Handler  id=my-file_storage_handler  title=My File Storage Handler
+  Create content  type=Button  id=my-file_storage_handler  title=My File Storage Handler
 
 # --- WHEN -------------------------------------------------------------------
 
