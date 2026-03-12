@@ -5,7 +5,6 @@ from zope.interface import alsoProvides
 from zExceptions import BadRequest
 
 # from Products.MailHost.interfaces import IMailHost
-from plone.api import portal
 from plone.base.utils import getToolByName, safe_text
 from plone.protect.interfaces import IDisableCSRFProtection
 import requests
@@ -47,29 +46,33 @@ class FormActionsEmailHandlerPost(Service):
         data = load_form_action_data(self)
 
         recipient = self.request.form.get("to_address")
-        reply_to = self.request.form.get("reply_to_address", None)
+        if self.request.form.get("use_email_of_current_user"):
+            user = api.user.get_current()
+            if user and not api.user.is_anonymous():
+                recipient = user.getProperty("email", default="")
+            if recipient == "":
+                logging.info(
+                    "No email was sent, because user email address is not available or no user is logged in."
+                )
+                return
+        # reply_to = self.request.form.get("reply_to_address", None)
         subject = self.request.form.get("subject", _("No Subject"))
         message = self.request.form.get("email_text", "") + "\n"
-
         message += data
 
         if not recipient:
             raise BadRequest("Recipient email address is required.")
 
         # Send email
-        self.send_email(recipient, default_sender, reply_to, subject, message)
+        # self.send_email(recipient, default_sender, reply_to, subject, message)
+        self.send_email(recipient, default_sender, subject, message)
 
         self.request.response.setStatus(200)
         return {"status": "success", "message": _("Email sent successfully.")}
 
-    def send_email(self, recipient, sender, reply_to_adress, subject, message):
+    # def send_email(self, recipient, sender, reply_to_adress, subject, message):
+    def send_email(self, recipient, sender, subject, message):
         """Helper method to send email."""
-
-        messageText = MIMEMultipart()
-        messageText.attach(MIMEText(message, "plain", "utf-8"))
-        messageText["Subject"] = subject
-        if reply_to_adress:
-            messageText["Reply-To"] = reply_to_adress
 
         # Send the email
         try:
@@ -77,7 +80,8 @@ class FormActionsEmailHandlerPost(Service):
                 recipient=recipient,
                 sender=sender,
                 subject=subject,
-                body=messageText,
+                body=message,
+                immediate=False,
             )
 
         except Exception as e:
