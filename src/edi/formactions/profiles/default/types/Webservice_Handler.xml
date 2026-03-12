@@ -10,7 +10,7 @@
       name="title">Webservice Handler</property>
   <property
       i18n:translate=""
-      name="description">A handler which can contain endpoints. When clicked, the content of the form is sent to all endpoints.</property>
+      name="description">A handler which can contain endpoints. If the parent button is clicked, the content of the form is sent to all endpoints.</property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">Webservice Handler</property>

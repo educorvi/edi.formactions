@@ -2,13 +2,13 @@
 <object name="portal_types" meta_type="Plone Types Tool">
   <property name="title">Controls the available contenttypes in your portal</property>
   <!--<object name="example_ct" meta_type="Dexterity FTI"/>-->
-  <object name="Button Handler" meta_type="Dexterity FTI"/>
-  <object name="Email Handler" meta_type="Dexterity FTI"/>
+  <object name="Button Group" meta_type="Dexterity FTI"/>
+  <object name="Button" meta_type="Dexterity FTI"/>
   <object name="Reset Button" meta_type="Dexterity FTI"/>
+  <object name="Email Handler" meta_type="Dexterity FTI"/>
   <object name="Webservice Handler" meta_type="Dexterity FTI"/>
+  <object name="Annotation Storage Handler" meta_type="Dexterity FTI"/>
   <object name="Endpoint" meta_type="Dexterity FTI"/>
-  <object name="Storage Handler" meta_type="Dexterity FTI"/>
   <object name="File Storage Handler" meta_type="Dexterity FTI"/>
   <object name="JsonFormsDocument" meta_type="Dexterity FTI"/>
-  <object name="Folder" meta_type="Dexterity FTI"/>
 </object>

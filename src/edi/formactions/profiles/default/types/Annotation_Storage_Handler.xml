@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Storage Handler"
+    name="Annotation Storage Handler"
     meta_type="Dexterity FTI"
     i18n:domain="edi.formactions">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Storage Handler</property>
+      name="title">Annotation Storage Handler</property>
   <property
       i18n:translate=""
-      name="description">A button to save the json data of the form to the Plone Annotation Storage.</property>
+      name="description">Adds an action to the parent button that saves the json data of the form to the Plone Annotation Storage.</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Storage Handler</property>
+  <property name="factory">Annotation Storage Handler</property>
   <property name="icon_expr">string:puzzle</property>
   <property name="link_target"></property>
 
@@ -27,11 +27,11 @@
   -->
   </property>
   <!-- Schema, class and security -->
-  <property name="add_permission">edi.formactions.AddStorageHandler</property>
-  <property name="klass">edi.formactions.content.storage_handler.StorageHandler</property>
+  <property name="add_permission">edi.formactions.AddAnnotationStorageHandler</property>
+  <property name="klass">edi.formactions.content.annotation_storage_handler.AnnotationStorageHandler</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">edi.formactions.content.storage_handler.IStorageHandler</property>
+  <property name="schema">edi.formactions.content.annotation_storage_handler.IAnnotationStorageHandler</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
@@ -60,7 +60,7 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Storage Handler</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Annotation Storage Handler</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>
