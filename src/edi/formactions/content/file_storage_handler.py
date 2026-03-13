@@ -34,14 +34,14 @@ class IFileStorageHandler(IGenericHandler):
         required=False,
     )
 
-    redirect_to_new_object = schema.Bool(
-        title=_("Redirect to created content object after submission"),
-        description=_(
-            "If enabled, the user will be redirected to the created content object after form submission and the configuration of the page after success is ignored."
-        ),
-        required=False,
-        default=True,
-    )
+    # redirect_to_new_object = schema.Bool(
+    #     title=_("Redirect to created content object after submission"),
+    #     description=_(
+    #         "If enabled, the user will be redirected to the created content object after form submission and the configuration of the page after success is ignored."
+    #     ),
+    #     required=False,
+    #     default=True,
+    # )
 
     directives.widget(
         "target_folder",
@@ -57,11 +57,11 @@ class IFileStorageHandler(IGenericHandler):
             try:
                 SandboxedEnvironment().from_string(data.content_object_title)
             except TemplateSyntaxError as e:
-                raise Invalid(
-                    _(
-                        f"Invalid jinja2 syntax: {str(e)}",
-                    )
+                error_message = _(
+                    "Invalid jinja2 syntax: ${error}",
+                    mapping={"error": str(e)},
                 )
+                raise Invalid(error_message)
 
 
 @implementer(IFileStorageHandler)
