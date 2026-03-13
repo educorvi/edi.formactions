@@ -22,14 +22,7 @@ class JsonFormsDocumentIntegrationTest(unittest.TestCase):
         """Custom shared utility setup for tests."""
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
-        portal_types = self.portal.portal_types
-        parent_id = portal_types.constructContent(
-            'Folder',
-            self.portal,
-            'parent_container',
-            title='Parent container',
-        )
-        self.parent = self.portal[parent_id]
+        self.parent = self.portal
 
     def test_ct_json_forms_document_schema(self):
         fti = queryUtility(IDexterityFTI, name='JsonFormsDocument')
@@ -55,7 +48,7 @@ class JsonFormsDocumentIntegrationTest(unittest.TestCase):
     def test_ct_json_forms_document_adding(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
         obj = api.content.create(
-            container=self.parent,
+            container=self.portal,
             type='JsonFormsDocument',
             id='json_forms_document',
         )

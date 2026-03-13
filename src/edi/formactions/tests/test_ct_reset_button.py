@@ -24,7 +24,7 @@ class ResetButtonIntegrationTest(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         portal_types = self.portal.portal_types
         parent_id = portal_types.constructContent(
-            'Button Handler',
+            'Button Group',
             self.portal,
             'parent_container',
             title='Parent container',

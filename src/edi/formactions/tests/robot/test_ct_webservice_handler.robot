@@ -36,7 +36,7 @@ Test Teardown  Close all browsers
 
 Scenario: As a site administrator I can add a Webservice Handler
   Given a logged-in site administrator
-    and an add Button Handler form
+    and an add Button form
    When I type 'My Webservice Handler' into the title field
     and I submit the form
    Then a Webservice Handler with the title 'My Webservice Handler' has been created
@@ -55,11 +55,11 @@ Scenario: As a site administrator I can view a Webservice Handler
 a logged-in site administrator
   Enable autologin as  Site Administrator
 
-an add Button Handler form
-  Go To  ${PLONE_URL}/++add++Button Handler
+an add Button form
+  Go To  ${PLONE_URL}/++add++Button
 
 a Webservice Handler 'My Webservice Handler'
-  Create content  type=Button Handler  id=my-webservice_handler  title=My Webservice Handler
+  Create content  type=Button  id=my-webservice_handler  title=My Webservice Handler
 
 # --- WHEN -------------------------------------------------------------------
 

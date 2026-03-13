@@ -7,14 +7,14 @@
   <!-- -*- extra stuff goes here -*- -->
 
     <permission
-        id="edi.formactions.AddFileStorageHandler"
-        title="edi.formactions: Add FileStorageHandler"
+        id="edi.formactions.AddJsonFormsDocument"
+        title="edi.formactions: Add JsonFormsDocument"
     />
 
 
     <permission
-        id="edi.formactions.AddStorageHandler"
-        title="edi.formactions: Add StorageHandler"
+        id="edi.formactions.AddFileStorageHandler"
+        title="edi.formactions: Add FileStorageHandler"
     />
 
 
@@ -25,8 +25,25 @@
 
 
     <permission
+        id="edi.formactions.AddAnnotationStorageHandler"
+        title="edi.formactions: Add AnnotationStorageHandler"
+    />
+
+
+    <permission
         id="edi.formactions.AddWebserviceHandler"
         title="edi.formactions: Add WebserviceHandler"
+    />
+
+
+    <permission
+        id="edi.formactions.AddEmailHandler"
+        title="edi.formactions: Add EmailHandler"
+    />
+
+    <permission
+        id="edi.formactions.AddButtonGroup"
+        title="edi.formactions: Add ButtonGroup"
     />
 
 
@@ -37,20 +54,11 @@
 
 
     <permission
-        id="edi.formactions.AddEmailHandler"
-        title="edi.formactions: Add EmailHandler"
+        id="edi.formactions.AddButton"
+        title="edi.formactions: Add Button"
     />
 
 
-    <permission
-        id="edi.formactions.AddButtonHandler"
-        title="edi.formactions: Add ButtonHandler"
-    />
-
-    <permission
-        id="edi.formactions.AddJsonFormsDocument"
-        title="edi.formactions: Add JsonFormsDocument"
-    />
 
   </configure>
 

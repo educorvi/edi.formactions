@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from edi.formactions.content.email_handler import IEmailHandler  # NOQA E501
+from edi.formactions.content.button_group import IButtonGroup  # NOQA E501
 from edi.formactions.testing import EDI_FORMACTIONS_INTEGRATION_TESTING  # noqa
 from plone import api
 from plone.api.exc import InvalidParameterError
@@ -14,7 +14,7 @@ import unittest
 
 
 
-class EmailHandlerIntegrationTest(unittest.TestCase):
+class ButtonGroupIntegrationTest(unittest.TestCase):
 
     layer = EDI_FORMACTIONS_INTEGRATION_TESTING
 
@@ -24,73 +24,73 @@ class EmailHandlerIntegrationTest(unittest.TestCase):
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         portal_types = self.portal.portal_types
         parent_id = portal_types.constructContent(
-            'Button',
+            'Form',
             self.portal,
             'parent_container',
             title='Parent container',
         )
         self.parent = self.portal[parent_id]
 
-    def test_ct_email_handler_schema(self):
-        fti = queryUtility(IDexterityFTI, name='Email Handler')
+    def test_ct_button_group_schema(self):
+        fti = queryUtility(IDexterityFTI, name='Button Group')
         schema = fti.lookupSchema()
-        self.assertEqual(IEmailHandler, schema)
+        self.assertEqual(IButtonGroup, schema)
 
-    def test_ct_email_handler_fti(self):
-        fti = queryUtility(IDexterityFTI, name='Email Handler')
+    def test_ct_button_group_fti(self):
+        fti = queryUtility(IDexterityFTI, name='Button Group')
         self.assertTrue(fti)
 
-    def test_ct_email_handler_factory(self):
-        fti = queryUtility(IDexterityFTI, name='Email Handler')
+    def test_ct_button_group_factory(self):
+        fti = queryUtility(IDexterityFTI, name='Button Group')
         factory = fti.factory
         obj = createObject(factory)
 
         self.assertTrue(
-            IEmailHandler.providedBy(obj),
-            u'IEmailHandler not provided by {0}!'.format(
+            IButtonGroup.providedBy(obj),
+            u'IButtonGroup not provided by {0}!'.format(
                 obj,
             ),
         )
 
-    def test_ct_email_handler_adding(self):
+    def test_ct_button_group_adding(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
         obj = api.content.create(
             container=self.parent,
-            type='Email Handler',
-            id='email_handler',
+            type='Button Group',
+            id='button_group',
         )
 
         self.assertTrue(
-            IEmailHandler.providedBy(obj),
-            u'IEmailHandler not provided by {0}!'.format(
+            IButtonGroup.providedBy(obj),
+            u'IButtonGroup not provided by {0}!'.format(
                 obj.id,
             ),
         )
 
         parent = obj.__parent__
-        self.assertIn('email_handler', parent.objectIds())
+        self.assertIn('button_group', parent.objectIds())
 
         # check that deleting the object works too
         api.content.delete(obj=obj)
-        self.assertNotIn('email_handler', parent.objectIds())
+        self.assertNotIn('button_group', parent.objectIds())
 
-    def test_ct_email_handler_globally_not_addable(self):
+    def test_ct_button_group_globally_not_addable(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
-        fti = queryUtility(IDexterityFTI, name='Email Handler')
+        fti = queryUtility(IDexterityFTI, name='Button Group')
         self.assertFalse(
             fti.global_allow,
             u'{0} is globally addable!'.format(fti.id)
         )
 
-    def test_ct_email_handler_filter_content_type_true(self):
+    def test_ct_button_group_filter_content_type_true(self):
         setRoles(self.portal, TEST_USER_ID, ['Contributor'])
-        fti = queryUtility(IDexterityFTI, name='Email Handler')
+        fti = queryUtility(IDexterityFTI, name='Button Group')
         portal_types = self.portal.portal_types
         parent_id = portal_types.constructContent(
             fti.id,
             self.portal,
-            'email_handler_id',
-            title='Email Handler container',
+            'button_group_id',
+            title='Button Group container',
         )
         self.parent = self.portal[parent_id]
         with self.assertRaises(InvalidParameterError):

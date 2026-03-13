@@ -16,10 +16,10 @@ from edi.formactions import _
 from edi.formactions.content.generic_handler import IGenericHandler, GenericHandler
 
 
-class IStorageHandler(IGenericHandler):
-    """Marker interface and Dexterity Python Schema for StorageHandler"""
+class IAnnotationStorageHandler(IGenericHandler):
+    """Marker interface and Dexterity Python Schema for AnnotationStorageHandler"""
 
 
-@implementer(IStorageHandler)
-class StorageHandler(GenericHandler):
-    """Content-type class for IStorageHandler"""
+@implementer(IAnnotationStorageHandler)
+class AnnotationStorageHandler(GenericHandler):
+    """Content-type class for IAnnotationStorageHandler"""

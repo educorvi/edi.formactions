@@ -10,7 +10,7 @@
       name="title">Email Handler</property>
   <property
       i18n:translate=""
-      name="description">Adds a button with an Email Action for a edi.jsonforms form</property>
+      name="description">Adds an Email Action to the parent button</property>
 
   <property name="allow_discussion">False</property>
   <property name="factory">Email Handler</property>
@@ -50,6 +50,10 @@
     <!--<element value="plone.tableofcontents"/>-->
     <!--<element value="plone.versioning" />-->
     <!--<element value="plone.translatable" />-->
+    <!--<element value="plone.nextprevioustoggle" />-->
+    <!--<element value="plone.nextpreviousenabled" />-->
+    <!--<element value="plone.navigationroot" />-->
+    <!--<element value="plone.selectablecontrainstypes" />-->
   </property>
 
   <!-- View information -->

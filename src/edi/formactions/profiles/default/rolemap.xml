@@ -3,7 +3,14 @@
   <permissions>
   <!-- -*- extra stuff goes here -*- -->
 
-    <permission name="edi.formactions: Add FileStorageHandler" acquire="True">
+    <permission name="edi.formactions: Add ButtonGroup" acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+
+    <permission name="edi.formactions: Add JsonFormsDocument" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
       <role name="Owner"/>
@@ -11,7 +18,7 @@
     </permission>
 
 
-    <permission name="edi.formactions: Add StorageHandler" acquire="True">
+    <permission name="edi.formactions: Add FileStorageHandler" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
       <role name="Owner"/>
@@ -27,7 +34,7 @@
     </permission>
 
 
-    <permission name="edi.formactions: Add WebserviceHandler" acquire="True">
+    <permission name="edi.formactions: Add AnnotationStorageHandler" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
       <role name="Owner"/>
@@ -35,7 +42,7 @@
     </permission>
 
 
-    <permission name="edi.formactions: Add ResetButton" acquire="True">
+    <permission name="edi.formactions: Add WebserviceHandler" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
       <role name="Owner"/>
@@ -51,19 +58,21 @@
     </permission>
 
 
-    <permission name="edi.formactions: Add ButtonHandler" acquire="True">
+    <permission name="edi.formactions: Add ResetButton" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
       <role name="Owner"/>
       <role name="Contributor"/>
     </permission>
 
-    <permission name="edi.formactions: Add JsonFormsDocument" acquire="True">
+
+    <permission name="edi.formactions: Add Button" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>
       <role name="Owner"/>
       <role name="Contributor"/>
     </permission>
+
 
   </permissions>
 </rolemap>

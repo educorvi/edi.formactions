@@ -36,7 +36,7 @@ Test Teardown  Close all browsers
 
 Scenario: As a site administrator I can add a Email Handler
   Given a logged-in site administrator
-    and an add Button Handler form
+    and an add Button form
    When I type 'My Email Handler' into the title field
     and I submit the form
    Then a Email Handler with the title 'My Email Handler' has been created
@@ -55,11 +55,11 @@ Scenario: As a site administrator I can view a Email Handler
 a logged-in site administrator
   Enable autologin as  Site Administrator
 
-an add Button Handler form
-  Go To  ${PLONE_URL}/++add++Button Handler
+an add Button form
+  Go To  ${PLONE_URL}/++add++Button
 
 a Email Handler 'My Email Handler'
-  Create content  type=Button Handler  id=my-email_handler  title=My Email Handler
+  Create content  type=Button  id=my-email_handler  title=My Email Handler
 
 # --- WHEN -------------------------------------------------------------------
 

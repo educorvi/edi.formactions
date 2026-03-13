@@ -31,7 +31,7 @@
 edi.formactions
 ===============
 
-Action package for edi.jsonforms
+Formactions (Buttons and Handler) for edi.jsonforms
 
 Features
 --------

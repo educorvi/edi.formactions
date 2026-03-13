@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Button Handler"
+    name="Button Group"
     meta_type="Dexterity FTI"
     i18n:domain="edi.formactions">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Button Handler</property>
+      name="title">Button Group</property>
   <property
       i18n:translate=""
-      name="description">Add this to choose a specific handler for a button, e.g. an Email-Handler or Save-to-database-Handler</property>
+      name="description">A group in which buttons can be put</property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Button Handler</property>
+  <property name="factory">Button Group</property>
   <property name="icon_expr">string:box</property>
   <property name="link_target"></property>
 
@@ -21,22 +21,15 @@
   <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
-    <element value="File Storage Handler" />
-    <element value="Storage Handler" />
-    <element value="Webservice Handler" />
     <element value="Reset Button" />
-    <element value="Email Handler" />
-      <!--
-    <element value="Document" />
-    <element value="File" />
-  -->
+    <element value="Button" />
   </property>
   <!-- Schema, class and security -->
-  <property name="add_permission">edi.formactions.AddButtonHandler</property>
-  <property name="klass">edi.formactions.content.button_handler.ButtonHandler</property>
+  <property name="add_permission">edi.formactions.AddButtonGroup</property>
+  <property name="klass">edi.formactions.content.button_group.ButtonGroup</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">edi.formactions.content.button_handler.IButtonHandler</property>
+  <property name="schema">edi.formactions.content.button_group.IButtonGroup</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
@@ -65,7 +58,7 @@
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Button Handler</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Button Group</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
   <property name="immediate_view">view</property>
