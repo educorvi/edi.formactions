@@ -51,10 +51,9 @@ class FormActionsEmailHandlerPost(Service):
             if user and not api.user.is_anonymous():
                 recipient = user.getProperty("email", default="")
             if recipient == "":
-                logging.info(
+                raise BadRequest(
                     "No email was sent, because user email address is not available or no user is logged in."
                 )
-                return
         # reply_to = self.request.form.get("reply_to_address", None)
         subject = self.request.form.get("subject", _("No Subject"))
         message = self.request.form.get("email_text", "") + "\n"

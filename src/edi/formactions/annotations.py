@@ -48,12 +48,15 @@ class FormActionsAnnotationStorage(object):
 
     def store_as_annotation(self, json_data: dict):
         """Add a new entry to the annotation storage of the context"""
-        try:
-            user = api.user.get_current()
-            user_id = user.getUserId()
-        except AttributeError:
-            user_id = "anonymous" if api.user.is_anonymous() else None
-        user_id = user_id or "unknown"
+        user = api.user.get_current()
+        if user is None or api.user.is_anonymous():
+            user_id = "anonymous"
+        else:
+            try:
+                user = api.user.get_current()
+                user_id = user.getUserId()
+            except AttributeError:
+                user_id = user_id or "unknown"
 
         annotation_data = AnnotationData(
             user_id=user_id,
