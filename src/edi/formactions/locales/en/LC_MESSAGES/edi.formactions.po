@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-10-02 13:46+0000\n"
+"POT-Creation-Date: 2026-03-16 07:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,222 +14,326 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ../profiles/default/types/Reset_Button.xml
+#: ./profiles/default/types/Button.xml
+msgid "A button in which handler can be put. The action of every handler is executed when the button is clicked."
+msgstr ""
+
+#: ./profiles/default/types/Reset_Button.xml
 msgid "A button to reset the form."
 msgstr ""
 
-#: ../profiles/default/types/Webservice_Handler.xml
-msgid "A handler which can contain endpoints. When clicked, the content of the form is sent to all endpoints."
+#: ./profiles/default/types/JsonFormsDocument.xml
+msgid "A container to hold the json data of a form. This content type is created automatically on submit of a form with a file storage handler."
 msgstr ""
 
-#: ../content/endpoint.py:33
+#: ./profiles/default/types/Button_Group.xml
+msgid "A group in which buttons can be put"
+msgstr ""
+
+#: ./profiles/default/types/Webservice_Handler.xml
+msgid "A handler which can contain endpoints. If the parent button is clicked, the content of the form is sent to all endpoints."
+msgstr ""
+
+#: ./content/endpoint.py:34
 msgid "API Key"
 msgstr ""
 
-#: ../profiles/default/types/Email_Handler.xml
-msgid "Add a button with an Email Action for a edi.jsonforms form"
+#: ./profiles/default/types/Email_Handler.xml
+msgid "Adds an Email Action to the parent button"
 msgstr ""
 
-#: ../profiles/default/types/Button_Handler.xml
-msgid "Add this to choose a specific handler for a button, e.g. an Email-Handler or Save-to-database-Handler"
+#: ./profiles/default/types/File_Storage_Handler.xml
+msgid "Adds an action to the parent button that saves the json data of the form to a specified folder."
 msgstr ""
 
-#: ../profiles/default/types/Endpoint.xml
+#: ./profiles/default/types/Annotation_Storage_Handler.xml
+msgid "Adds an action to the parent button that saves the json data of the form to the Plone Annotation Storage."
+msgstr ""
+
+#: ./profiles/default/types/Endpoint.xml
 msgid "An Endpoint to which the content of the form is sent."
 msgstr ""
 
-#: ../profiles/default/types/Button_Handler.xml
-msgid "Button Handler"
+#: ./profiles/default/types/Annotation_Storage_Handler.xml
+msgid "Annotation Storage Handler"
 msgstr ""
 
-#: ../content/email_handler.py:42
-#: ../content/reset_button.py:24
-#: ../content/webservice_handler.py:24
+#: ./views/configure.zcml:29
+msgid "Annotations"
+msgstr ""
+
+#: ./profiles/default/types/Button.xml
+msgid "Button"
+msgstr ""
+
+#: ./profiles/default/types/Button_Group.xml
+msgid "Button Group"
+msgstr ""
+
+#: ./content/button.py:29
+#: ./content/reset_button.py:28
 msgid "Color variant of the button"
 msgstr ""
 
-#: ../vocabularies.py:13
+#: ./vocabularies.py:13
 msgid "Danger"
 msgstr ""
 
-#: ../vocabularies.py:18
+#: ./vocabularies.py:18
 msgid "Danger Outline"
 msgstr ""
 
-#: ../vocabularies.py:22
+#: ./vocabularies.py:22
 msgid "Dark"
 msgstr ""
 
-#: ../content/email_handler.py:34
+#: ./api/services/form_actions/post.py:293
+msgid "Data stored in folder successfully."
+msgstr ""
+
+#: ./api/services/form_actions/post.py:167
+msgid "Data stored successfully."
+msgstr ""
+
+#: ./api/services/form_actions/post.py:325
+msgid "Data updated successfully."
+msgstr ""
+
+#: ./content/file_storage_handler.py:31
+msgid "Define a title for the content objects that will be created to store the JSON data of the filled form. Use the Jinja2 language to define dynamic titles. For example: 'Form submission from {{data['id_of_field_x']}} on {{data['id_of_field_y']}}', to use the value of field x and y in the title. This also works if the field is inside a fieldset. The field IDs must come from the form fields. In addition to field values, you can use the username via '{{user}}'."
+msgstr ""
+
+#: ./content/email_handler.py:50
 msgid "Email Body"
 msgstr ""
 
-#: ../profiles/default/types/Email_Handler.xml
+#: ./profiles/default/types/Email_Handler.xml
 msgid "Email Handler"
 msgstr ""
 
-#: ../profiles/default/types/Endpoint.xml
+#: ./api/services/form_actions/post.py:70
+msgid "Email sent successfully."
+msgstr ""
+
+#: ./profiles/default/types/Endpoint.xml
 msgid "Endpoint"
 msgstr ""
 
-#: ../content/endpoint.py:21
+#: ./content/endpoint.py:22
 msgid "Endpoint URL"
 msgstr ""
 
-#: ../api/services/form_actions/post.py:174
+#: ./api/services/form_actions/post.py:123
 msgid "Error sending request to: "
 msgstr ""
 
-#: ../content/endpoint.py:27
+#: ./profiles/default/types/File_Storage_Handler.xml
+msgid "File Storage Handler"
+msgstr ""
+
+#: ./api/services/form_actions/post.py:193
+msgid "Form submission"
+msgstr ""
+
+#: ./content/endpoint.py:28
 msgid "Header Name for API Key"
 msgstr ""
 
-#: ../vocabularies.py:20
+#: ./content/email_handler.py:24
+msgid "If checked, the email address of the current user will be used instead of the 'To address' field."
+msgstr ""
+
+#: ./vocabularies.py:20
 msgid "Info"
 msgstr ""
 
-#: ../configure.zcml:28
+#: ./configure.zcml:28
 msgid "Installs the edi.formactions add-on."
 msgstr ""
 
-#: ../content/email_handler.py:38
-#: ../content/reset_button.py:20
-#: ../content/webservice_handler.py:19
+#: ./content/file_storage_handler.py:60
+msgid "Invalid jinja2 syntax: ${error}"
+msgstr ""
+
+#: ./content/json_forms_document.py:22
+msgid "Json data"
+msgstr ""
+
+#: ./content/json_forms_document.py:28
+msgid "Json schema"
+msgstr ""
+
+#: ./profiles/default/types/JsonFormsDocument.xml
+msgid "JsonFormsDocument"
+msgstr ""
+
+#: ./content/button.py:22
+#: ./content/reset_button.py:22
 msgid "Label of the button"
 msgstr ""
 
-#: ../vocabularies.py:21
+#: ./vocabularies.py:21
 msgid "Light"
 msgstr ""
 
-#: ../api/services/form_actions/post.py:89
+#: ./api/services/form_actions/post.py:58
 msgid "No Subject"
 msgstr ""
 
-#: ../content/webservice_handler.py:31
+#: ./content/button.py:37
 msgid "Page after success"
 msgstr ""
 
-#: ../vocabularies.py:10
+#: ./vocabularies.py:10
 msgid "Primary"
 msgstr ""
 
-#: ../vocabularies.py:15
+#: ./vocabularies.py:15
 msgid "Primary Outline"
 msgstr ""
 
-#: ../content/email_handler.py:26
-msgid "Reply-to address"
-msgstr ""
-
-#: ../profiles/default/types/Reset_Button.xml
+#: ./profiles/default/types/Reset_Button.xml
 msgid "Reset Button"
 msgstr ""
 
-#: ../content/reset_button.py:23
+#: ./content/reset_button.py:25
 msgid "Reset form"
 msgstr ""
 
-#: ../vocabularies.py:11
+#: ./api/services/form_actions/post.py:247
+msgid "Save"
+msgstr ""
+
+#: ./vocabularies.py:11
 msgid "Secondary"
 msgstr ""
 
-#: ../vocabularies.py:16
+#: ./vocabularies.py:16
 msgid "Secondary Outline"
 msgstr ""
 
-#: ../content/email_handler.py:41
-msgid "Send email"
+#: ./content/file_storage_handler.py:22
+msgid "Select the folder where the json data of the filled form will be stored. If the folder is deleted, the button will be disabled."
 msgstr ""
 
-#: ../content/webservice_handler.py:22
+#: ./content/button.py:25
 msgid "Send request(s)"
 msgstr ""
 
-#: ../content/email_handler.py:30
+#: ./content/email_handler.py:46
 msgid "Subject"
 msgstr ""
 
-#: ../vocabularies.py:12
+#: ./vocabularies.py:12
 msgid "Success"
 msgstr ""
 
-#: ../vocabularies.py:17
+#: ./vocabularies.py:17
 msgid "Success Outline"
 msgstr ""
 
-#: ../content/endpoint.py:34
+#: ./content/file_storage_handler.py:21
+msgid "Target folder for file storage"
+msgstr ""
+
+#: ./content/endpoint.py:35
 msgid "The API key to be used for this endpoint."
 msgstr ""
 
-#: ../content/endpoint.py:22
+#: ./content/endpoint.py:23
 msgid "The URL of the endpoint to which requests will be sent."
 msgstr ""
 
-#: ../content/email_handler.py:35
+#: ./content/email_handler.py:51
 msgid "The body of the email. The content of the form will be appended to this text."
 msgstr ""
 
-#: ../content/email_handler.py:43
-#: ../content/reset_button.py:25
-#: ../content/webservice_handler.py:25
+#: ./content/button.py:30
+#: ./content/reset_button.py:29
 msgid "The color variant of the button."
 msgstr ""
 
-#: ../content/email_handler.py:23
-msgid "The email address of the recipient"
+#: ./content/email_handler.py:33
+msgid "The email address of the recipient. This field is required if 'Use email of current user as recipient' is not checked."
 msgstr ""
 
-#: ../content/email_handler.py:27
-msgid "The email address to which replies should be sent."
-msgstr ""
-
-#: ../content/endpoint.py:28
+#: ./content/endpoint.py:29
 msgid "The name of the header where the API key will be sent."
 msgstr ""
 
-#: ../content/webservice_handler.py:32
+#: ./content/button.py:38
 msgid "The page to redirect to after a successful request."
 msgstr ""
 
-#: ../content/email_handler.py:31
+#: ./content/email_handler.py:46
 msgid "The subject of the email."
 msgstr ""
 
-#: ../content/email_handler.py:22
+#: ./content/json_forms_document.py:23
+msgid "This field stores the json data of the filled form."
+msgstr ""
+
+#: ./content/json_forms_document.py:29
+msgid "This field stores the json schema of the form."
+msgstr ""
+
+#: ./content/json_forms_document.py:35
+msgid "This field stores the ui schema of the form."
+msgstr ""
+
+#: ./content/file_storage_handler.py:30
+msgid "Title for stored content objects"
+msgstr ""
+
+#: ./content/email_handler.py:32
 msgid "To address"
 msgstr ""
 
-#: ../configure.zcml:37
+#: ./content/email_handler.py:61
+msgid "To address is required if 'Use email of current user as recipient' is not checked."
+msgstr ""
+
+#: ./content/email_handler.py:67
+msgid "To address should not be set if 'Use email of current user as recipient' is checked."
+msgstr ""
+
+#: ./content/json_forms_document.py:34
+msgid "UI schema"
+msgstr ""
+
+#: ./configure.zcml:37
 msgid "Uninstalls the edi.formactions add-on."
 msgstr ""
 
-#: ../vocabularies.py:14
+#: ./content/email_handler.py:23
+msgid "Use email of current user as recipient"
+msgstr ""
+
+#: ./vocabularies.py:14
 msgid "Warning"
 msgstr ""
 
-#: ../vocabularies.py:19
+#: ./vocabularies.py:19
 msgid "Warning Outline"
 msgstr ""
 
-#: ../api/services/form_actions/post.py:173
+#: ./api/services/form_actions/post.py:122
 msgid "Web service request sent successfully."
 msgstr ""
 
-#: ../profiles/default/types/Webservice_Handler.xml
+#: ./profiles/default/types/Webservice_Handler.xml
 msgid "Webservice Handler"
 msgstr ""
 
-#: ../content/email_handler.py:39
-#: ../content/reset_button.py:21
-#: ../content/webservice_handler.py:20
+#: ./content/button.py:23
+#: ./content/reset_button.py:23
 msgid "What is displayed inside the button."
 msgstr ""
 
-#: ../configure.zcml:28
+#: ./configure.zcml:28
 msgid "edi.formactions"
 msgstr ""
 
-#: ../configure.zcml:37
+#: ./configure.zcml:37
 msgid "edi.formactions (uninstall)"
 msgstr ""

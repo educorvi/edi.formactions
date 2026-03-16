@@ -20,7 +20,7 @@ class IFileStorageHandler(IGenericHandler):
     target_folder = RelationChoice(
         title=_("Target folder for file storage"),
         description=_(
-            "Select the folder where the json data of the filled form will be stored. If the folder is deleted, the button will be disabled. The folder must be published if it is possible that users that are not logged in will fill the form, otherwise the content object cannot be created and the form submission will fail."
+            "Select the folder where the json data of the filled form will be stored. If the folder is deleted, the button will be disabled."
         ),
         vocabulary="plone.app.vocabularies.Catalog",
         required=True,

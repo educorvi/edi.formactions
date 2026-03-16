@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2026-03-12 16:29+0000\n"
+"POT-Creation-Date: 2026-03-16 07:47+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ./profiles/default/types/Button.xml
 msgid "A button in which handler can be put. The action of every handler is executed when the button is clicked."
-msgstr "Ein Button, der mit Handlern konfiguriert werden kann. Nach dem Klicken des Buttons wird die Aktion jedes Handlers ausgeführt."
+msgstr ""
 
 #: ./profiles/default/types/Reset_Button.xml
 msgid "A button to reset the form."
@@ -27,15 +27,15 @@ msgstr ""
 
 #: ./profiles/default/types/JsonFormsDocument.xml
 msgid "A container to hold the json data of a form. This content type is created automatically on submit of a form with a file storage handler."
-msgstr "Ein Container für die JSON-Daten von Fragebögen. Dieser Inhaltstyp wird automatisch beim Absenden eines Fragebogens mit File Storage Handler erstellt."
+msgstr ""
 
 #: ./profiles/default/types/Button_Group.xml
 msgid "A group in which buttons can be put"
-msgstr "Eine Gruppe zum Anlegen von Buttons."
+msgstr ""
 
 #: ./profiles/default/types/Webservice_Handler.xml
 msgid "A handler which can contain endpoints. If the parent button is clicked, the content of the form is sent to all endpoints."
-msgstr "Ein Handler zum Konfigurieren von Endpunkten. Beim Ausführen des Handlers wird der Inhalt des Fragebogens an alle Endpunkte gesendet."
+msgstr ""
 
 #: ./content/endpoint.py:34
 msgid "API Key"
@@ -43,19 +43,19 @@ msgstr ""
 
 #: ./profiles/default/types/Email_Handler.xml
 msgid "Adds an Email Action to the parent button"
-msgstr "Fügt eine Email-Aktion zum Button hinzu."
+msgstr ""
 
 #: ./profiles/default/types/File_Storage_Handler.xml
 msgid "Adds an action to the parent button that saves the json data of the form to a specified folder."
-msgstr "Fügt eine Aktion zum Button hinzu, die die JSON-Daten des Fragebogens im angegebenen Ordner speichert."
+msgstr ""
 
 #: ./profiles/default/types/Annotation_Storage_Handler.xml
 msgid "Adds an action to the parent button that saves the json data of the form to the Plone Annotation Storage."
-msgstr "Fügt eine Aktion zum Button hinzu, die die JSON-Daten des Fragebogens im Plone Annotation Storage speichert."
+msgstr ""
 
 #: ./profiles/default/types/Endpoint.xml
 msgid "An Endpoint to which the content of the form is sent."
-msgstr "Ein Endpunkt, an den der Inhalt des Fragebogens gesendet wird."
+msgstr ""
 
 #: ./profiles/default/types/Annotation_Storage_Handler.xml
 msgid "Annotation Storage Handler"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: ./views/configure.zcml:29
 msgid "Annotations"
-msgstr "Annotationen"
+msgstr ""
 
 #: ./profiles/default/types/Button.xml
 msgid "Button"
@@ -71,12 +71,12 @@ msgstr ""
 
 #: ./profiles/default/types/Button_Group.xml
 msgid "Button Group"
-msgstr "Button Gruppe"
+msgstr ""
 
 #: ./content/button.py:29
 #: ./content/reset_button.py:28
 msgid "Color variant of the button"
-msgstr "Farbvariante des Buttons"
+msgstr ""
 
 #: ./vocabularies.py:13
 msgid "Danger"
@@ -90,21 +90,21 @@ msgstr ""
 msgid "Dark"
 msgstr ""
 
-#: ./api/services/form_actions/post.py:294
+#: ./api/services/form_actions/post.py:293
 msgid "Data stored in folder successfully."
-msgstr "Daten erfolgreich im Ordner gespeichert."
+msgstr ""
 
-#: ./api/services/form_actions/post.py:168
+#: ./api/services/form_actions/post.py:167
 msgid "Data stored successfully."
-msgstr "Daten erfolreich gespeichert."
+msgstr ""
 
-#: ./api/services/form_actions/post.py:326
+#: ./api/services/form_actions/post.py:325
 msgid "Data updated successfully."
-msgstr "Daten erfolgreich aktualisiert."
+msgstr ""
 
 #: ./content/file_storage_handler.py:31
 msgid "Define a title for the content objects that will be created to store the JSON data of the filled form. Use the Jinja2 language to define dynamic titles. For example: 'Form submission from {{data['id_of_field_x']}} on {{data['id_of_field_y']}}', to use the value of field x and y in the title. This also works if the field is inside a fieldset. The field IDs must come from the form fields. In addition to field values, you can use the username via '{{user}}'."
-msgstr "Die Titeldefinition bestimmt den Titel des Objekts, das erstellt wird, um die JSON-Daten des Fragebogens zu speichern. Die Definition erfolgt mit Jinja2, um dynamische Titel zu erlauben. Zum Beispiel: 'Form submission from {{data['id_of_field_x']}} on {{data['id_of_field_y']}}', um den Inhalt der Felder x und y im Titel zu verwenden. Dies funktioniert auch, wenn die Felder in einer Feldgruppe liegen. Die angegebenen IDs müssen aus dem Fragebogen kommen. Neben den Werten von Feldern, kann auch der Nutzername verwendet werden durch '{{user}}'."
+msgstr ""
 
 #: ./content/email_handler.py:50
 msgid "Email Body"
@@ -114,19 +114,19 @@ msgstr ""
 msgid "Email Handler"
 msgstr ""
 
-#: ./api/services/form_actions/post.py:71
+#: ./api/services/form_actions/post.py:70
 msgid "Email sent successfully."
-msgstr "Email erfolgreich gesendet."
+msgstr ""
 
 #: ./profiles/default/types/Endpoint.xml
 msgid "Endpoint"
-msgstr "Endpunkt"
+msgstr ""
 
 #: ./content/endpoint.py:22
 msgid "Endpoint URL"
-msgstr "Endpunkt URL"
+msgstr ""
 
-#: ./api/services/form_actions/post.py:124
+#: ./api/services/form_actions/post.py:123
 msgid "Error sending request to: "
 msgstr ""
 
@@ -134,17 +134,17 @@ msgstr ""
 msgid "File Storage Handler"
 msgstr ""
 
-#: ./api/services/form_actions/post.py:194
+#: ./api/services/form_actions/post.py:193
 msgid "Form submission"
-msgstr "Fragebogenübermittlung"
+msgstr ""
 
 #: ./content/endpoint.py:28
 msgid "Header Name for API Key"
-msgstr "Header Name des API Keys"
+msgstr ""
 
 #: ./content/email_handler.py:24
 msgid "If checked, the email address of the current user will be used instead of the 'To address' field."
-msgstr "Wenn diese Option aktiviert ist, wird die Email-Adresse des aktuellen Benutzers anstelle des Feldes 'Empfängeradresse' verwendet."
+msgstr ""
 
 #: ./vocabularies.py:20
 msgid "Info"
@@ -156,11 +156,11 @@ msgstr ""
 
 #: ./content/file_storage_handler.py:60
 msgid "Invalid jinja2 syntax: ${error}"
-msgstr "Ungültige Jinja2 Syntax: ${error}"
+msgstr ""
 
 #: ./content/json_forms_document.py:22
 msgid "Json data"
-msgstr "JSON-Daten"
+msgstr ""
 
 #: ./content/json_forms_document.py:28
 msgid "Json schema"
@@ -173,13 +173,13 @@ msgstr ""
 #: ./content/button.py:22
 #: ./content/reset_button.py:22
 msgid "Label of the button"
-msgstr "Label des Buttons"
+msgstr ""
 
 #: ./vocabularies.py:21
 msgid "Light"
 msgstr ""
 
-#: ./api/services/form_actions/post.py:59
+#: ./api/services/form_actions/post.py:58
 msgid "No Subject"
 msgstr ""
 
@@ -201,11 +201,11 @@ msgstr ""
 
 #: ./content/reset_button.py:25
 msgid "Reset form"
-msgstr "Formular zurücksetzen"
+msgstr ""
 
-#: ./api/services/form_actions/post.py:248
+#: ./api/services/form_actions/post.py:247
 msgid "Save"
-msgstr "Speichern"
+msgstr ""
 
 #: ./vocabularies.py:11
 msgid "Secondary"
@@ -216,16 +216,16 @@ msgid "Secondary Outline"
 msgstr ""
 
 #: ./content/file_storage_handler.py:22
-msgid "Select the folder where the json data of the filled form will be stored. If the folder is deleted, the button will be disabled. The folder must be published if it is possible that users that are not logged in will fill the form, otherwise the content object cannot be created and the form submission will fail."
-msgstr "Im ausgewählten Ordner werden die JSON-Daten des ausgefüllten Fragebogens gespeichert. Wenn der Ordner zwischenzeitlich gelöscht wurde, wird der Button deaktiviert. "
+msgid "Select the folder where the json data of the filled form will be stored. If the folder is deleted, the button will be disabled."
+msgstr ""
 
 #: ./content/button.py:25
 msgid "Send request(s)"
-msgstr "Request(s) senden"
+msgstr ""
 
 #: ./content/email_handler.py:46
 msgid "Subject"
-msgstr "Betreff"
+msgstr ""
 
 #: ./vocabularies.py:12
 msgid "Success"
@@ -237,68 +237,68 @@ msgstr ""
 
 #: ./content/file_storage_handler.py:21
 msgid "Target folder for file storage"
-msgstr "Zielordner für die Datenspeicherung"
+msgstr ""
 
 #: ./content/endpoint.py:35
 msgid "The API key to be used for this endpoint."
-msgstr "Der API Key für den Endpunkt."
+msgstr ""
 
 #: ./content/endpoint.py:23
 msgid "The URL of the endpoint to which requests will be sent."
-msgstr "Die URL des Endpunkts, an den der Request gesendet wird."
+msgstr ""
 
 #: ./content/email_handler.py:51
 msgid "The body of the email. The content of the form will be appended to this text."
-msgstr "Der Textkörper der Email. Der Inhalt des Fragebogens wird an diesen Text angehängt."
+msgstr ""
 
 #: ./content/button.py:30
 #: ./content/reset_button.py:29
 msgid "The color variant of the button."
-msgstr "Die Farbvariante des Buttons."
+msgstr ""
 
 #: ./content/email_handler.py:33
 msgid "The email address of the recipient. This field is required if 'Use email of current user as recipient' is not checked."
-msgstr "Die Email-Adresse des Empfängers. Dieses Feld ist ein Pflichtfeld, wenn nicht die Emailadresse des aktuellen Nutzers verwendet werden soll."
+msgstr ""
 
 #: ./content/endpoint.py:29
 msgid "The name of the header where the API key will be sent."
-msgstr "Der Name des Headers für den API Key."
+msgstr ""
 
 #: ./content/button.py:38
 msgid "The page to redirect to after a successful request."
-msgstr "Die Seite, an die nach dem erfolgreichen Request weitergeleitet wird."
+msgstr ""
 
 #: ./content/email_handler.py:46
 msgid "The subject of the email."
-msgstr "Der Betreff der Email."
+msgstr ""
 
 #: ./content/json_forms_document.py:23
 msgid "This field stores the json data of the filled form."
-msgstr "Dieses Feld speichert die JSON-Daten "
+msgstr ""
 
 #: ./content/json_forms_document.py:29
 msgid "This field stores the json schema of the form."
-msgstr "Dieses Feld speichert das JSON-Schema des Fragebogens."
+msgstr ""
 
 #: ./content/json_forms_document.py:35
 msgid "This field stores the ui schema of the form."
-msgstr "Dieses Feld speichert das UI-Schema des Fragebogens."
+msgstr ""
 
 #: ./content/file_storage_handler.py:30
 msgid "Title for stored content objects"
-msgstr "Titel für die gespeicherten Objekte."
+msgstr ""
 
 #: ./content/email_handler.py:32
 msgid "To address"
-msgstr "Empfängeradresse"
+msgstr ""
 
 #: ./content/email_handler.py:61
 msgid "To address is required if 'Use email of current user as recipient' is not checked."
-msgstr "Die Empfängeradresse ist ein Pflichtfeld, wenn nicht die Emailadresse des aktuellen Nutzers verwendet werden soll."
+msgstr ""
 
 #: ./content/email_handler.py:67
 msgid "To address should not be set if 'Use email of current user as recipient' is checked."
-msgstr "Die Empfängeradresse darf nicht gesetzt werden, wenn die Emailadresse des aktuellen Nutzers verwendet werden soll."
+msgstr ""
 
 #: ./content/json_forms_document.py:34
 msgid "UI schema"
@@ -310,7 +310,7 @@ msgstr ""
 
 #: ./content/email_handler.py:23
 msgid "Use email of current user as recipient"
-msgstr "Die Emailadresse des angemeldeten Nutzers als Empfängeradresse verwenden"
+msgstr ""
 
 #: ./vocabularies.py:14
 msgid "Warning"
@@ -320,7 +320,7 @@ msgstr ""
 msgid "Warning Outline"
 msgstr ""
 
-#: ./api/services/form_actions/post.py:123
+#: ./api/services/form_actions/post.py:122
 msgid "Web service request sent successfully."
 msgstr ""
 
@@ -331,7 +331,7 @@ msgstr ""
 #: ./content/button.py:23
 #: ./content/reset_button.py:23
 msgid "What is displayed inside the button."
-msgstr "Der Inhalt des Buttons."
+msgstr ""
 
 #: ./configure.zcml:28
 msgid "edi.formactions"
