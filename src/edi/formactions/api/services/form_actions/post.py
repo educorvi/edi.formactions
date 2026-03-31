@@ -1,26 +1,30 @@
 # -*- coding: utf-8 -*-
-from plone import api
-from plone.restapi.services import Service
-from zope.interface import alsoProvides
-from zExceptions import BadRequest
-
-# from Products.MailHost.interfaces import IMailHost
-from plone.base.utils import getToolByName, safe_text
-from plone.protect.interfaces import IDisableCSRFProtection
-import requests
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-import json
 from edi.formactions import _
 from edi.formactions.annotations import FormActionsAnnotationStorage
-from jinja2 import Template, TemplateSyntaxError, meta
-from jinja2.sandbox import SandboxedEnvironment
-import logging
-from plone.base.utils import unrestricted_construct_instance
-from zope.container.interfaces import INameChooser
-
 from edi.jsonforms.views.json_schema_view import JsonSchemaView
 from edi.jsonforms.views.ui_schema_view import UiSchemaView
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from jinja2 import meta
+from jinja2 import Template
+from jinja2 import TemplateSyntaxError
+from jinja2.sandbox import SandboxedEnvironment
+from plone import api
+
+# from Products.MailHost.interfaces import IMailHost
+from plone.base.utils import getToolByName
+from plone.base.utils import safe_text
+from plone.base.utils import unrestricted_construct_instance
+from plone.protect.interfaces import IDisableCSRFProtection
+from plone.restapi.services import Service
+from zExceptions import BadRequest
+from zope.container.interfaces import INameChooser
+from zope.interface import alsoProvides
+
+import json
+import logging
+import requests
+
 
 logger = logging.getLogger(__name__)
 

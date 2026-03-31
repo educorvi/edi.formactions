@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
-from zope import schema
+from edi.formactions import _
+from edi.formactions.content.generic_handler import GenericHandler
+from edi.formactions.content.generic_handler import IGenericHandler
 from plone.supermodel import model
 from zope import schema
 from zope.interface import implementer
-
-
-from edi.formactions import _
-from edi.formactions.content.generic_handler import IGenericHandler, GenericHandler
 
 
 class IWebserviceHandler(IGenericHandler):

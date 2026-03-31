@@ -1,9 +1,8 @@
+# imports from edi.formactions
+from edi.formactions.config import ANNOTATION_KEY
 from persistent.list import PersistentList
 from plone import api
 from zope.annotation.interfaces import IAnnotations
-
-# imports from edi.formactions
-from edi.formactions.config import ANNOTATION_KEY
 
 
 class AnnotationData(object):

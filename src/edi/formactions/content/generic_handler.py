@@ -1,9 +1,8 @@
-from plone.supermodel import model
+from edi.formactions import _
 from plone.dexterity.content import Container
-from zope import schema
+from plone.supermodel import model
 from zope import schema
 from zope.interface import implementer
-from edi.formactions import _
 
 
 class IGenericHandler(model.Schema):

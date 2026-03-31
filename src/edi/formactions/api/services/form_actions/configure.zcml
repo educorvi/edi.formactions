@@ -1,55 +1,59 @@
 <configure
-  xmlns="http://namespaces.zope.org/zope"
-  xmlns:plone="http://namespaces.plone.org/plone">
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    >
 
-  <adapter factory=".get.FormActions" name="form_actions"/>
-
-  <plone:service
-    method="GET"
-    for="zope.interface.Interface"
-    factory=".get.FormActionsGet"
-    name="@form_actions"
-    permission="zope2.View"
-    />
+  <adapter
+      factory=".get.FormActions"
+      name="form_actions"
+      />
 
   <plone:service
-    method="POST"
-    for="edi.jsonforms.content.form.IForm"
-    factory=".post.FormActionsEmailHandlerPost"
-    name="@send-email"
-    permission="zope2.View"
-    />
+      method="GET"
+      factory=".get.FormActionsGet"
+      for="zope.interface.Interface"
+      permission="zope2.View"
+      name="@form_actions"
+      />
 
   <plone:service
-    method="POST"
-    for="edi.jsonforms.content.form.IForm"
-    factory=".post.FormActionsWebserviceHandlerPost"
-    name="@webservice-request"
-    permission="zope2.View"
-    />
+      method="POST"
+      factory=".post.FormActionsEmailHandlerPost"
+      for="edi.jsonforms.content.form.IForm"
+      permission="zope2.View"
+      name="@send-email"
+      />
 
   <plone:service
-    method="POST"
-    for="edi.jsonforms.content.form.IForm"
-    factory=".post.FormActionsStorageHandlerPost"
-    name="@store-as-annotation"
-    permission="zope2.View"
-    />
+      method="POST"
+      factory=".post.FormActionsWebserviceHandlerPost"
+      for="edi.jsonforms.content.form.IForm"
+      permission="zope2.View"
+      name="@webservice-request"
+      />
 
   <plone:service
-    method="POST"
-    for="edi.jsonforms.content.form.IForm"
-    factory=".post.FormActionsFileStorageHandlerPost"
-    name="@store-as-file"
-    permission="zope2.View"
-    />
+      method="POST"
+      factory=".post.FormActionsStorageHandlerPost"
+      for="edi.jsonforms.content.form.IForm"
+      permission="zope2.View"
+      name="@store-as-annotation"
+      />
 
   <plone:service
-    method="POST"
-    for="edi.formactions.content.json_forms_document.IJsonFormsDocument"
-    factory=".post.FormActionsEditJsonFormsDocumentPost"
-    name="@edit-jsonformsdocument"
-    permission="zope2.View"
-    />
+      method="POST"
+      factory=".post.FormActionsFileStorageHandlerPost"
+      for="edi.jsonforms.content.form.IForm"
+      permission="zope2.View"
+      name="@store-as-file"
+      />
+
+  <plone:service
+      method="POST"
+      factory=".post.FormActionsEditJsonFormsDocumentPost"
+      for="edi.formactions.content.json_forms_document.IJsonFormsDocument"
+      permission="zope2.View"
+      name="@edit-jsonformsdocument"
+      />
 
 </configure>

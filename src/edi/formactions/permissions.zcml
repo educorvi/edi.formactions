@@ -1,62 +1,63 @@
 <configure
-  xmlns="http://namespaces.zope.org/zope"
-  xmlns:zcml="http://namespaces.zope.org/zcml"
-  i18n_domain="plone">
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="plone"
+    >
 
   <configure zcml:condition="installed AccessControl.security">
-  <!-- -*- extra stuff goes here -*- -->
+    <!-- -*- extra stuff goes here -*- -->
 
     <permission
         id="edi.formactions.AddJsonFormsDocument"
         title="edi.formactions: Add JsonFormsDocument"
-    />
+        />
 
 
     <permission
         id="edi.formactions.AddFileStorageHandler"
         title="edi.formactions: Add FileStorageHandler"
-    />
+        />
 
 
     <permission
         id="edi.formactions.AddEndpoint"
         title="edi.formactions: Add Endpoint"
-    />
+        />
 
 
     <permission
         id="edi.formactions.AddAnnotationStorageHandler"
         title="edi.formactions: Add AnnotationStorageHandler"
-    />
+        />
 
 
     <permission
         id="edi.formactions.AddWebserviceHandler"
         title="edi.formactions: Add WebserviceHandler"
-    />
+        />
 
 
     <permission
         id="edi.formactions.AddEmailHandler"
         title="edi.formactions: Add EmailHandler"
-    />
+        />
 
     <permission
         id="edi.formactions.AddButtonGroup"
         title="edi.formactions: Add ButtonGroup"
-    />
+        />
 
 
     <permission
         id="edi.formactions.AddResetButton"
         title="edi.formactions: Add ResetButton"
-    />
+        />
 
 
     <permission
         id="edi.formactions.AddButton"
         title="edi.formactions: Add Button"
-    />
+        />
 
 
 

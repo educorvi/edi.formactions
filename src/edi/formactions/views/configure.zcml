@@ -1,34 +1,35 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:i18n="http://namespaces.zope.org/i18n"
-    i18n_domain="edi.formactions">
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="edi.formactions"
+    >
 
- <!-- -*- extra stuff goes here -*- -->
+  <!-- -*- extra stuff goes here -*- -->
 
   <include package="plone.app.contentmenu" />
 
   <browser:page
-    name="json-forms-document-view"
-    for="edi.formactions.content.json_forms_document.IJsonFormsDocument"
-    class=".json_forms_document_view.JsonFormsDocumentView"
-    template="json_forms_document_view.pt"
-    permission="zope2.View"
-    layer="edi.formactions.interfaces.IEdiFormactionsLayer"
-    />
+      name="json-forms-document-view"
+      for="edi.formactions.content.json_forms_document.IJsonFormsDocument"
+      class=".json_forms_document_view.JsonFormsDocumentView"
+      template="json_forms_document_view.pt"
+      permission="zope2.View"
+      layer="edi.formactions.interfaces.IEdiFormactionsLayer"
+      />
 
   <browser:page
-    name="annotations-view"
-    for="edi.jsonforms.content.form.IForm"
-    class=".annotations_view.AnnotationsView"
-    template="annotations_view.pt"
-    permission="zope2.View"
-    layer="edi.formactions.interfaces.IEdiFormactionsLayer"
-    title="Annotations"
-    menu="plone_displayviews"
-    i18n:domain="edi.formactions"
-    />
+      name="annotations-view"
+      for="edi.jsonforms.content.form.IForm"
+      class=".annotations_view.AnnotationsView"
+      template="annotations_view.pt"
+      permission="zope2.View"
+      layer="edi.formactions.interfaces.IEdiFormactionsLayer"
+      menu="plone_displayviews"
+      title="Annotations"
+      i18n:domain="edi.formactions"
+      />
 
 
 

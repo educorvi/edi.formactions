@@ -1,25 +1,25 @@
 # -*- coding: utf-8 -*-
+from . import _
 from zope.interface import implementer
 from zope.schema.interfaces import IVocabularyFactory
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
-
-from . import _
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
 
 
 BOOTSTRAP_BUTTON_VARIANTS = [
-    ("primary", _(u"Primary")),
-    ("secondary", _(u"Secondary")),
-    ("success", _(u"Success")),
-    ("danger", _(u"Danger")),
-    ("warning", _(u"Warning")),
-    ("outline-primary", _(u"Primary Outline")),
-    ("outline-secondary", _(u"Secondary Outline")),
-    ("outline-success", _(u"Success Outline")),
-    ("outline-danger", _(u"Danger Outline")),
-    ("outline-warning", _(u"Warning Outline")),
-    ("info", _(u"Info")),
-    ("light", _(u"Light")),
-    ("dark", _(u"Dark")),
+    ("primary", _("Primary")),
+    ("secondary", _("Secondary")),
+    ("success", _("Success")),
+    ("danger", _("Danger")),
+    ("warning", _("Warning")),
+    ("outline-primary", _("Primary Outline")),
+    ("outline-secondary", _("Secondary Outline")),
+    ("outline-success", _("Success Outline")),
+    ("outline-danger", _("Danger Outline")),
+    ("outline-warning", _("Warning Outline")),
+    ("info", _("Info")),
+    ("light", _("Light")),
+    ("dark", _("Dark")),
 ]
 
 
@@ -34,6 +34,7 @@ class ButtonVariantsVocabulary:
 
     def __call__(self, context):
         terms = [
-            SimpleTerm(value=key, token=key, title=title) for key, title in BOOTSTRAP_BUTTON_VARIANTS
+            SimpleTerm(value=key, token=key, title=title)
+            for key, title in BOOTSTRAP_BUTTON_VARIANTS
         ]
         return SimpleVocabulary(terms)

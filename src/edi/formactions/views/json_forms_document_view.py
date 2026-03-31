@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 
 # from edi.formactions import _
-import json
-
 from plone import api
 from Products.Five.browser import BrowserView
 from zope.interface import implementer
 from zope.interface import Interface
+
+import json
+
 
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 

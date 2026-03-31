@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <layers>
-  <layer
-      name="edi.formactions"
-      interface="edi.formactions.interfaces.IEdiFormactionsLayer"
-      />
+  <layer interface="edi.formactions.interfaces.IEdiFormactionsLayer"
+         name="edi.formactions"
+  />
 </layers>

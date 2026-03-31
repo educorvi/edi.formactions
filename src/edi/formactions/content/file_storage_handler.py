@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+from edi.formactions import _
+from edi.formactions.content.generic_handler import GenericHandler
+from edi.formactions.content.generic_handler import IGenericHandler
 from jinja2 import TemplateSyntaxError
 from jinja2.sandbox import SandboxedEnvironment
 from plone.app.z3cform.widget import RelatedItemsFieldWidget
@@ -7,11 +10,9 @@ from plone.dexterity.content import Container
 from plone.supermodel import model
 from z3c.relationfield.schema import RelationChoice
 from zope import schema
-from zope.interface import implementer, Invalid, invariant
-
-from edi.formactions import _
-from edi.formactions.content.generic_handler import IGenericHandler
-from edi.formactions.content.generic_handler import GenericHandler
+from zope.interface import implementer
+from zope.interface import Invalid
+from zope.interface import invariant
 
 
 class IFileStorageHandler(IGenericHandler):

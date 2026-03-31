@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 
 # from edi.formactions import _
+# from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+from edi.formactions.annotations import FormActionsAnnotationStorage
 from Products.Five.browser import BrowserView
 from zope.interface import implementer
 from zope.interface import Interface
-
-# from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
-from edi.formactions.annotations import FormActionsAnnotationStorage
 
 
 class IAnnotationsView(Interface):

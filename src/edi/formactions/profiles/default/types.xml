@@ -1,14 +1,34 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<object name="portal_types" meta_type="Plone Types Tool">
+<?xml version="1.0" encoding="utf-8"?>
+<object meta_type="Plone Types Tool"
+        name="portal_types"
+>
   <property name="title">Controls the available contenttypes in your portal</property>
   <!--<object name="example_ct" meta_type="Dexterity FTI"/>-->
-  <object name="Button Group" meta_type="Dexterity FTI"/>
-  <object name="Button" meta_type="Dexterity FTI"/>
-  <object name="Reset Button" meta_type="Dexterity FTI"/>
-  <object name="Email Handler" meta_type="Dexterity FTI"/>
-  <object name="Webservice Handler" meta_type="Dexterity FTI"/>
-  <object name="Annotation Storage Handler" meta_type="Dexterity FTI"/>
-  <object name="Endpoint" meta_type="Dexterity FTI"/>
-  <object name="File Storage Handler" meta_type="Dexterity FTI"/>
-  <object name="JsonFormsDocument" meta_type="Dexterity FTI"/>
+  <object meta_type="Dexterity FTI"
+          name="Button Group"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Button"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Reset Button"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Email Handler"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Webservice Handler"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Annotation Storage Handler"
+  />
+  <object meta_type="Dexterity FTI"
+          name="Endpoint"
+  />
+  <object meta_type="Dexterity FTI"
+          name="File Storage Handler"
+  />
+  <object meta_type="Dexterity FTI"
+          name="JsonFormsDocument"
+  />
 </object>
