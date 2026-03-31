@@ -1,4 +1,4 @@
-edi.formactions Copyright 2024, Nina Mücke
+edi.formactions Copyright 2026, Nina Mücke
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License version 2

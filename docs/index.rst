@@ -1,5 +1,0 @@
-===============
-edi.formactions
-===============
-
-User documentation
