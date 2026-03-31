@@ -5,7 +5,7 @@ from plone import api
 from zope.annotation.interfaces import IAnnotations
 
 
-class AnnotationData(object):
+class AnnotationData:
     """Helper class to structure annotation data for form actions"""
 
     user_id: str
@@ -35,7 +35,7 @@ class AnnotationData(object):
         }
 
 
-class FormActionsAnnotationStorage(object):
+class FormActionsAnnotationStorage:
     """Helper class to manage form action data stored in annotations"""
 
     def __init__(self, context):

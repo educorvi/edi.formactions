@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # from edi.formactions import _
 from plone import api
 from Products.Five.browser import BrowserView
@@ -24,10 +22,9 @@ class JsonFormsDocumentView(BrowserView):
     def get_ui_schema(self):
         disable_save_button = False
         user = api.user.get_current()
-        if not user:
-            disable_save_button = True
-        elif self.context.Creator() != user.getUserId() and not api.user.has_permission(
-            "Modify portal content", obj=self.context
+        if not user or (
+            self.context.Creator() != user.getUserId()
+            and not api.user.has_permission("Modify portal content", obj=self.context)
         ):
             disable_save_button = True
 

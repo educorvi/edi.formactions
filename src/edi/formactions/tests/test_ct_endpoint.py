@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
-from edi.formactions.content.endpoint import IEndpoint  # NOQA E501
-from edi.formactions.testing import EDI_FORMACTIONS_INTEGRATION_TESTING  # noqa
+from edi.formactions.content.endpoint import IEndpoint
+from edi.formactions.testing import EDI_FORMACTIONS_INTEGRATION_TESTING
 from plone import api
 from plone.api.exc import InvalidParameterError
 from plone.app.testing import setRoles
@@ -44,9 +43,7 @@ class EndpointIntegrationTest(unittest.TestCase):
 
         self.assertTrue(
             IEndpoint.providedBy(obj),
-            "IEndpoint not provided by {0}!".format(
-                obj,
-            ),
+            f"IEndpoint not provided by {obj}!",
         )
 
     def test_ct_endpoint_adding(self):
@@ -59,9 +56,7 @@ class EndpointIntegrationTest(unittest.TestCase):
 
         self.assertTrue(
             IEndpoint.providedBy(obj),
-            "IEndpoint not provided by {0}!".format(
-                obj.id,
-            ),
+            f"IEndpoint not provided by {obj.id}!",
         )
 
         parent = obj.__parent__
@@ -74,7 +69,7 @@ class EndpointIntegrationTest(unittest.TestCase):
     def test_ct_endpoint_globally_not_addable(self):
         setRoles(self.portal, TEST_USER_ID, ["Contributor"])
         fti = queryUtility(IDexterityFTI, name="Endpoint")
-        self.assertFalse(fti.global_allow, "{0} is globally addable!".format(fti.id))
+        self.assertFalse(fti.global_allow, f"{fti.id} is globally addable!")
 
     def test_ct_endpoint_filter_content_type_true(self):
         setRoles(self.portal, TEST_USER_ID, ["Contributor"])

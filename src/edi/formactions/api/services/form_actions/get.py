@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from plone import api
 from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.services import Service
@@ -9,7 +8,7 @@ from zope.interface import Interface
 
 @implementer(IExpandableElement)
 @adapter(Interface, Interface)
-class FormActions(object):
+class FormActions:
     def __init__(self, context, request):
         self.context = context.aq_explicit
         self.request = request
@@ -17,9 +16,7 @@ class FormActions(object):
     def __call__(self, expand=False):
         result = {
             "form_actions": {
-                "@id": "{}/@form_actions".format(
-                    self.context.absolute_url(),
-                ),
+                "@id": f"{self.context.absolute_url()}/@form_actions",
             },
         }
         if not expand:

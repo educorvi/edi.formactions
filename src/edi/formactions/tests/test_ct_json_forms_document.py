@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
-from edi.formactions.content.json_forms_document import IJsonFormsDocument  # NOQA E501
-from edi.formactions.testing import EDI_FORMACTIONS_INTEGRATION_TESTING  # noqa
+from edi.formactions.content.json_forms_document import IJsonFormsDocument
+from edi.formactions.testing import EDI_FORMACTIONS_INTEGRATION_TESTING
 from plone import api
 from plone.api.exc import InvalidParameterError
 from plone.app.testing import setRoles
@@ -37,9 +36,7 @@ class JsonFormsDocumentIntegrationTest(unittest.TestCase):
 
         self.assertTrue(
             IJsonFormsDocument.providedBy(obj),
-            "IJsonFormsDocument not provided by {0}!".format(
-                obj,
-            ),
+            f"IJsonFormsDocument not provided by {obj}!",
         )
 
     def test_ct_json_forms_document_adding(self):
@@ -52,9 +49,7 @@ class JsonFormsDocumentIntegrationTest(unittest.TestCase):
 
         self.assertTrue(
             IJsonFormsDocument.providedBy(obj),
-            "IJsonFormsDocument not provided by {0}!".format(
-                obj.id,
-            ),
+            f"IJsonFormsDocument not provided by {obj.id}!",
         )
 
         parent = obj.__parent__
@@ -67,7 +62,7 @@ class JsonFormsDocumentIntegrationTest(unittest.TestCase):
     def test_ct_json_forms_document_globally_not_addable(self):
         setRoles(self.portal, TEST_USER_ID, ["Contributor"])
         fti = queryUtility(IDexterityFTI, name="JsonFormsDocument")
-        self.assertFalse(fti.global_allow, "{0} is globally addable!".format(fti.id))
+        self.assertFalse(fti.global_allow, f"{fti.id} is globally addable!")
 
     def test_ct_json_forms_document_filter_content_type_true(self):
         setRoles(self.portal, TEST_USER_ID, ["Contributor"])

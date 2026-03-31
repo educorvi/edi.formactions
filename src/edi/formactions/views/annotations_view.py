@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # from edi.formactions import _
 # from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from edi.formactions.annotations import FormActionsAnnotationStorage

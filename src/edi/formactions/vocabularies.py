@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from . import _
 from zope.interface import implementer
 from zope.schema.interfaces import IVocabularyFactory

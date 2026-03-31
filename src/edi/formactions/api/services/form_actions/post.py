@@ -1,19 +1,11 @@
-# -*- coding: utf-8 -*-
 from edi.formactions import _
 from edi.formactions.annotations import FormActionsAnnotationStorage
 from edi.jsonforms.views.json_schema_view import JsonSchemaView
 from edi.jsonforms.views.ui_schema_view import UiSchemaView
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from jinja2 import meta
-from jinja2 import Template
-from jinja2 import TemplateSyntaxError
 from jinja2.sandbox import SandboxedEnvironment
 from plone import api
 
 # from Products.MailHost.interfaces import IMailHost
-from plone.base.utils import getToolByName
-from plone.base.utils import safe_text
 from plone.base.utils import unrestricted_construct_instance
 from plone.protect.interfaces import IDisableCSRFProtection
 from plone.restapi.services import Service
@@ -88,7 +80,7 @@ class FormActionsEmailHandlerPost(Service):
             )
 
         except Exception as e:
-            raise BadRequest(f"Failed to send email: {str(e)}")
+            raise BadRequest(f"Failed to send email: {e!s}")
 
 
 class FormActionsWebserviceHandlerPost(Service):

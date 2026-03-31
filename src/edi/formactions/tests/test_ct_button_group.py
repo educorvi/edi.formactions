@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
-from edi.formactions.content.button_group import IButtonGroup  # NOQA E501
-from edi.formactions.testing import EDI_FORMACTIONS_INTEGRATION_TESTING  # noqa
+from edi.formactions.content.button_group import IButtonGroup
+from edi.formactions.testing import EDI_FORMACTIONS_INTEGRATION_TESTING
 from plone import api
 from plone.api.exc import InvalidParameterError
 from plone.app.testing import setRoles
@@ -44,9 +43,7 @@ class ButtonGroupIntegrationTest(unittest.TestCase):
 
         self.assertTrue(
             IButtonGroup.providedBy(obj),
-            "IButtonGroup not provided by {0}!".format(
-                obj,
-            ),
+            f"IButtonGroup not provided by {obj}!",
         )
 
     def test_ct_button_group_adding(self):
@@ -59,9 +56,7 @@ class ButtonGroupIntegrationTest(unittest.TestCase):
 
         self.assertTrue(
             IButtonGroup.providedBy(obj),
-            "IButtonGroup not provided by {0}!".format(
-                obj.id,
-            ),
+            f"IButtonGroup not provided by {obj.id}!",
         )
 
         parent = obj.__parent__
@@ -74,7 +69,7 @@ class ButtonGroupIntegrationTest(unittest.TestCase):
     def test_ct_button_group_globally_not_addable(self):
         setRoles(self.portal, TEST_USER_ID, ["Contributor"])
         fti = queryUtility(IDexterityFTI, name="Button Group")
-        self.assertFalse(fti.global_allow, "{0} is globally addable!".format(fti.id))
+        self.assertFalse(fti.global_allow, f"{fti.id} is globally addable!")
 
     def test_ct_button_group_filter_content_type_true(self):
         setRoles(self.portal, TEST_USER_ID, ["Contributor"])
