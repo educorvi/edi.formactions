@@ -7,6 +7,8 @@
 
  <!-- -*- extra stuff goes here -*- -->
 
+  <include package="plone.app.contentmenu" />
+
   <browser:page
     name="json-forms-document-view"
     for="edi.formactions.content.json_forms_document.IJsonFormsDocument"
