@@ -3,7 +3,7 @@ from edi.formactions.content.generic_handler import GenericHandler
 from edi.formactions.content.generic_handler import IGenericHandler
 from jinja2 import TemplateSyntaxError
 from jinja2.sandbox import SandboxedEnvironment
-from plone.app.z3cform.widget import RelatedItemsFieldWidget
+from plone.app.z3cform.widgets.contentbrowser import ContentBrowserFieldWidget
 from plone.autoform import directives
 from z3c.relationfield.schema import RelationChoice
 from zope import schema
@@ -34,7 +34,7 @@ class IFileStorageHandler(IGenericHandler):
 
     directives.widget(
         "target_folder",
-        RelatedItemsFieldWidget,
+        ContentBrowserFieldWidget,
         vocabulary="plone.app.vocabularies.Catalog",
         pattern_options={"selectableTypes": ["Folder"]},
     )
