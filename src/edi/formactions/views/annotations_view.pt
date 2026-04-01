@@ -2,15 +2,15 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
-      metal:use-macro="context/main_template/macros/master"
+      metal:use-macro="context/@@main_template/macros/master"
       i18n:domain="edi.formactions"
 >
   <body>
     <metal:block fill-slot="content-core">
       <div tal:define="
-             annotations view/get_annotations;
+             annotations python: view.get_annotations();
            ">
-        <h2 tal:content="string:Annotations of ${context/Title}"></h2>
+        <h2 tal:content="python:'Annotations of %s' % context.Title()"></h2>
         <ul>
           <li tal:repeat="annotation annotations"
               tal:content="string:${annotation}"
