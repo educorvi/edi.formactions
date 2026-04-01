@@ -29,19 +29,17 @@ class JsonFormsDocumentView(BrowserView):
             disable_save_button = True
 
         ui_schema = json.loads(self.context.ui_schema) if self.context.ui_schema else {}
-        if "layout" in ui_schema.keys():
+        if "layout" in ui_schema:
             layout = ui_schema["layout"]
-            if "elements" in layout.keys():
+            if "elements" in layout:
                 buttongroup = layout["elements"][-1]
-                if (
-                    buttongroup["type"] == "Buttongroup"
-                    and "buttons" in buttongroup.keys()
-                ):
+                if buttongroup["type"] == "Buttongroup" and "buttons" in buttongroup:
                     button = buttongroup["buttons"][0]
-                    if "options" in button.keys():
+                    if "options" in button:
                         ui_schema["layout"]["elements"][-1]["buttons"][0]["options"][
                             "disabled"
-                        ] = disable_save_button  # disable the save button if the user is not allowed to edit the content
+                        ] = disable_save_button  # disable the save button if the user
+                        # is not allowed to edit the content
         return json.dumps(
             ui_schema,
             ensure_ascii=False,

@@ -41,7 +41,7 @@ class FormActionsAnnotationStorage:
     def __init__(self, context):
         self.context = context
         annotations = IAnnotations(context)
-        if ANNOTATION_KEY not in annotations.keys():
+        if ANNOTATION_KEY not in annotations:
             annotations[ANNOTATION_KEY] = PersistentList()
         self.annotations = annotations[ANNOTATION_KEY]
 

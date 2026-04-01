@@ -18,7 +18,7 @@ class IFileStorageHandler(IGenericHandler):
     target_folder = RelationChoice(
         title=_("Target folder for file storage"),
         description=_(
-            "Select the folder where the json data of the filled form will be stored. If the folder is deleted, the button will be disabled."
+            "Select the folder where the json data of the filled form will be stored. If the folder is deleted, the button will be disabled."  # noqa: E501
         ),
         vocabulary="plone.app.vocabularies.Catalog",
         required=True,
@@ -27,19 +27,10 @@ class IFileStorageHandler(IGenericHandler):
     content_object_title = schema.TextLine(
         title=_("Title for stored content objects"),
         description=_(
-            "Define a title for the content objects that will be created to store the JSON data of the filled form. Use the Jinja2 language to define dynamic titles. For example: 'Form submission from {{data['id_of_field_x']}} on {{data['id_of_field_y']}}', to use the value of field x and y in the title. This also works if the field is inside a fieldset. The field IDs must come from the form fields. In addition to field values, you can use the username via '{{user}}'."
+            "Define a title for the content objects that will be created to store the JSON data of the filled form. Use the Jinja2 language to define dynamic titles. For example: 'Form submission from {{data['id_of_field_x']}} on {{data['id_of_field_y']}}', to use the value of field x and y in the title. This also works if the field is inside a fieldset. The field IDs must come from the form fields. In addition to field values, you can use the username via '{{user}}'."  # noqa: E501
         ),
         required=False,
     )
-
-    # redirect_to_new_object = schema.Bool(
-    #     title=_("Redirect to created content object after submission"),
-    #     description=_(
-    #         "If enabled, the user will be redirected to the created content object after form submission and the configuration of the page after success is ignored."
-    #     ),
-    #     required=False,
-    #     default=True,
-    # )
 
     directives.widget(
         "target_folder",
@@ -59,7 +50,7 @@ class IFileStorageHandler(IGenericHandler):
                     "Invalid jinja2 syntax: ${error}",
                     mapping={"error": str(e)},
                 )
-                raise Invalid(error_message)
+                raise Invalid(error_message) from e
 
 
 @implementer(IFileStorageHandler)

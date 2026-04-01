@@ -19,7 +19,7 @@ class IEmailHandler(IGenericHandler):
     use_email_of_current_user = schema.Bool(
         title=_("Use email of current user as recipient"),
         description=_(
-            "If checked, the email address of the current user will be used instead of the 'To address' field."
+            "If checked, the email address of the current user will be used instead of the 'To address' field."  # noqa: E501
         ),
         required=False,
         default=False,
@@ -28,7 +28,7 @@ class IEmailHandler(IGenericHandler):
     to_address = schema.TextLine(
         title=_("To address"),
         description=_(
-            "The email address of the recipient. This field is required if 'Use email of current user as recipient' is not checked."
+            "The email address of the recipient. This field is required if 'Use email of current user as recipient' is not checked."  # noqa: E501
         ),
         required=False,
     )
@@ -46,7 +46,7 @@ class IEmailHandler(IGenericHandler):
     email_text = schema.Text(
         title=_("Email Body"),
         description=_(
-            "The body of the email. The content of the form will be appended to this text."
+            "The body of the email. The content of the form will be appended to this text."  # noqa: E501
         ),
         required=False,
     )
@@ -56,13 +56,13 @@ class IEmailHandler(IGenericHandler):
         if not data.use_email_of_current_user and not data.to_address:
             raise Invalid(
                 _(
-                    "To address is required if 'Use email of current user as recipient' is not checked."
+                    "To address is required if 'Use email of current user as recipient' is not checked."  # noqa: E501
                 )
             )
         if data.use_email_of_current_user and data.to_address:
             raise Invalid(
                 _(
-                    "To address should not be set if 'Use email of current user as recipient' is checked."
+                    "To address should not be set if 'Use email of current user as recipient' is checked."  # noqa: E501
                 )
             )
 

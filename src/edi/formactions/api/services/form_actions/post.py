@@ -80,7 +80,7 @@ class FormActionsEmailHandlerPost(Service):
             )
 
         except Exception as e:
-            raise BadRequest(f"Failed to send email: {e!s}")
+            raise BadRequest(f"Failed to send email: {e!s}") from e
 
 
 class FormActionsWebserviceHandlerPost(Service):
@@ -90,8 +90,8 @@ class FormActionsWebserviceHandlerPost(Service):
 
         try:
             payload = json.loads(data)
-        except json.JSONDecodeError:
-            raise BadRequest("Invalid JSON format.")
+        except json.JSONDecodeError as e:
+            raise BadRequest("Invalid JSON format.") from e
 
         endpoints = []
         i = 1
@@ -122,7 +122,10 @@ class FormActionsWebserviceHandlerPost(Service):
             headers = {k: v for k, v in endpoint.items() if k != "url"}
             headers["Referer"] = "https://plone.org"  # self.context.absolute_url()
             response = requests.post(
-                url=endpoint["url"], headers=headers, data=json.dumps(payload)
+                url=endpoint["url"],
+                headers=headers,
+                data=json.dumps(payload),
+                timeout=15,
             )
 
             if response.status_code != 200:
@@ -148,8 +151,8 @@ class FormActionsStorageHandlerPost(Service):
 
         try:
             payload = json.loads(data)
-        except json.JSONDecodeError:
-            raise BadRequest("Invalid JSON format.")
+        except json.JSONDecodeError as e:
+            raise BadRequest("Invalid JSON format.") from e
 
         annotation_storage = FormActionsAnnotationStorage(self.context)
         annotation_storage.store_as_annotation(payload)
@@ -166,14 +169,14 @@ class FormActionsStorageHandlerPost(Service):
 class FormActionsFileStorageHandlerPost(Service):
     """Handler for storing form data in a file inside a folder in the Plone site."""
 
-    def reply(self):
+    def reply(self):  # noqa: C901
         alsoProvides(self.request, IDisableCSRFProtection)
         data = load_form_action_data(self)
 
         try:
             payload = json.loads(data)
-        except json.JSONDecodeError:
-            raise BadRequest("Invalid JSON format.")
+        except json.JSONDecodeError as e:
+            raise BadRequest("Invalid JSON format.") from e
 
         # get target folder from request form and validate it
         folder_path = self.request.form.get("folder_path")
@@ -184,7 +187,8 @@ class FormActionsFileStorageHandlerPost(Service):
         if folder is None:
             raise BadRequest("Folder path is invalid.")
 
-        # get content object title from request form, validate it and render it as jinja2 template with form data as variables
+        # get content object title from request form, validate it and render it as
+        # jinja2 template with form data as variables
         content_object_title = self.request.form.get(
             "content_object_title", _("Form submission")
         )
@@ -203,7 +207,8 @@ class FormActionsFileStorageHandlerPost(Service):
         if not obj_title or obj_title.isspace():
             obj_title = _("Form submission")
 
-        # create JsonFormsDocument inside the target folder but bypass checks (don't use api.content.create)
+        # create JsonFormsDocument inside the target folder but bypass checks (don't
+        # use api.content.create)
         with api.env.adopt_roles(["Manager"]):
             container = api.content.get(path=folder_path)
             if container is None:
@@ -218,7 +223,7 @@ class FormActionsFileStorageHandlerPost(Service):
                 )
             except Exception as e:
                 logging.error(f"Error creating JsonFormsDocument: {e}")
-                raise BadRequest("Error creating content object.")
+                raise BadRequest("Error creating content object.") from e
 
         # set fields of the created object
         jsonformsdocument.json_data = json.dumps(payload, ensure_ascii=False, indent=4)
@@ -233,7 +238,8 @@ class FormActionsFileStorageHandlerPost(Service):
                 else:
                     new_list.append(element)
             ui_schema["layout"]["elements"] = new_list
-            # put new buttongroup into the ui schema to enable editing the created JsonFormsDocument
+            # put new buttongroup into the ui schema to enable editing the
+            # created JsonFormsDocument
             new_button_group = {
                 "type": "Buttongroup",
                 "buttons": [
@@ -246,7 +252,7 @@ class FormActionsFileStorageHandlerPost(Service):
                             "submitOptions": {
                                 "action": "request",
                                 "request": {
-                                    "url": f"{jsonformsdocument.absolute_url()}/@edit-jsonformsdocument",
+                                    "url": f"{jsonformsdocument.absolute_url()}/@edit-jsonformsdocument",  # noqa: E501
                                     "method": "POST",
                                     "headers": {
                                         "Accept": "application/json",
@@ -264,7 +270,7 @@ class FormActionsFileStorageHandlerPost(Service):
             )
         except Exception as e:
             logging.error(f"Error processing UI schema: {e}")
-            raise BadRequest("Error processing UI schema.")
+            raise BadRequest("Error processing UI schema.") from e
 
         # set state to private so only admins and the creator can see the created object
         # bypass permission checks to make transition also as anonymous user
@@ -294,7 +300,9 @@ class FormActionsFileStorageHandlerPost(Service):
 
 
 class FormActionsEditJsonFormsDocumentPost(Service):
-    """Endpoint to edit a JsonFormsDocument created by the FormActionsFileStorageHandler"""
+    """
+    Endpoint to edit a JsonFormsDocument created by the FormActionsFileStorageHandler
+    """
 
     def reply(self):
         alsoProvides(self.request, IDisableCSRFProtection)
@@ -302,8 +310,8 @@ class FormActionsEditJsonFormsDocumentPost(Service):
 
         try:
             payload = json.loads(data)
-        except json.JSONDecodeError:
-            raise BadRequest("Invalid JSON format.")
+        except json.JSONDecodeError as e:
+            raise BadRequest("Invalid JSON format.") from e
 
         # check that self.context was created by the current user
         # if user is anonymous, content cannot be edited
