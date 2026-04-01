@@ -4,19 +4,20 @@ from plone.restapi.services import Service
 from zope.interface import alsoProvides
 from zExceptions import BadRequest
 
-# from Products.MailHost.interfaces import IMailHost
-from plone.base.utils import getToolByName, safe_text
 from plone.protect.interfaces import IDisableCSRFProtection
 import requests
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 import json
 from edi.formactions import _
 from edi.formactions.annotations import FormActionsAnnotationStorage
-from jinja2 import Template, TemplateSyntaxError, meta
 from jinja2.sandbox import SandboxedEnvironment
 import logging
-from plone.base.utils import unrestricted_construct_instance
+
+try:
+    from plone.base.utils import unrestricted_construct_instance
+except ImportError:
+    from Products.CMFPlone.utils import (
+        _createObjectByType as unrestricted_construct_instance,
+    )
 from zope.container.interfaces import INameChooser
 
 from edi.jsonforms.views.json_schema_view import JsonSchemaView
