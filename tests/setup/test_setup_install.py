@@ -8,9 +8,9 @@ class TestSetupInstall:
 
     def test_browserlayer(self, browser_layers):
         """Test that IBrowserLayer is registered."""
-        from edi.formactions.interfaces import IBrowserLayer
+        from edi.formactions.interfaces import IEdiFormactionsLayer
 
-        assert IBrowserLayer in browser_layers
+        assert IEdiFormactionsLayer in browser_layers
 
     def test_latest_version(self, profile_last_version):
         """Test latest version of default profile."""

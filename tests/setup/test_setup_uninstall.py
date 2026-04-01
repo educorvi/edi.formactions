@@ -14,6 +14,6 @@ class TestSetupUninstall:
 
     def test_browserlayer_not_registered(self, browser_layers):
         """Test that IBrowserLayer is not registered."""
-        from edi.formactions.interfaces import IBrowserLayer
+        from edi.formactions.interfaces import IEdiFormactionsLayer
 
-        assert IBrowserLayer not in browser_layers
+        assert IEdiFormactionsLayer not in browser_layers
