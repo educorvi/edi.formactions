@@ -7,6 +7,27 @@
 
  <!-- -*- extra stuff goes here -*- -->
 
+  <!-- <browser:page
+    name="potenzialanalyse-view"
+    for="plone.app.contenttypes.interfaces.IFolder"
+    class=".potenzialanalyse_view.PotenzialanalyseView"
+    template="potenzialanalyse_view.pt"
+    permission="zope2.View"
+    layer="edi.formactions.interfaces.IEdiFormactionsLayer"
+    /> -->
+
+  <browser:page
+    name="potenzialanalyse-view"
+    for="edi.jsonforms.content.form.IForm"
+    class=".potenzialanalyse_view.PotenzialanalyseView"
+    template="potenzialanalyse_view.pt"
+    permission="zope2.View"
+    layer="edi.formactions.interfaces.IEdiFormactionsLayer"
+    title="Potenzialanalyse"
+    menu="plone_displayviews"
+    i18n:domain="edi.formactions"
+    />
+
   <browser:page
     name="json-forms-document-view"
     for="edi.formactions.content.json_forms_document.IJsonFormsDocument"
