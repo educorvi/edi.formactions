@@ -7,19 +7,21 @@
 
  <!-- -*- extra stuff goes here -*- -->
 
-  <!-- <browser:page
+  <browser:page
     name="potenzialanalyse-view"
     for="plone.app.contenttypes.interfaces.IFolder"
-    class=".potenzialanalyse_view.PotenzialanalyseView"
+    class=".potenzialanalyse_view.JFDPotenzialanalyseView"
     template="potenzialanalyse_view.pt"
     permission="zope2.View"
     layer="edi.formactions.interfaces.IEdiFormactionsLayer"
-    /> -->
+    title="Potenzialanalyse"
+    menu="plone_displayviews"
+    />
 
   <browser:page
     name="potenzialanalyse-view"
     for="edi.jsonforms.content.form.IForm"
-    class=".potenzialanalyse_view.PotenzialanalyseView"
+    class=".potenzialanalyse_view.AnnotationsPotenzialanalyseView"
     template="potenzialanalyse_view.pt"
     permission="zope2.View"
     layer="edi.formactions.interfaces.IEdiFormactionsLayer"
