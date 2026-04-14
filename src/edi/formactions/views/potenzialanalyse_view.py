@@ -83,6 +83,7 @@ class PotenzialanalyseHelper:
             service_id = json_data.get("service_id", "")
             service["service_id"] = service_id
 
+            # map title if service_id is in mapping and title is not empty
             service_title_original = service_id_mapping.get(str(service_id), {}).get(
                 "name", ""
             )
@@ -95,16 +96,48 @@ class PotenzialanalyseHelper:
                 else service_title
             )
 
+            # map mandant if service_id is in mapping and client is not empty
+            mandant = json_data.get("mandant", [])
+            mandant_original = service_id_mapping.get(str(service_id), {}).get(
+                "client", []
+            )
+            if isinstance(mandant, str):
+                mandant = [mandant]
+            if mandant_original:
+                mandant.append(f"({mandant_original})")
+            service["mandant"] = mandant
+
+            # map fachdomaene if service_id is in mapping and domain is not empty
+            fachdomaene = json_data.get("fachdomaene", "")
+            fachdomaene_original = service_id_mapping.get(str(service_id), {}).get(
+                "domain", ""
+            )
+            service["fachdomaene"] = (
+                f"{fachdomaene} ({fachdomaene_original})"
+                if fachdomaene_original
+                else fachdomaene
+            )
+
+            # map fachbereich_subdomaene if service_id is in mapping and subdomain is not empty
+            fachbereich_subdomaene = (
+                json_data.get("mub_fachbereich", "")
+                or json_data.get("subdomaenen_rul", "")
+                or json_data.get("subdomaenen_praev", "")
+            )
+            fachbereich_subdomaene_original = service_id_mapping.get(
+                str(service_id), {}
+            ).get("subdomain", "")
+            service["fachbereich_subdomaene"] = (
+                f"{fachbereich_subdomaene} ({fachbereich_subdomaene_original})"
+                if fachbereich_subdomaene_original
+                else fachbereich_subdomaene
+            )
+
             info = {
                 "service_description": json_data.get("service_description_new", ""),
-                "mandant": json_data.get("mandant", ""),
                 "bearbeitung_durch": json_data.get("bearbeitung_durch", ""),
                 "fachbereich": json_data.get("fachbereich", ""),
                 "status": json_data.get("status", ""),
-                "fachdomaene": json_data.get("fachdomaene", ""),
-                "fachbereich_subdomaene": json_data.get("mub_fachbereich", "")
-                or json_data.get("subdomaenen_rul", "")
-                or json_data.get("subdomaenen_praev", ""),
                 "querschnittsthemen": json_data.get("querschnittsthemen", ""),
                 "list_potenziale": json_data.get("list_potenziale", ""),
                 "potenziale_weitere": json_data.get("potenziale_weitere", ""),
