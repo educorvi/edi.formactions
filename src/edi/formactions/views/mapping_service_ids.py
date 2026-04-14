@@ -1,3 +1,6 @@
+import json
+
+mapping_string = """
 {
   "1": {
     "name": "Abfrage Gewerke",
@@ -3996,3 +3999,7 @@
     "subdomain": null
   }
 }
+
+"""
+
+mapping = json.loads(mapping_string)
