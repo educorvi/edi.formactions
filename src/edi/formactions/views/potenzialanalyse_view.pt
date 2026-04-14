@@ -7,30 +7,14 @@
 <body>
 
   <metal:block fill-slot="content-core">
+    <div class="mb-3">
+      <a class="btn btn-primary" href="?download=csv">CSV herunterladen</a>
+    </div>
     <div class="table-responsive">
       <table class="table">
         <thead>
           <tr>
-            <th scope="col">Service ID</th>
-            <th scope="col">Service Titel</th>
-            <th scope="col">Service Beschreibung</th>
-            <th scope="col">Mandant</th>
-            <th scope="col">Bearbeitung durch</th>
-            <th scope="col">Fachbereich</th>
-            <th scope="col">Status</th>
-            <th scope="col">Fachdomäne</th>
-            <th scope="col">MuB Fachbereich / Subdomäne RuL/Prävention</th>
-            <th scope="col">Querschnittsthemen</th>
-            <th scope="col">Potenziale</th>
-            <th scope="col">Weitere Potenziale</th>
-            <th scope="col">Browser</th>
-            <th scope="col">App/PWA</th>
-            <th scope="col">API</th>
-            <th scope="col">Chatbot</th>
-            <th scope="col">KI-Assistent</th>
-            <th scope="col">Automatisierung</th>
-            <th scope="col">Aufwand</th>
-            <th scope="col">Ideen</th>
+            <th scope="col" tal:repeat="column python: view.COLUMNS" tal:content="python: column[1]"></th>
           </tr>
         </thead>
         <tbody>

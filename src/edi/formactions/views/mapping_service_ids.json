@@ -1,0 +1,3998 @@
+{
+  "1": {
+    "name": "Abfrage Gewerke",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "2": {
+    "name": "Abfrage Stunden, Namen und Tätigkeit der Helfenden",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "3": {
+    "name": "Alle Antragsformulare einsehen",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "4": {
+    "name": "Alle Antragsformulare einsehen",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "5": {
+    "name": "Allgemeingültige Informationen einholen",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "6": {
+    "name": "Änderung der freiwilligen Versicherung beantragen",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "7": {
+    "name": "Angaben zur beruflichen Tätigkeit - BK 2301",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "8": {
+    "name": "Anhörung Bußgeld",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "9": {
+    "name": "Anmeldung Unternehmen",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "10": {
+    "name": "Anmeldung/Fragebogen privates Bauvorhaben",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "11": {
+    "name": "Anzeige für Arbeiten in kontaminierten Bereichen",
+    "client": "BGBAU",
+    "domain": "Prävention",
+    "subdomain": null
+  },
+  "12": {
+    "name": "Anzeige Personenaufnahmemittel (PAM)",
+    "client": "BGBAU",
+    "domain": "Prävention",
+    "subdomain": null
+  },
+  "13": {
+    "name": "Arbeitsschutzprämie beantragen (einfach & vorausgefüllt)",
+    "client": "BGBAU",
+    "domain": "Prävention",
+    "subdomain": null
+  },
+  "14": {
+    "name": "Arbeitsschutzprämie beantragen (Formular ohne Login)",
+    "client": "BGBAU",
+    "domain": "Prävention",
+    "subdomain": null
+  },
+  "15": {
+    "name": "Arbeitsschutzprämienanträge einsehen",
+    "client": "BGBAU",
+    "domain": "Prävention",
+    "subdomain": null
+  },
+  "16": {
+    "name": "ASD Dokumente einsehen",
+    "client": "BGBAU",
+    "domain": "Prävention (ASD)",
+    "subdomain": null
+  },
+  "17": {
+    "name": "ASD Leistungen einsehen",
+    "client": "BGBAU",
+    "domain": "Prävention (ASD)",
+    "subdomain": null
+  },
+  "18": {
+    "name": "Ausloggen",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "19": {
+    "name": "Äußerungsbogen zur Anhörung (\"Unser Zeichen\" beginnt mit TO)",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "20": {
+    "name": "Bankverbindung angeben (einfach & vorausgefüllt)",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "21": {
+    "name": "Bankverbindung angeben (Formular ohne Login)",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "22": {
+    "name": "Bankverbindung verwalten",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "23": {
+    "name": "Bausteine-App herunterladen",
+    "client": "BGBAU",
+    "domain": "Prävention",
+    "subdomain": null
+  },
+  "24": {
+    "name": "Baustelle melden",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "25": {
+    "name": "Behandlungsorte finden (Durchgangsärzte, Krankenhäuser etc.)",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "26": {
+    "name": "Beitragsvorschuss anpassen (einfach & vorausgefüllt)",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "27": {
+    "name": "Beitragsvorschuss anpassen (Formular ohne Login)",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "28": {
+    "name": "Beratung zum Betreuungsmodell erhalten",
+    "client": "BGBAU",
+    "domain": "Prävention",
+    "subdomain": null
+  },
+  "29": {
+    "name": "Berufskrankheit - vorbeugende Maßnahmen beantragen",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "30": {
+    "name": "Berufskrankheit melden",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "31": {
+    "name": "Berufskrankheit melden",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "32": {
+    "name": "Berufskrankheit melden",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "33": {
+    "name": "Baustellenmeldungen einsehen",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "34": {
+    "name": "Betreuungsbestätigung anfordern",
+    "client": "BGBAU",
+    "domain": "Prävention (ASD)",
+    "subdomain": null
+  },
+  "35": {
+    "name": "Betreuungsmodell auswählen / anpassen (einfach & vorausgefüllt)",
+    "client": "BGBAU",
+    "domain": "Prävention (ASD)",
+    "subdomain": null
+  },
+  "36": {
+    "name": "Betreuungsmodell auswählen / anpassen (Formular ohne Login)",
+    "client": "BGBAU",
+    "domain": "Prävention (ASD)",
+    "subdomain": null
+  },
+  "37": {
+    "name": "Betriebliche Erklärung (Hauptseite)",
+    "client": "BGBAU",
+    "domain": "Prävention",
+    "subdomain": null
+  },
+  "38": {
+    "name": "Betriebsanweisungen erstellen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "39": {
+    "name": "BG BAU Karte bestellen",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "40": {
+    "name": "Beitragsbescheide einsehen",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "41": {
+    "name": "Erklärfilm zum Arbeitsunfall ansehen",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "42": {
+    "name": "Erstattung von Hilfsmitteln beantragen",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "43": {
+    "name": "Erste Authentifizierung & Login durchführen (2FA)",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "44": {
+    "name": "Erste Hilfe Abrechnung einsenden",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "45": {
+    "name": "Erstinformationen nach einem Unfall erhalten",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "46": {
+    "name": "Fahrsicherheitstraining (Hauptseite)",
+    "client": "BGBAU",
+    "domain": "Prävention",
+    "subdomain": null
+  },
+  "47": {
+    "name": "Fahrsicherheitstraining Abrechnung einsenden",
+    "client": "BGBAU",
+    "domain": "Prävention",
+    "subdomain": null
+  },
+  "48": {
+    "name": "Fahrtkostenerstattung beantragen (einfach & vorausgefüllt)",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "49": {
+    "name": "Fahrtkostenerstattung beantragen (Formular ohne Login)",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "50": {
+    "name": "Fragen zur Bauherreneigenschaft",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "51": {
+    "name": "Gefahrenstoffe suchen & verwalten",
+    "client": "BGBAU",
+    "domain": "Prävention",
+    "subdomain": null
+  },
+  "52": {
+    "name": "Haushaltshilfe und Kinderbetreuungskosten beantragen",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "53": {
+    "name": "Intelligentes Suchfeld verwenden",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "54": {
+    "name": "Jahresarbeitsverdienst / Rückantwort Entgeltnachweis: Unternehmen (SGB VII)",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "55": {
+    "name": "KI-Assistent fragen / Begleitung",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "56": {
+    "name": "Kontakt aufnehmen",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "57": {
+    "name": "Kostenerstattung beantragen",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "58": {
+    "name": "Kraftfahrzeughilfe beantragen",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "59": {
+    "name": "Leistungen des ASD anfragen",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen (ASD)",
+    "subdomain": null
+  },
+  "60": {
+    "name": "Beitragskonto einsehen (Unternehmen)",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "61": {
+    "name": "Lohnsummenänderung melden",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "62": {
+    "name": "Mehrsprachig kommunizieren und Inhalte übersetzen lassen",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "63": {
+    "name": "Mitteilung Bankverbindung Leistungsempfänger",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "64": {
+    "name": "Nachweis Arbeitsstunden",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "65": {
+    "name": "Nachweis über Eigenbauarbeiten",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "66": {
+    "name": "Nachweis über Eigenbauarbeiten als gewerbliche/-r Unternehmer/-in",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "67": {
+    "name": "Passwort / 2FA ändern",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "68": {
+    "name": "Personalliste verwalten",
+    "client": "BGBAU",
+    "domain": "Prävention (ASD)",
+    "subdomain": null
+  },
+  "69": {
+    "name": "Berufskrankheiten einsehen",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "70": {
+    "name": "Profil wechseln",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "71": {
+    "name": "Registrieren",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "72": {
+    "name": "Rente beantragen",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "73": {
+    "name": "Rente für Hinterbliebene beantragen",
+    "client": "BGBAU",
+    "domain": null,
+    "subdomain": null
+  },
+  "74": {
+    "name": "Rollen & Rechte verwalten",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "75": {
+    "name": "Schwarzarbeit und illegale Beschäftigung melden",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "76": {
+    "name": "Selbsterklärung für das Vorliegen einer aktuellen Gefährdungsbeurteilung",
+    "client": "BGBAU",
+    "domain": "Prävention",
+    "subdomain": null
+  },
+  "77": {
+    "name": "SEPA Lastschrift verwalten (einfach & vorausgefüllt)",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "78": {
+    "name": "SEPA Lastschrift verwalten (Formular ohne Login)",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "79": {
+    "name": "Stundung beantragen (einfach & vorausgefüllt)",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "80": {
+    "name": "Stundung beantragen (Formular ohne Login)",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "81": {
+    "name": "Tätigkeit / Veranlagung ändern",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "82": {
+    "name": "Unbedenklichkeitsbescheinigung anfordern (einfach & vorausgefüllt)",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "83": {
+    "name": "Unbedenklichkeitsbescheinigung anfordern (Formular ohne Login)",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "84": {
+    "name": "Unbedenklichkeitsbescheinigung anfordern (für fremdes Unternehmen)",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "85": {
+    "name": "BG BAU Medien einsehen",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "86": {
+    "name": "Unbedenklichkeitsbescheinigungen prüfen",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "87": {
+    "name": "Unfall melden (einfach & vorausgefüllt)",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "88": {
+    "name": "Unfall melden (Formular ohne Login)",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "89": {
+    "name": "Unfalldaten prüfen",
+    "client": "BGBAU",
+    "domain": "Prävention (Regress)",
+    "subdomain": null
+  },
+  "90": {
+    "name": "Unternehmen abmelden",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "91": {
+    "name": "Unternehmensdaten verwalten",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "92": {
+    "name": "Versicherungs- und Beitragspflicht klären",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "93": {
+    "name": "Wiederaufleben abgefundener Renten an Witwen und Witwer",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "94": {
+    "name": "Zugangsdaten elektronisches Lohnnachweisverfahren anfordern",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "95": {
+    "name": "Zuständigkeit und Veranlagung klären",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "96": {
+    "name": "Freiwillige Versicherungsdaten einsehen",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "97": {
+    "name": "Kontakte einsehen",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "98": {
+    "name": "Kostenerstattung einsehen",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "99": {
+    "name": "Lohnnachweise & Meldungen einsehen",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "100": {
+    "name": "Persönliches Dashboard einsehen",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "101": {
+    "name": "Postfach einsehen",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "102": {
+    "name": "Postfach einsehen",
+    "client": "BGBAU",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "103": {
+    "name": "Unbedenklichkeitsbescheinigungen einsehen",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "104": {
+    "name": "Unfälle einsehen",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "105": {
+    "name": "Zuständigkeiten einsehen",
+    "client": "BGBAU",
+    "domain": "Mitglieder & Beitrag",
+    "subdomain": null
+  },
+  "106": {
+    "name": "LD_000_5V1120 Wegefragebogen",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "107": {
+    "name": "LD_000_5V1117 Fragebogen bei Schulterverletzung",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "108": {
+    "name": "LD_000_5V1125 Fragebogen bei Unfall in der Arbeitspause",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "109": {
+    "name": "LD_000_5V1161 Fragebogen bei Schäden an Sehhilfen",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "110": {
+    "name": "LD_000_5V1123 Auskunft über Arbeitsaufnahme",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "111": {
+    "name": "Abfindung bei Wiederheirat ",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "112": {
+    "name": "Abfindung von Renten wegen Arbeitsunfall oder Berufskrankheit",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "113": {
+    "name": "Änderungen im Unternehmen",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "114": {
+    "name": "Änderungen zur freiwilligen Versicherung",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "115": {
+    "name": "Anmeldung eines Unternehmens",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "116": {
+    "name": "Anmeldung zur freiwilligen Versicherung",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "117": {
+    "name": "Antrag auf Abschluss einer freiwilligen Versicherung",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "118": {
+    "name": "Antrag auf Befreiung von der Unternehmerpflichtversicherung",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "119": {
+    "name": "Arbeits- und Wegeunfall melden",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "120": {
+    "name": "Bankverbindung ändern",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "121": {
+    "name": "Beantragung einer Auslandsversicherung",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "122": {
+    "name": "Beantragung einer Auslandsversicherung",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "123": {
+    "name": "Beendigung einer Auslandsversicherung",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "124": {
+    "name": "Beendigung einer Auslandsversicherung",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "125": {
+    "name": "Beitragsbescheid",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "126": {
+    "name": "Besichtigungsbericht",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "127": {
+    "name": "Besichtigungstermin",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "128": {
+    "name": "Betriebsabgabe und Unfall-Last",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "129": {
+    "name": "DEÜV Daten /UV-Meldeverfahren",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "130": {
+    "name": "Durchgangsarzt",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "131": {
+    "name": "Einwand gegen Unfälle in der Unfallbelastungsliste",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "132": {
+    "name": "Formulare",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "133": {
+    "name": "Gefährdungsbeurteilung",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "134": {
+    "name": "Gewerbliche Unfallanzeige",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "135": {
+    "name": "Haushaltshilfe und Kinderbetreuungskosten",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "136": {
+    "name": "Informationen zu Versicherungsfällen (Unfall und BK)",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "137": {
+    "name": "Kommunikationskanal verwalten",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "138": {
+    "name": "Kontaktformular",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "139": {
+    "name": "Kündigung der freiwilligen Versicherung",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "140": {
+    "name": "LD_000_0V1101 Zuständigkeitsanfrage bei versicherter Person",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "141": {
+    "name": "LD_000_0V2202 Fragebogen RV-Pflicht bei VG-Bezug",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "142": {
+    "name": "LD_000_0V2271 Haushaltshilfefragebogen",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "143": {
+    "name": "LD_000_0V9900 Gutachterauswahl",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "144": {
+    "name": "LD_000_5V1113 Fragebogen bei Garagenunfall",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "145": {
+    "name": "LD_000_5V3004 Kfz-Hilfe - Erklärung über Zuschüsse anderer Stellen",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "146": {
+    "name": "Liste mit meinen Versicherungsfällen",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "147": {
+    "name": "Meldung von Auslandsmonaten",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "148": {
+    "name": "Mitteilung an den Unfallversicherungsträger",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "149": {
+    "name": "Niederlassung an-, ab-, ummelden",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "150": {
+    "name": "Nofall- Hilfe im Ausland",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "151": {
+    "name": "Postfach (Austausch von freien Nachrichten)",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "152": {
+    "name": "Postfach (Austausch von freien Nachrichten)/Mitteilung senden (BGHW)",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "153": {
+    "name": "Rückmeldungen",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "154": {
+    "name": "Seminare",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "155": {
+    "name": "SEPA-Lastschriftmandat",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "156": {
+    "name": "Stundung / Ratenzahlung",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "157": {
+    "name": "Unbedenklichkeitsbescheinigung für Unternehmen",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "158": {
+    "name": "Unbedenklichkeitsbescheinigung herunterladen",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "159": {
+    "name": "Unfallbelastungsliste",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "160": {
+    "name": "Unfallschwerpunkte",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "161": {
+    "name": "Unfallübersicht",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "162": {
+    "name": "Vergabe von Einmal-Accounts (Gastzugang)",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "163": {
+    "name": "Widerspruch gegen einen Bescheid der UV (Unternehmen)",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "164": {
+    "name": "Wiederaufleben abgefundener Renten an Witwen und Witwer",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "165": {
+    "name": "Erstattung von Hilfsmitteln",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "166": {
+    "name": "LD_000_0V2251 Reisekostenantrag",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "167": {
+    "name": "LD_000_5V1115 Fragebogen bei HWS-Verletzung",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "168": {
+    "name": "LD_000_5V1116 Fragebogen bei Knieverletzung",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "169": {
+    "name": "Kraftfahrzeughilfe",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "170": {
+    "name": "Leistung für Ersthelfende",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "171": {
+    "name": "Maßnahmen bei Berufskrankheiten/ Individualprävention",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "172": {
+    "name": "Meldung eines Verdachts einer Berufskrankheit ",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "173": {
+    "name": "Medien",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "174": {
+    "name": "Rente wegen Arbeitsunfall oder anerkannter Berufskrankheit",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "175": {
+    "name": "Rente für Hinterbliebene nach einem Todesfall",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "176": {
+    "name": "Lohnnachweis digital",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "177": {
+    "name": "Übersicht digitale Lohnnachweise",
+    "client": "BGETEM",
+    "domain": null,
+    "subdomain": null
+  },
+  "178": {
+    "name": "Beitragskonto einsehen (Unternehmen, freiwillige Versicherung), Guthaben auszahlen",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "179": {
+    "name": "Maßnahmen bei Berufskrankheiten / Individualprävention für gesetzlich Unfallversicherte Gewährung",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "180": {
+    "name": "Abfindung von Renten wegen Arbeitsunfall oder Berufskrankheit (Abfindung bei MdE)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "181": {
+    "name": "Abmelden",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "182": {
+    "name": "Abmeldung und Änderung von Privathaushalten",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "183": {
+    "name": "Änderung der Versicherungssumme zur freiwilligen Versicherung",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "184": {
+    "name": "Änderungen in den Unternehmensverhältnissen mitteilen (Tätigkeiten)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "185": {
+    "name": "Anmeldung einer Auslandsversicherung",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "186": {
+    "name": "Anmeldung von Privathaushalten",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "187": {
+    "name": "Anmeldung zur Unfallversicherung",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "188": {
+    "name": "Antrag zur freiwilligen Versicherung",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "189": {
+    "name": "Arbeits- und Wegeunfall melden",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "190": {
+    "name": "Arbeitsplatzanamnese vom Versicherten (L2793)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "191": {
+    "name": "Ausschüsse der Vertreterversammlung",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "192": {
+    "name": "Ausschüsse des Vorstands",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "193": {
+    "name": "Beendigung Auslandsversicherung",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "194": {
+    "name": "Beiräte",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "195": {
+    "name": "Erstantrag, Änderungsantrag, Kündigung, Versicherungs-/Beitragsprognose, Beitrag einsehen (freiwillige Versicherung)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "196": {
+    "name": "Beitragsvorschuss anpassen",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "197": {
+    "name": "Belastungsliste",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "198": {
+    "name": "Benachrichtigungen erhalten",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "199": {
+    "name": "Daten zum Unternehmen/zur freiwilligen Versicherung ändern",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "200": {
+    "name": "Fahrtkostenerstattung",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "201": {
+    "name": "Fragebogen VG Abklärung Versicherungspflicht (L2398)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "202": {
+    "name": "Fragebogen zur Kfz-Hilfe (L2428)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "203": {
+    "name": "Frühere Krankenkassenzugehörigkeiten (L2052)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "204": {
+    "name": "Gefahrtarifkommission",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "205": {
+    "name": "Geoservice",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "206": {
+    "name": "Gesamtunfallliste anzeigen",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "207": {
+    "name": "Gutscheine für externe Veranstaltungen bestellen",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "208": {
+    "name": "Haushaltshilfe und Kinderbetreuungskosten",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "209": {
+    "name": "Informationsordner für die Selbstverwaltung",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "210": {
+    "name": "Infoveranstaltung für die Mitglieder der besonderen Ausschüsse",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "211": {
+    "name": "Insolvenzeröffnung melden",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "212": {
+    "name": "KI-Services (intelligentes Suchfeld, KI-Assistent)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "213": {
+    "name": "Kontakt",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "214": {
+    "name": "Kontakt",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "215": {
+    "name": "Kontakt",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "216": {
+    "name": "Kontakt / Nachricht an zuständige Aufsichtsperson (bzw. KMU-Beratende)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "217": {
+    "name": "Kraftfahrzeughilfe ",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "218": {
+    "name": "Lern-Management-System",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "219": {
+    "name": "Meine Aktenzeichen",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "220": {
+    "name": "Meine Dokumente",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "221": {
+    "name": "Meldung Auslandsmonate",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "222": {
+    "name": "Mitteilung an Unfallversicherungsträger (Unternehmen)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "223": {
+    "name": "Mitteilung an Unfallversicherungsträger (Versicherter)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "224": {
+    "name": "Mitteilung Bankverbindung Leistungsempfänger (L2601)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "225": {
+    "name": "Passwort ändern",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "226": {
+    "name": "Reisekosten",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "227": {
+    "name": "Rente für Hinterbliebene",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "228": {
+    "name": "Renten wegen Arbeitsunfall oder Berufskrankheit (Gewährung der Rente)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "229": {
+    "name": "Rollen & Rechte verwalten",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "230": {
+    "name": "Rückantwort zum Bezug von Arbeitsentgelt u. -einkommen (L2101)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "231": {
+    "name": "Seminar buchen",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "232": {
+    "name": "Seminarangebot durchsuchen",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "233": {
+    "name": "SEPA-Lastschriftmandat (Anlage, Änderung, Löschung)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "234": {
+    "name": "Sitzungen",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "235": {
+    "name": "Stundung und Ratenzahlung beantragen",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "236": {
+    "name": "Termine",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "237": {
+    "name": "Übergangsleistung Rückantwort Versicherter tatsäches Netto-Einkommen (L2952)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "238": {
+    "name": "Unbedenklichkeitsbescheinigung für Unternehmen der gesetzlichen Unfallversicherung Anforderung",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "239": {
+    "name": "Unfallanzeige inkl Wegeunfallfragebogen",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "240": {
+    "name": "Unfallbelastung\n(Prüfen,\nZuständigkeit,\nEinwand erheben)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "241": {
+    "name": "Unternehmen abmelden",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "242": {
+    "name": "Vertreterversammlung",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "243": {
+    "name": "Vorstand",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "244": {
+    "name": "Web-based-Traiing",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "245": {
+    "name": "Wiederauflebung abgefundener Renten",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "246": {
+    "name": "Einwilligungserklärung Datenerhebung (L2085)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "247": {
+    "name": "Entwurf speichern (für Onlinefragebögen)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "248": {
+    "name": "Einwilligungserklärung Datenübermittlung (L2084)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "249": {
+    "name": "Sicherheitsfragen hinterlegen",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "250": {
+    "name": "Unbedenklichkeitsbescheinigung (anfordern, prüfen, einsehen)",
+    "client": "BGRCI",
+    "domain": null,
+    "subdomain": null
+  },
+  "251": {
+    "name": "LD_000_5V1120 Wegefragebogen",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "252": {
+    "name": "LD_000_5V1117 Fragebogen bei Schulterverletzung",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "253": {
+    "name": "92er Meldung",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "254": {
+    "name": "Abrechnungsverfahren in Artus",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "255": {
+    "name": "Abrechnungsverfahren in Lotus",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "256": {
+    "name": "Aerztliche Tauglichekeitsuntersuchungen (Artus)",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "257": {
+    "name": "Änderungen im Unternehmen",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "258": {
+    "name": "Änderungstool der Ansprechpersonen",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "259": {
+    "name": "Ansprechpersonen / Fachleute",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "260": {
+    "name": "Audit Portal der BG Verkehr",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "261": {
+    "name": "Ausbildungs-Rechner",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "262": {
+    "name": "Betriebsdaten anzeigen",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "263": {
+    "name": "DEÜV Daten /UV-Meldeverfahren",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "264": {
+    "name": "Dokumentensuche Deutsche Flagge",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "265": {
+    "name": "E-Zeugnisse / Verifikation",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "266": {
+    "name": "Einwand gegen Unfälle in der Unfallbelastungsliste",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "267": {
+    "name": "Elektronisches Zeugnisportal -  Schiffszeugnisse",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "268": {
+    "name": "Elektronisches Zeugnisportal - Mailversand der TrackingID",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "269": {
+    "name": "Elektronisches Zeugnisportal - Motorenzeugnisse",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "270": {
+    "name": "Elektronisches Zeugnisportal - Zeugnisse oder Bescheinigungen Reeder / Vermittler",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "271": {
+    "name": "Elektronisches Zeugnisportal - Zeugnisverlängerungen",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "272": {
+    "name": "Entgeltnachweis Vorschussmitteilung",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "273": {
+    "name": "Feedback (Button) Emojis",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "274": {
+    "name": "Feedback / Meldung einer Barriere",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "275": {
+    "name": "Gebühren-Rechner",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "276": {
+    "name": "Gebühren-Rechner Schiffsregister",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "277": {
+    "name": "Gewerbliche Unfallanzeige",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "278": {
+    "name": "Kanboard (Projekttool)",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "279": {
+    "name": "Lotseneignungsuntersuchungen (Lotus)",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "280": {
+    "name": "Machmeer - Ausbildung in der Seeschifffahrt",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "281": {
+    "name": "Medizinisches Handbuch See",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "282": {
+    "name": "Mitteilung an den Unfallversicherungsträger",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "283": {
+    "name": "Nextcloud",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "284": {
+    "name": "Parkplatzbuchungstool",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "285": {
+    "name": "Personalplanungstool des Servicecenters der BG Verkehr",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "286": {
+    "name": "Portal der Selbstverwaltung",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "287": {
+    "name": "Portal der Selbstverwaltung (Mitgliederverwaltung)",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "288": {
+    "name": "Postfach (Austausch von freien Nachrichten)",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "289": {
+    "name": "Postfach (Austausch von freien Nachrichten)/Mitteilung senden (BGHW)",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "290": {
+    "name": "Postleitzahlensuche \"BG Verkehr in Ihrer Region\"",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "291": {
+    "name": "Prüf- und Zertifizierungsstelle Fachbereich Verkehr und Landschaft",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "292": {
+    "name": "Questor Pro - Umfragetool",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "293": {
+    "name": "Rechenhilfe Seefahrtzeiten",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "294": {
+    "name": "Rechtsvorschriftensuche Deutsche Flagge",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "295": {
+    "name": "Roundcube \"service@deutsche-flagge.de\"",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "296": {
+    "name": "SEPA-Lastschriftmandat",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "297": {
+    "name": "SIGUV-Newsletter",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "298": {
+    "name": "Standortsuche",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "299": {
+    "name": "Stellenangebote Webseite",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "300": {
+    "name": "Terminplanung (Doodle-Alternative)",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "301": {
+    "name": "Traumameldung",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "302": {
+    "name": "Umfragetool LimeSurvey",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "303": {
+    "name": "Unbedenklichkeitsbescheinigung herunterladen",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "304": {
+    "name": "Unfallbelastungsliste",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "305": {
+    "name": "Veranlagung ändern",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "306": {
+    "name": "Webstatistik",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "307": {
+    "name": "Zugangsdaten Lohnnachweis DIGITAL",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "308": {
+    "name": "Zugelassene Ärzte für Lotseignungsuntersuchungen",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "309": {
+    "name": "Zugelassene Ärzte für Seediensttauglichkeitsuntersuchungen",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "310": {
+    "name": "LD_000_0V2251 Reisekostenantrag",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "311": {
+    "name": "LD_000_5V1112 Fragebogen zum Unfallhergang",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "312": {
+    "name": "LD_000_5V1116 Fragebogen bei Knieverletzung",
+    "client": "BGVERKEHR",
+    "domain": null,
+    "subdomain": null
+  },
+  "313": {
+    "name": "Abfindung bei Wiederheirat",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "314": {
+    "name": "Abfindung bei Wiederheirat",
+    "client": "BGHW",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  },
+  "315": {
+    "name": "Am Prämienverfahren teilnehmen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "316": {
+    "name": "An Blended Learning-Seminaren teilnehmen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "317": {
+    "name": "An onlinebasierten Befragungen/Evaluationen teilnehmen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "318": {
+    "name": "An Onlineseminaren teilnehmen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "319": {
+    "name": "Änderungen im Unternehmen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "320": {
+    "name": "Ansprechperson finden",
+    "client": "BGHW",
+    "domain": "fachliche Querschnittsthemen",
+    "subdomain": null
+  },
+  "321": {
+    "name": "Ansprechperson finden",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "322": {
+    "name": "Antrag stellen: Förderung betriebliche psychologische Erstbetreuung",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "323": {
+    "name": "Anzeige Personenaufnahmemittel (PAM) / Personenbeförderung mit Kranen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "324": {
+    "name": "Arbeitsentgeltkatalog",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "325": {
+    "name": "Arbeitsunfall melden",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "326": {
+    "name": "Ausschreibungen einsehen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "327": {
+    "name": "Beitragskonto einsehen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "328": {
+    "name": "Beitragsrechner (freiwillige Versicherung)",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "329": {
+    "name": "Bekanntmachungen einsehen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "330": {
+    "name": "Beratung durch das Kompetenzzentrum nutzen: u. a. Onlineberatung\ndurchführen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "331": {
+    "name": "Berufskrankheit melden (Versicherte)",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "332": {
+    "name": "Bescheide (einsehen, elektr. Bescheidabruf, statistische Auswertung BAV)",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "333": {
+    "name": "BGHW-Webseite: Informationen zu Sicherheit und Gesundheit ansehen und z. T. herunterladen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "334": {
+    "name": "D-Arzt-Verzeichnis",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "335": {
+    "name": "DEÜV Daten /UV-Meldeverfahren",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "336": {
+    "name": "Digitale Hilfen rund um Unterweisungen nutzen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "337": {
+    "name": "Digitale Lernangebote nutzen: Gehörschutz richtig verwenden (mit Gamification!)",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "338": {
+    "name": "Digitale Lernangebote nutzen: Gekonnt gedeichselt",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "339": {
+    "name": "Digitale Lernangebote nutzen: Motivierend unterweisen (mit Gamification!)",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "340": {
+    "name": "Digitale Lernangebote nutzen: Offenes Lernportal",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "341": {
+    "name": "Digitale Lernangebote nutzen: Präsentieren und Moderieren / Lernmodul Kommunikationsgeschick und Lampenfieber (mit Gamification!)",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "342": {
+    "name": "Digitale Lernangebote: Gekonnt gedeichselt - Login",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "343": {
+    "name": "Digitaler Unternehmerkalender",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "344": {
+    "name": "Durchgangsarzt",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "345": {
+    "name": "E-Learning-Angebote nutzen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "346": {
+    "name": "E-Rechnungen einreichen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "347": {
+    "name": "E-Scooter-Training: Interesse bekunden",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "348": {
+    "name": "Einsatzzeitenrechner nutzen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "349": {
+    "name": "Erste Authentifizierung & Login durchführen (2FA)",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "350": {
+    "name": "Exponat „Tödlicher Unfall am Stauende“: Anfrage stellen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "351": {
+    "name": "Fachtagung Sicherheit und Gesundheit in Handel und Warenlogistik: Anmelden",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "352": {
+    "name": "Fachtagung Sicherheit und Gesundheit in Handel und Warenlogistik: Interesse bekunden",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "353": {
+    "name": "Fahrsicherheitstraining für Auszubildende: Anfrage stellen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "354": {
+    "name": "Fahrtkostenerstattung beantragen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "355": {
+    "name": "Fahrtkostenerstattung bearbeiten",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "356": {
+    "name": "Formulare beantworten",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "357": {
+    "name": "Formulare für Mitgliedschaftsangelegenheiten herunterladen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "358": {
+    "name": "Formulare herunterladen bzw. bearbeiten",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "359": {
+    "name": "Formulare und Downloads einsehen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "360": {
+    "name": "Gefährdungsbeurteilung Online (GBO): GBO Mobile herunterladen und nutzen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "361": {
+    "name": "Gefährdungsbeurteilung online (GBO): Gefährdungsbeurteilung durchführen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "362": {
+    "name": "Gefährdungsbeurteilung Online (GBO): Registrierung",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "363": {
+    "name": "Gewerbliche Unfallanzeige",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "364": {
+    "name": "Herunterladen der digitalen Versichertenkarte",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "365": {
+    "name": "Hilfe nach einem Ereignis mit psychischer Belastung",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "366": {
+    "name": "Informationen der Unfallanzeige",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "367": {
+    "name": "Informationen zum UV-Meldeverfahren einsehen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "368": {
+    "name": "Infos zu Gefahrstoffen finden",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "369": {
+    "name": "Kontaktformular ausfüllen und absenden",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "370": {
+    "name": "Kundenmagazin bestellen/abbestellen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "371": {
+    "name": "LD_000_0V1101 Zuständigkeitsanfrage bei versicherter Person",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "372": {
+    "name": "LD_000_0V2202 Fragebogen RV-Pflicht bei VG-Bezug",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "373": {
+    "name": "LD_000_0V2251 Reisekostenantrag",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "374": {
+    "name": "LD_000_0V2271 Haushaltshilfefragebogen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "375": {
+    "name": "LD_000_0V9101 Abfrage Kontoverbindung",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "376": {
+    "name": "LD_000_0V9900 Gutachterauswahl",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "377": {
+    "name": "LD_000_5V1116 Fragebogen bei Knieverletzung",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "378": {
+    "name": "LD_000_5V1117 Fragebogen bei Schulterverletzung",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "379": {
+    "name": "LD_000_5V1120 Wegefragebogen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "380": {
+    "name": "LD_000_5V1123 Auskunft über Arbeitsaufnahme",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "381": {
+    "name": "LD_000_5V1125 Fragebogen bei Unfall in der Arbeitspause",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "382": {
+    "name": "LD_000_5V1161 Fragebogen bei Schäden an Sehhilfen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "383": {
+    "name": "LD_000_5V3004 Kfz-Hilfe - Erklärung über Zuschüsse anderer Stellen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "384": {
+    "name": "Leiter-Prüf-App nutzen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "385": {
+    "name": "Lohnnachweis (Meldungen einsehen, Zugangsdaten einsehen)",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "386": {
+    "name": "Lohnnachweis digital",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "387": {
+    "name": "Mediencenter",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "388": {
+    "name": "Medienshop: Regelwerk/Medien/Arbeitsschutz-Materialien herunterladen und bestellen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "389": {
+    "name": "Medienshop: Regelwerk/Medien/Arbeitsschutz-Materialien suchen, filtern und ansehen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "390": {
+    "name": "Medienshop: Registrierung",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "391": {
+    "name": "Medienshop: Zusatzfunktionen nutzen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "392": {
+    "name": "Mein Ordner - übersandte Dokumente einsehen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "393": {
+    "name": "Meine Daten einsehen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "394": {
+    "name": "mobil: Anfrage stellen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "395": {
+    "name": "Newsletter abonnieren",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "396": {
+    "name": "Newsletter bestellen/abbestellen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "397": {
+    "name": "Online-Fernlehrgang: An Fortbildung teilnehmen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "398": {
+    "name": "Online-Fernlehrgang: Grundausbildung absolvieren (mit Gamification!)",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "399": {
+    "name": "Online-Fernlehrgang: Registrierung",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "400": {
+    "name": "Online-Services einsehen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "401": {
+    "name": "Pedelec-Fahrsicherheitstraining: Anmelden",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "402": {
+    "name": "Postfach (Austausch von freien Nachrichten)",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "403": {
+    "name": "Postfach (Austausch von freien Nachrichten)/Mitteilung senden (BGHW)",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "404": {
+    "name": "Präventionspreis \"Die Goldene Hand\": Registrieren, einloggen und bewerben",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "405": {
+    "name": "Raubüberfall melden",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "406": {
+    "name": "Registrierung für Versicherte",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "407": {
+    "name": "Reisekosten abrechnen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "408": {
+    "name": "Satzung, Gefahrtarif, Erläuterungen zum Gefahrtarif herunteralden",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "409": {
+    "name": "Schadensfall melden",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "410": {
+    "name": "Selbstcheck Sicher mit System bearbeiten",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "411": {
+    "name": "Seminare/Qualifizierungsangebote buchen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "412": {
+    "name": "Seminare/Qualifizierungsangebote einsehen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "413": {
+    "name": "SEPA-Lastschriftmandat",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "414": {
+    "name": "Showtruck: Anfrage stellen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "415": {
+    "name": "Sicherheitsmaßnahmen durch Gamification fördern: Wissensmemory - schwere und tödliche Unfälle verhindern",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "416": {
+    "name": "Sifa-Selbsteinschätzungstest absolvieren",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "417": {
+    "name": "Unbedenklichkeitsbescheinigung herunterladen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "418": {
+    "name": "Unfallanzeige erstatten (Upload)",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "419": {
+    "name": "Unfallbelastungsliste",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "420": {
+    "name": "Unternehmen anmelden",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "421": {
+    "name": "Verleih von digitalen Geschwindigkeitsdisplays: Anfrage stellen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "422": {
+    "name": "Videomaterial u. a. zu Sicherheit und Gesundheit bei der Arbeit ansehen und z. T. herunterladen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "423": {
+    "name": "Virtuelle Poststelle",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "424": {
+    "name": "Webbasiertes Training \"Leitern und Tritte: Grundlagen und Prüfung\"",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "425": {
+    "name": "Wegeunfall melden",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "426": {
+    "name": "Rollen & Rechte verwalten",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "427": {
+    "name": "Zugehörigkeitsaushang herunterladen",
+    "client": "BGHW",
+    "domain": null,
+    "subdomain": null
+  },
+  "428": {
+    "name": "ASD Leistungen einsehen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "429": {
+    "name": "ASD Vertragspartner einsehen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "430": {
+    "name": "Beitragskonto einsehen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "431": {
+    "name": "Lohnnachweise einsehen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "432": {
+    "name": "Aktenzeichen verwalten",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "433": {
+    "name": "Antrag auf Fahrtkostenerstattung ausfüllen und versenden",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "434": {
+    "name": "Benutzerauthentifizierung",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "435": {
+    "name": "Arbeitsplatzanamnese vom Versicherten (L2793)",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "436": {
+    "name": "ASD Betreuung anfragen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "437": {
+    "name": "Dokumente hochladen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "438": {
+    "name": "Kontakt aufnehmen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "439": {
+    "name": "Persönliches Postfach verwalten",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "440": {
+    "name": "Post aus dem Postfach downloaden",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "441": {
+    "name": "Ausschließliche digitaler Postversand",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "442": {
+    "name": "Ausschließliche digitaler Postversand",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "443": {
+    "name": "Beitragsbescheid",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "444": {
+    "name": "Post erhalten",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "445": {
+    "name": "Belastungsliste",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "446": {
+    "name": "Verschiedene D-Ärzte finden",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "447": {
+    "name": "Ansprechpartner zur Rehabilitation finden",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "448": {
+    "name": "Online-Seminare, Live-Seminare und Lern-Snacks besuchen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "449": {
+    "name": "Einsatzzeiten nach DGUV Vorschrift 2 ermitteln",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "450": {
+    "name": "Risikobewertung und Maßnahmenplanung für die Unfallprävention im innerbetrieblichen Verkehr",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "451": {
+    "name": "Informationen über die Themen Arbeitssicherheit, Gesundheitsschutz und Rehabilitation erhalten",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "452": {
+    "name": "Einwilligungserklärung Datenerhebung (L2085)",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "453": {
+    "name": "Einwilligungserklärung Datenübermittlung (L2084)",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "454": {
+    "name": "Entwurf speichern (für Onlinefragebögen)",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "455": {
+    "name": "Lüftungszeitpunkt bestimmen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "456": {
+    "name": "Fahrtkostenerstattung",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "457": {
+    "name": "Lüftungsintervalle berechnen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "458": {
+    "name": "Unterweisungen planen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "459": {
+    "name": "Fragebogen VG Abklärung Versicherungspflicht (L2398)",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "460": {
+    "name": "Fragebogen zur Kfz-Hilfe (L2428)",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "461": {
+    "name": "Frühere Krankenkassenzugehörigkeiten (L2052)",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "462": {
+    "name": "Neuigkeiten zu Arbeitssicherheit und Gesundheitsschutz erfahren",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "463": {
+    "name": "Geoservice",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "464": {
+    "name": "Unterstützung der Azubis im Berufsalltag",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "465": {
+    "name": "Digitale Versichertenkarte erhalten",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "466": {
+    "name": "Gefährdungsbeurteilung durchführen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "467": {
+    "name": "Kennwort ändern",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "468": {
+    "name": "Kennwort ändern",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "469": {
+    "name": "Kontakt",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "470": {
+    "name": "Passwort anfordern Unternehmer",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "471": {
+    "name": "Dashboard Unternehmen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "472": {
+    "name": "ASD Stunden erfassen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "473": {
+    "name": "Prämienverfahren",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "474": {
+    "name": "Meine Aktenzeichen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "475": {
+    "name": "Meine Dokumente",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "476": {
+    "name": "Meldung des Verdachts einer Berufskrankheit (Versicherte)",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "477": {
+    "name": "Mitteilung Bankverbindung Leistungsempfänger (L2601)",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "478": {
+    "name": "Fernlehrgang dokumentieren",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "479": {
+    "name": "Unfallliste-Gesamt",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "480": {
+    "name": "Passwort ändern",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "481": {
+    "name": "Passwort ändern",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "482": {
+    "name": "Fehler melden",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "483": {
+    "name": "Passwort ändern Unternehmer",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "484": {
+    "name": "Registrieren",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "485": {
+    "name": "Support anfordern",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "486": {
+    "name": "Unfall melden",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "487": {
+    "name": "Postfach",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "488": {
+    "name": "Postfach",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "489": {
+    "name": "Gesundheitsgerechte Dienstpläne erstellen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "490": {
+    "name": "Lehrgänge buchen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "491": {
+    "name": "Registrierung für Versicherte",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "492": {
+    "name": "Beitragsrechner zur freiwilligen Versicherung",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "493": {
+    "name": "Rollen & Rechte verwalten",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "494": {
+    "name": "Rückantwort zum Bezug von Arbeitsentgelt u. -einkommen (L2101)",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "495": {
+    "name": "Erstinformationen nach einem Unfall erhalten",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "496": {
+    "name": "Notwendige Feuerlöscher ermitteln",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "497": {
+    "name": "Übergangsleistung Rückantwort Versicherter tatsäches Netto-Einkommen (L2952)",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "498": {
+    "name": "Praxishilfen für Betriebe",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "499": {
+    "name": "Unfallbelastung",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "500": {
+    "name": "Prüffristen und Kontrollfristen zu verschiedenen Themenbereichen ermitteln",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "501": {
+    "name": "Informationen zu Seminaren finden",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "502": {
+    "name": "Zu Seminaren anmelden",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "503": {
+    "name": "Unternehmen anmelden",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "504": {
+    "name": "Berufskrankheit melden (Unternehmen)",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "505": {
+    "name": "Aufsichtsperson suchen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "506": {
+    "name": "Seminare zum Betrieblichen Eingliederungsmanagement buchen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "507": {
+    "name": "Unterlagen zum Basisseminar herunterladen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "508": {
+    "name": "Vorlagen für Arbeitsplatzunterweisungen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "509": {
+    "name": "Zugänge verwalten",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "510": {
+    "name": "Unfälle einsehen",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "511": {
+    "name": "Unternehmensdaten\neinsehen / ändern",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "512": {
+    "name": "Rollen & Rechte verwalten",
+    "client": "BGN",
+    "domain": null,
+    "subdomain": null
+  },
+  "513": {
+    "name": "E-Magazin einsehen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "514": {
+    "name": "E-Magazin einsehen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "515": {
+    "name": "Formulare und Downloads einsehen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "516": {
+    "name": "Informationen zum UV-Meldeverfahren einsehen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "517": {
+    "name": "Meine Daten einsehen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "518": {
+    "name": "Berufskrankheit melden (Versicherte)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "519": {
+    "name": "Online-Services einsehen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "520": {
+    "name": "LD_000_5V1120 Wegefragebogen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "521": {
+    "name": "LD_000_5V1117 Fragebogen bei Schulterverletzung",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "522": {
+    "name": "Medien",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "523": {
+    "name": "Medienshop: Regelwerk/Medien/Arbeitsschutz-Materialien herunterladen und bestellen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "524": {
+    "name": "Fahrtkostenerstattung (wird in SIGUV abgelöst mit LD_000_0V2251)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "525": {
+    "name": "Haushaltshilfe und Kinderbetreuungskosten (SIGUV:LD_000_0V2271)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "526": {
+    "name": "LD_000_0V2271 Haushaltshilfefragebogen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "527": {
+    "name": "Abmeldung von Unternehmen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "528": {
+    "name": "Abmeldung von Unternehmen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "529": {
+    "name": "Abmeldung von Unternehmen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "530": {
+    "name": "Altdaten löschen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "531": {
+    "name": "Am Prämienverfahren teilnehmen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "532": {
+    "name": "An onlinebasierten Befragungen/Evaluationen teilnehmen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "533": {
+    "name": "An Onlineseminaren teilnehmen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "534": {
+    "name": "Änderung der Kontaktdaten",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "535": {
+    "name": "Änderungen im Unternehmen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "536": {
+    "name": "Änderungen zur freiwilligen Versicherung",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "537": {
+    "name": "Ansicht der Teillohnnachweise",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "538": {
+    "name": "Antrag auf Abschluss einer freiwilligen Versicherung",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "539": {
+    "name": "Antrag nach dem Informationsfreiheitsgesetz",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "540": {
+    "name": "Apothekenbesichtigungsbogen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "541": {
+    "name": "Arbeitsunfall melden",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "542": {
+    "name": "ASD Modul-1 Betreuer",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "543": {
+    "name": "ASD Modul-2 Mitglieder",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "544": {
+    "name": "Bankverbindung ändern",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "545": {
+    "name": "Beitragsrechner (freiwillige Versicherung)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "546": {
+    "name": "Betroffenenrechte nach DSGVO",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "547": {
+    "name": "BGW Demo-Check",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "548": {
+    "name": "BGW Fotowettbewerb",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "549": {
+    "name": "BGW Nachwuchspreis",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "550": {
+    "name": "BGW Orga-Check ",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "551": {
+    "name": "BuS Betreuung melden",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "552": {
+    "name": "DEÜV Daten /UV-Meldeverfahren",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "553": {
+    "name": "Dokumentenupload",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "554": {
+    "name": "Dokumentupload",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "555": {
+    "name": "Durchgangsarzt",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "556": {
+    "name": "E-Learning-Angebote nutzen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "557": {
+    "name": "Seminare/Qualifizierungsangebote einsehen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "558": {
+    "name": "E-Rechnungen einreichen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "559": {
+    "name": "Ehrenamtliche melden",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "560": {
+    "name": "Erfassung psychischer Belastungen am Arbeitsplatz",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "561": {
+    "name": "Erste Authentifizierung & Login durchführen (2FA)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "562": {
+    "name": "Erste Hilfe Berechtigungsschein-Management",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "563": {
+    "name": "Erstehilfe Kostenübernahme",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "564": {
+    "name": "F1021 Anfrage nach Soz.Vers.",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "565": {
+    "name": "F1030 Anfrage nach früherer Tätigkeit, Renten, Konto",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "566": {
+    "name": "Fahrtkostenerstattung beantragen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "567": {
+    "name": "Fahrtkostenerstattung bearbeiten",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "568": {
+    "name": "Formulare",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "569": {
+    "name": "Formulare beantworten",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "570": {
+    "name": "Formulare für Mitgliedschaftsangelenheiten herunterladen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "571": {
+    "name": "Formulare herunterladen bzw. bearbeiten",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "572": {
+    "name": "Freischaltservice (Microservice) (Unternehmen)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "573": {
+    "name": "Freischaltservice (Microservice) (Versicherte)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "574": {
+    "name": "Gefährdungsbericht Haut",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "575": {
+    "name": "Gefährdungsbeurteilung",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "576": {
+    "name": "Gefährdungsbeurteilung online (GBO): Gefährdungsbeurteilung durchführen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "577": {
+    "name": "Gefährdungsbeurteilung Online (GBO): Registrierung",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "578": {
+    "name": "Gefahrstoffdatenbank (emissionsarme Produkte)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "579": {
+    "name": "Gewerbliche Unfallanzeige",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "580": {
+    "name": "Handlungshilfe Psyche",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "581": {
+    "name": "Hautschutzplan",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "582": {
+    "name": "Informationen zu Versicherungsfällen (Unfall und BK)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "583": {
+    "name": "Informationen zum Kreis der versicherten Personen (Wer ist versichert?)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "584": {
+    "name": "Informationen zum Versicherungsschutz (Was ist versichert?)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "585": {
+    "name": "Infos zu Gefahrstoffen finden",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "586": {
+    "name": "Kommunikationskanal verwalten ",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "587": {
+    "name": "Kontaktformular",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "588": {
+    "name": "Kontaktformular ausfüllen und absenden",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "589": {
+    "name": "Kostenübernahme für Hilfsmittel",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "590": {
+    "name": "Kraftfahrzeughilfe",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "591": {
+    "name": "Kundenmagazin bestellen/abbestellen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "592": {
+    "name": "Kündigung der freiwilligen Versicherung",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "593": {
+    "name": "LD_000_5V1116 Fragebogen bei Knieverletzung",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "594": {
+    "name": "Leistungen für Hinterbliebene nach Todesfall",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "595": {
+    "name": "Liste mit meinen Versicherungsfällen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "596": {
+    "name": "Login",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "597": {
+    "name": "Medienshop: Regelwerk/Medien/Arbeitsschutz-Materialien suchen, filtern und ansehen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "598": {
+    "name": "Medienshop: Registrierung",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "599": {
+    "name": "Meine Daten",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "600": {
+    "name": "Meldung des Verdachts einer Berufskrankheit (Unternehmen)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "601": {
+    "name": "Mitteilung an den Unfallversicherungsträger",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "602": {
+    "name": "Mitteilung an den Unfallversicherungsträger",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "603": {
+    "name": "Mobilitätstraining",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "604": {
+    "name": "Modul Betriebsprüfung",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "605": {
+    "name": "Newsletter bestellen/abbestellen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "606": {
+    "name": "Persönliche Daten ändern",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "607": {
+    "name": "Persönliche Daten ändern",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "608": {
+    "name": "PIN-Anzeige",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "609": {
+    "name": "Postfach (Austausch von freien Nachrichten)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "610": {
+    "name": "Postfach (Austausch von freien Nachrichten)/Mitteilung senden (BGHW)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "611": {
+    "name": "Registrierung (Bund ID)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "612": {
+    "name": "Registrierung (Bund ID)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "613": {
+    "name": "Registrierung für Versicherte",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "614": {
+    "name": "Rollen & Rechte verwalten",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "615": {
+    "name": "Satzung, Gefahrtarif, Erläuterungen zum Gefahrtarif herunteralden",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "616": {
+    "name": "Selbstcheck Sicher mit System bearbeiten",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "617": {
+    "name": "Seminare",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "618": {
+    "name": "Seminare/Qualifizierungsangebote buchen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "619": {
+    "name": "SEPA-Lastschriftmandat",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "620": {
+    "name": "Stammdatenabrufe anzeigen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "621": {
+    "name": "Stundung / Ratenzahlung",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "622": {
+    "name": "U3030 Wegeunfallfragebogen (BGW)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "623": {
+    "name": "Übersicht digitale Lohnnachweise",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "624": {
+    "name": "Unbedenklichkeitsbescheinigung",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "625": {
+    "name": "Unbedenklichkeitsbescheinigung herunterladen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "626": {
+    "name": "Unfallanzeige erstatten (Upload)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "627": {
+    "name": "Unternehmen anmelden",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "628": {
+    "name": "Unternehmen anmelden",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "629": {
+    "name": "Vergabe von Einmal-Accounts (Gastzugang)",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "630": {
+    "name": "Videomaterial u. a. zu Sicherheit und Gesundheit bei der Arbeit ansehen und z. T. herunterladen",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "631": {
+    "name": "Virtuelle Poststelle",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "632": {
+    "name": "Wegeunfall melden",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "633": {
+    "name": "Zugangsdaten Lohnnachweis DIGITAL",
+    "client": "BGW",
+    "domain": null,
+    "subdomain": null
+  },
+  "634": {
+    "name": "Dienstunfallanzeige (Eurostat)",
+    "client": "GUVH",
+    "domain": null,
+    "subdomain": null
+  },
+  "635": {
+    "name": "Gewerbliche Unfallanzeige",
+    "client": "GUVH",
+    "domain": null,
+    "subdomain": null
+  },
+  "636": {
+    "name": "Unfallanzeige für Schüler, Studierende und Kinder in Tageseinrichtungen",
+    "client": "GUVH",
+    "domain": null,
+    "subdomain": null
+  },
+  "637": {
+    "name": "Wegeunfall melden",
+    "client": "GUVH",
+    "domain": null,
+    "subdomain": null
+  },
+  "638": {
+    "name": "Dienstunfallanzeige (Eurostat)",
+    "client": "KUVB",
+    "domain": null,
+    "subdomain": null
+  },
+  "639": {
+    "name": "Gewerbliche Unfallanzeige",
+    "client": "KUVB",
+    "domain": null,
+    "subdomain": null
+  },
+  "640": {
+    "name": "Unfallanzeige für Schüler, Studierende und Kinder in Tageseinrichtungen",
+    "client": "KUVB",
+    "domain": null,
+    "subdomain": null
+  },
+  "641": {
+    "name": "Fahrtkostenerstattung (wird in SIGUV abgelöst mit LD_000_0V2251)",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "642": {
+    "name": "Akteneinsicht (SER)",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "643": {
+    "name": "Altdaten löschen",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "644": {
+    "name": "Auswertung gesendeter Unfallanzeigen",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "645": {
+    "name": "Beitragsbescheid",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "646": {
+    "name": "Dienstunfallanzeige (Eurostat)",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "647": {
+    "name": "Dokumentenupload",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "648": {
+    "name": "Dokumentupload",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "649": {
+    "name": "Einsicht in das Leistungskonto",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "650": {
+    "name": "Erste Hilfe Berechtigungsschein-Management",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "651": {
+    "name": "Gewerbliche Unfallanzeige",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "652": {
+    "name": "Terminkalender für Reha-Sprechstunden",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "653": {
+    "name": "U_1400 - Anfrage Wegeunfall",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "654": {
+    "name": "U_1401 - Anfrage Wegeunfall Kind",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "655": {
+    "name": "U_1520A - Anfrage Bankverbindung",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "656": {
+    "name": "U_1520B - Anfrage weitere Unfälle oder Renten",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "657": {
+    "name": "U_1520C - Anfrage Jahresarbeitsverdienst",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "658": {
+    "name": "Unfallanzeige für Schüler, Studierende und Kinder in Tageseinrichtungen",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "659": {
+    "name": "Unfallbelastungsliste",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "660": {
+    "name": "Verbandsbuch",
+    "client": "UKH",
+    "domain": null,
+    "subdomain": null
+  },
+  "661": {
+    "name": "Gewerbliche Unfallanzeige",
+    "client": "UKT",
+    "domain": null,
+    "subdomain": null
+  },
+  "662": {
+    "name": "Unfallanzeige für Schüler, Studierende und Kinder in Tageseinrichtungen",
+    "client": "UKT",
+    "domain": null,
+    "subdomain": null
+  },
+  "663": {
+    "name": "Gewerbliche Unfallanzeige",
+    "client": "VGPLUS",
+    "domain": null,
+    "subdomain": null
+  },
+  "664": {
+    "name": "Unfallanzeige für Schüler, Studierende und Kinder in Tageseinrichtungen",
+    "client": "VGPLUS",
+    "domain": null,
+    "subdomain": null
+  },
+  "665": {
+    "name": "Sonnenschutz-Paket bestellen",
+    "client": "BGBAU",
+    "domain": null,
+    "subdomain": null
+  },
+  "666": {
+    "name": "Fragebogen BK 2301 - Lärmschwerhörigkeit",
+    "client": "BGBAU",
+    "domain": "Reha & Leistungen",
+    "subdomain": null
+  }
+}
