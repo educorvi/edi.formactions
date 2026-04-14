@@ -1,6 +1,7 @@
 import json
 
 mapping_string = """
+
 {
   "1": {
     "name": "Abfrage Gewerke",
@@ -111,7 +112,7 @@ mapping_string = """
     "subdomain": null
   },
   "19": {
-    "name": "Äußerungsbogen zur Anhörung (\"Unser Zeichen\" beginnt mit TO)",
+    "name": "Äußerungsbogen zur Anhörung (\\"Unser Zeichen\\" beginnt mit TO)",
     "client": "BGBAU",
     "domain": "Mitglieder & Beitrag",
     "subdomain": null
@@ -1437,7 +1438,7 @@ mapping_string = """
     "subdomain": null
   },
   "240": {
-    "name": "Unfallbelastung\n(Prüfen,\nZuständigkeit,\nEinwand erheben)",
+    "name": "Unfallbelastung\\n(Prüfen,\\nZuständigkeit,\\nEinwand erheben)",
     "client": "BGRCI",
     "domain": null,
     "subdomain": null
@@ -1737,7 +1738,7 @@ mapping_string = """
     "subdomain": null
   },
   "290": {
-    "name": "Postleitzahlensuche \"BG Verkehr in Ihrer Region\"",
+    "name": "Postleitzahlensuche \\"BG Verkehr in Ihrer Region\\"",
     "client": "BGVERKEHR",
     "domain": null,
     "subdomain": null
@@ -1767,7 +1768,7 @@ mapping_string = """
     "subdomain": null
   },
   "295": {
-    "name": "Roundcube \"service@deutsche-flagge.de\"",
+    "name": "Roundcube \\"service@deutsche-flagge.de\\"",
     "client": "BGVERKEHR",
     "domain": null,
     "subdomain": null
@@ -1977,7 +1978,7 @@ mapping_string = """
     "subdomain": null
   },
   "330": {
-    "name": "Beratung durch das Kompetenzzentrum nutzen: u. a. Onlineberatung\ndurchführen",
+    "name": "Beratung durch das Kompetenzzentrum nutzen: u. a. Onlineberatung\\ndurchführen",
     "client": "BGHW",
     "domain": null,
     "subdomain": null
@@ -2421,7 +2422,7 @@ mapping_string = """
     "subdomain": null
   },
   "404": {
-    "name": "Präventionspreis \"Die Goldene Hand\": Registrieren, einloggen und bewerben",
+    "name": "Präventionspreis \\"Die Goldene Hand\\": Registrieren, einloggen und bewerben",
     "client": "BGHW",
     "domain": null,
     "subdomain": null
@@ -2541,7 +2542,7 @@ mapping_string = """
     "subdomain": null
   },
   "424": {
-    "name": "Webbasiertes Training \"Leitern und Tritte: Grundlagen und Prüfung\"",
+    "name": "Webbasiertes Training \\"Leitern und Tritte: Grundlagen und Prüfung\\"",
     "client": "BGHW",
     "domain": null,
     "subdomain": null
@@ -3063,7 +3064,7 @@ mapping_string = """
     "subdomain": null
   },
   "511": {
-    "name": "Unternehmensdaten\neinsehen / ändern",
+    "name": "Unternehmensdaten\\neinsehen / ändern",
     "client": "BGN",
     "domain": null,
     "subdomain": null
@@ -3999,7 +4000,6 @@ mapping_string = """
     "subdomain": null
   }
 }
-
 """
 
 mapping = json.loads(mapping_string)
