@@ -95,9 +95,7 @@ class PotenzialanalyseHelper:
 
         # map mandant if service_id is in mapping and client is not empty
         mandant = json_data.get("mandant", [])
-        mandant_original = service_id_mapping.get(str(service_id), {}).get(
-            "client", []
-        )
+        mandant_original = service_id_mapping.get(str(service_id), {}).get("client", [])
         if isinstance(mandant, str):
             mandant = [mandant]
         if mandant_original:
@@ -183,5 +181,7 @@ class JFDPotenzialanalyseView(PotenzialanalyseHelper, BrowserView):
             json_data_str = getattr(jfd, "json_data", "{}")
             json_data = json.loads(json_data_str)
             service = self.create_service(json_data)
+            service["link"] = jfd.getURL()
             services.append(service)
+
         return services
