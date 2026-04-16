@@ -49,27 +49,29 @@ class PotenzialanalyseHelper:
     ]
 
     def __call__(self):
-        if self.request.form.get("download") == "csv":
-            csv_content = self._build_csv(self.get_services())
-            self.request.response.setHeader("Content-Type", "text/csv; charset=utf-8")
+        if self.request.form.get("download") == "tsv":
+            tsv_content = self._build_tsv(self.get_services())
             self.request.response.setHeader(
-                "Content-Disposition", 'attachment; filename="potenzialanalyse.csv"'
+                "Content-Type", "text/tab-separated-values; charset=utf-8"
             )
-            return "\ufeff" + csv_content
+            self.request.response.setHeader(
+                "Content-Disposition", 'attachment; filename="potenzialanalyse.tsv"'
+            )
+            return "\ufeff" + tsv_content
         return self.index()
 
-    def _as_csv_cell(self, value):
+    def _as_tsv_cell(self, value):
         if isinstance(value, list):
             return " | ".join(str(v) for v in value)
         return value if value is not None else ""
 
-    def _build_csv(self, services):
+    def _build_tsv(self, services):
         output = io.StringIO()
-        writer = csv.writer(output, delimiter=";")
+        writer = csv.writer(output, delimiter="\t")
         writer.writerow([header for _, header in self.COLUMNS])
         for service in services:
             writer.writerow(
-                [self._as_csv_cell(service.get(field, "")) for field, _ in self.COLUMNS]
+                [self._as_tsv_cell(service.get(field, "")) for field, _ in self.COLUMNS]
             )
         return output.getvalue()
 

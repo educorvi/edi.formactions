@@ -8,7 +8,7 @@
 
   <metal:block fill-slot="content-core">
     <div class="mb-3">
-      <a class="btn btn-primary" href="?download=csv">CSV herunterladen</a>
+      <a class="btn btn-primary" href="?download=tsv">TSV herunterladen</a>
     </div>
     <div class="table-responsive">
       <table class="table">
