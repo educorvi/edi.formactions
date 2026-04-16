@@ -20,12 +20,12 @@
         <tbody>
           <tr tal:repeat="service python: view.get_services()">
             <th scope="row">
-              <a tal:condition="service/link" tal:attributes="href service/link" tal:content="service/service_id"></a>
-              <span tal:condition="not:service/link" tal:content="service/service_id"></span>
+              <a tal:condition="python: service.get('link')" tal:attributes="href service/link" tal:content="service/service_id"></a>
+              <span tal:condition="python: not service.get('link')" tal:content="service/service_id"></span>
             </th>
             <td>
-              <a tal:condition="service/link" tal:attributes="href service/link" tal:content="service/service_title"></a>
-              <span tal:condition="not:service/link" tal:content="service/service_title"></span>
+              <a tal:condition="python: service.get('link')" tal:attributes="href service/link" tal:content="service/service_title"></a>
+              <span tal:condition="python: not service.get('link')" tal:content="service/service_title"></span>
             </td>
             <td tal:content="service/service_description"></td>
             <td tal:define="mandant service/mandant">
