@@ -1,3 +1,4 @@
+from abc import abstractmethod
 import csv
 import io
 import json
@@ -41,7 +42,9 @@ class AnnotationsTableHelper:
 
         return flattened
 
-    def process_uploads(self, data: dict[str, Any]) -> dict[str, Any]:
+    def process_uploads(
+        self, data: dict[str, Any], upload_fields_as_links: bool
+    ) -> dict[str, Any]:
         """
         Process the uploads in the data and replace the file data with the filename.
 
@@ -51,7 +54,12 @@ class AnnotationsTableHelper:
         for key, value in data.items():
             if isinstance(value, str) and ";base64," in value and ";name=" in value:
                 filename = value.split(";name=")[1].split(";")[0]
-                data[key] = f'<a href="{value}" download="{filename}">{filename}</a>'
+                if upload_fields_as_links:
+                    data[key] = (
+                        f'<a href="{value}" download="{filename}">{filename}</a>'
+                    )
+                else:
+                    data[key] = filename
             elif isinstance(value, list):
                 for index, item in enumerate(value):
                     if (
@@ -60,9 +68,12 @@ class AnnotationsTableHelper:
                         and ";name=" in item
                     ):
                         filename = item.split(";name=")[1].split(";")[0]
-                        value[index] = (
-                            f'<a href="{item}" download="{filename}">{filename}</a>'
-                        )
+                        if upload_fields_as_links:
+                            value[index] = (
+                                f'<a href="{item}" download="{filename}">{filename}</a>'
+                            )
+                        else:
+                            value[index] = filename
         return data
 
     def get_processed_keys(self, data: dict[str, Any]) -> list[str]:
@@ -92,7 +103,9 @@ class AnnotationsTableHelper:
 
     def __call__(self):
         if self.request.form.get("download") == "tsv":
-            tsv_content = self._build_tsv(self.create_table_data())
+            tsv_content = self._build_tsv(
+                self.get_rows(upload_fields_as_links=False), self.get_columns()
+            )
             self.request.response.setHeader(
                 "Content-Type", "text/tab-separated-values; charset=utf-8"
             )
@@ -107,20 +120,32 @@ class AnnotationsTableHelper:
             return " | ".join(str(v) for v in value)
         return value if value is not None else ""
 
-    def _build_tsv(self, table_data: dict[str, Any], columns: list[str]) -> str:
+    def _build_tsv(self, data_list: list[dict[str, Any]], columns: list[str]) -> str:
         output = io.StringIO()
         writer = csv.writer(output, delimiter="\t")
-        writer.writerow([header for _, header in columns])
-        for service in table_data:
+
+        writer.writerow(columns)
+        for element in data_list:
             writer.writerow(
-                [self._as_tsv_cell(service.get(field, "")) for field in columns]
+                [self._as_tsv_cell(element.get(field, "")) for field in columns]
             )
         return output.getvalue()
 
-    def create_table_data(self, json_data: dict) -> dict:
+    def process_json_data(self, json_data: dict, upload_fields_as_links: bool) -> dict:
+        """
+        Flattens the data and processes the uploads
+        """
         table_data = self.flatten_dict(json_data)
-        table_data = self.process_uploads(table_data)
+        table_data = self.process_uploads(table_data, upload_fields_as_links)
         return table_data
+
+    @abstractmethod
+    def get_columns(self) -> list:
+        pass
+
+    @abstractmethod
+    def get_rows(self) -> list:
+        pass
 
 
 @implementer(IAnnotationsTableView)
@@ -135,16 +160,18 @@ class AnnotationsTableView(AnnotationsTableHelper, AnnotationsView):
         super().__init__(context, request)
         self.columns = []
 
-    def get_rows(self):
+    def get_rows(self, upload_fields_as_links: bool = True) -> list:
         annotations = self.get_annotations()
         table_rows = []
         for annotation in annotations:
-            table_row = self.create_table_data(annotation["json_data"])
+            table_row = self.process_json_data(
+                annotation["json_data"], upload_fields_as_links
+            )
             table_rows.append(table_row)
 
         return table_rows
 
-    def get_columns(self):
+    def get_columns(self) -> list:
         """
         Get the columns for the table by flattening the JSON schema of the form and using the keys as column names.
         Necessary because the json_data does not contain the order of the fields and the table should be displayed in the order of the JSON schema.
