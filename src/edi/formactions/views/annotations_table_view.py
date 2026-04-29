@@ -1,14 +1,14 @@
 from abc import abstractmethod
 import csv
+from html import escape
 import io
-import json
 from typing import Any
+from urllib.parse import unquote
 
 from edi.formactions.views.annotations_view import AnnotationsView
 from edi.jsonforms.views.json_schema_view import JsonSchemaView
 from zope.interface import implementer
 from zope.interface import Interface
-from Products.Five.browser import BrowserView
 
 
 class IAnnotationsTableView(Interface):
@@ -16,6 +16,29 @@ class IAnnotationsTableView(Interface):
 
 
 class AnnotationsTableHelper:
+    def _extract_upload_filename(self, value: str) -> str | None:
+        """Extract and decode filename from a JsonForms data URL upload value."""
+        if not value.startswith("data:") or ";base64," not in value:
+            return None
+
+        meta_part = value.split(",", 1)[0]
+        for part in meta_part.split(";"):
+            if part.startswith("name="):
+                filename = unquote(part[len("name=") :]).replace("\x00", "").strip()
+                return filename or None
+
+        return None
+
+    def _format_upload_value(
+        self, raw_value: str, filename: str, upload_fields_as_links: bool
+    ) -> str:
+        if not upload_fields_as_links:
+            return filename
+
+        safe_href = escape(raw_value, quote=True)
+        safe_filename = escape(filename, quote=True)
+        return f'<a href="{safe_href}" download="{safe_filename}">{safe_filename}</a>'
+
     def flatten_dict(
         self, data: dict[str, Any], parent_key: str = ""
     ) -> dict[str, Any]:
@@ -52,28 +75,20 @@ class AnnotationsTableHelper:
             {"file": "data:application/pdf;name=example.pdf;base64,..." } -> {"file": "example.pdf"}
         """
         for key, value in data.items():
-            if isinstance(value, str) and ";base64," in value and ";name=" in value:
-                filename = value.split(";name=")[1].split(";")[0]
-                if upload_fields_as_links:
-                    data[key] = (
-                        f'<a href="{value}" download="{filename}">{filename}</a>'
+            if isinstance(value, str):
+                filename = self._extract_upload_filename(value)
+                if filename:
+                    data[key] = self._format_upload_value(
+                        value, filename, upload_fields_as_links
                     )
-                else:
-                    data[key] = filename
             elif isinstance(value, list):
                 for index, item in enumerate(value):
-                    if (
-                        isinstance(item, str)
-                        and ";base64," in item
-                        and ";name=" in item
-                    ):
-                        filename = item.split(";name=")[1].split(";")[0]
-                        if upload_fields_as_links:
-                            value[index] = (
-                                f'<a href="{item}" download="{filename}">{filename}</a>'
+                    if isinstance(item, str):
+                        filename = self._extract_upload_filename(item)
+                        if filename:
+                            value[index] = self._format_upload_value(
+                                item, filename, upload_fields_as_links
                             )
-                        else:
-                            value[index] = filename
         return data
 
     def get_processed_keys(self, data: dict[str, Any]) -> list[str]:
