@@ -31,6 +31,11 @@ class AnnotationsTableHelper:
 
             if isinstance(value, dict):
                 flattened.update(self.flatten_dict(value, new_key))
+            elif isinstance(value, list):
+                value_new = []
+                for element in value:
+                    value_new.append(str(element))
+                flattened[new_key] = value_new
             else:
                 flattened[new_key] = value
 
@@ -46,7 +51,7 @@ class AnnotationsTableHelper:
         for key, value in data.items():
             if isinstance(value, str) and ";base64," in value and ";name=" in value:
                 filename = value.split(";name=")[1].split(";")[0]
-                data[key] = filename
+                data[key] = f'<a href="{value}" download="{filename}">{filename}</a>'
             elif isinstance(value, list):
                 for index, item in enumerate(value):
                     if (
@@ -55,7 +60,9 @@ class AnnotationsTableHelper:
                         and ";name=" in item
                     ):
                         filename = item.split(";name=")[1].split(";")[0]
-                        value[index] = filename
+                        value[index] = (
+                            f'<a href="{item}" download="{filename}">{filename}</a>'
+                        )
         return data
 
     def get_processed_keys(self, data: dict[str, Any]) -> list[str]:

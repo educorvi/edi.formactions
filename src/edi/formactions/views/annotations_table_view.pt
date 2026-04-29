@@ -22,7 +22,7 @@
             <td tal:repeat="column python: view.columns">
               <span tal:define="cell python: row.get(column, '')" tal:condition="python: not isinstance(cell, list)" tal:content="cell"></span>
               <ul tal:define="cell python: row.get(column, '')" tal:condition="python: isinstance(cell, list)">
-                <li tal:repeat="element cell" tal:content="python: str(element)"></li>
+                <li tal:repeat="element cell" tal:content="structure python: element"></li>
               </ul>
             </td>
           </tr>
