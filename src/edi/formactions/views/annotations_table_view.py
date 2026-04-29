@@ -180,24 +180,3 @@ class AnnotationsTableView(AnnotationsTableHelper, AnnotationsView):
         json_schema = json_schema_view.get_schema()
         self.columns = self.get_processed_keys(json_schema)
         return self.columns
-
-
-# @implementer(IAnnotationsTableView)
-# class JFDPotenzialanalyseView(AnnotationsTableHelper, BrowserView):
-#     """
-#     View for a folder that contains JsonFormsDocuments (created by the formaction file_storage_handler)
-#     """
-
-#     def get_services(self):
-#         jfds = self.context.restrictedTraverse("contentlisting")()
-#         services = []
-#         for jfd in jfds:
-#             if jfd.portal_type != "JsonFormsDocument":
-#                 continue
-#             json_data_str = getattr(jfd, "json_data", "{}")
-#             json_data = json.loads(json_data_str)
-#             service = self.create_table_data(json_data)
-#             service["link"] = jfd.getURL()
-#             services.append(service)
-
-#         return services
