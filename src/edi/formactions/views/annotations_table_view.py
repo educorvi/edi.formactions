@@ -81,6 +81,10 @@ class AnnotationsTableHelper:
                     data[key] = self._format_upload_value(
                         value, filename, upload_fields_as_links
                     )
+                elif value.startswith("data:") and ";base64," in value:
+                    data[key] = self._format_upload_value(
+                        value, _("Unbekannter Dateiname"), upload_fields_as_links
+                    )
             elif isinstance(value, list):
                 for index, item in enumerate(value):
                     if isinstance(item, str):
@@ -88,6 +92,10 @@ class AnnotationsTableHelper:
                         if filename:
                             value[index] = self._format_upload_value(
                                 item, filename, upload_fields_as_links
+                            )
+                        elif item.startswith("data:") and ";base64," in item:
+                            value[index] = self._format_upload_value(
+                                item, _("Unbekannter Dateiname"), upload_fields_as_links
                             )
         return data
 
