@@ -11,15 +11,20 @@
       <a class="btn btn-primary" href="?download=tsv" i18n:translate="">Download TSV</a>
     </div>
     <div class="table-responsive">
-      <table class="table">
+      <table class="table" tal:define="columns python: view.get_columns()">
         <thead>
           <tr>
-            <th scope="col" tal:repeat="column python: view.get_columns()" tal:content="python: column"></th>
+            <th scope="col" tal:repeat="idx python: range(len(columns[1]))">
+              <span tal:define="title python: columns[1][idx]; key python: columns[0][idx]"
+                    tal:attributes="title key">
+                <span tal:content="title"></span>
+              </span>
+            </th>
           </tr>
         </thead>
         <tbody>
           <tr tal:repeat="row python: view.get_rows()">
-            <td tal:repeat="column python: view.columns">
+            <td tal:repeat="column python: columns[0]">
               <span tal:define="cell python: row.get(column, '')" tal:condition="python: not isinstance(cell, list)" tal:content="cell"></span>
               <ul tal:define="cell python: row.get(column, '')" tal:condition="python: isinstance(cell, list)">
                 <li tal:repeat="element cell" tal:content="structure python: element"></li>

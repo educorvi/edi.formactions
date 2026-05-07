@@ -10,6 +10,8 @@ from edi.jsonforms.views.json_schema_view import JsonSchemaView
 from zope.interface import implementer
 from zope.interface import Interface
 
+from edi.formactions import _
+
 
 class IAnnotationsTableView(Interface):
     """Marker Interface for IAnnotationsTableView"""
@@ -124,6 +126,29 @@ class AnnotationsTableHelper:
 
         return flattened_list
 
+    def extract_titles(self, schema: dict[str, Any], keys: list[str]) -> dict[str, str]:
+        """
+        searches for the keys in the schema and extracts the title for the key if it exists
+        """
+        titles: dict[str, str] = {}
+        for key in keys:
+            key_parts = key.split(".")
+
+            tmp_schema = schema
+            for part in key_parts:
+                if "properties" in tmp_schema and part in tmp_schema["properties"]:
+                    tmp_schema = tmp_schema["properties"][part]
+                elif "items" in tmp_schema and isinstance(tmp_schema["items"], dict):
+                    tmp_schema = tmp_schema["items"]
+                    if "properties" in tmp_schema and part in tmp_schema["properties"]:
+                        tmp_schema = tmp_schema["properties"][part]
+                else:
+                    tmp_schema = None
+                    break
+            if tmp_schema and "title" in tmp_schema:
+                titles[key] = tmp_schema["title"]
+        return titles
+
     def __call__(self):
         if self.request.form.get("download") == "tsv":
             tsv_content = self._build_tsv(
@@ -194,7 +219,7 @@ class AnnotationsTableView(AnnotationsTableHelper, AnnotationsView):
 
         return table_rows
 
-    def get_columns(self) -> list:
+    def get_columns(self) -> tuple[list[str], list[str]]:
         """
         Get the columns for the table by flattening the JSON schema of the form and using the keys as column names.
         Necessary because the json_data does not contain the order of the fields and the table should be displayed in the order of the JSON schema.
@@ -202,4 +227,7 @@ class AnnotationsTableView(AnnotationsTableHelper, AnnotationsView):
         json_schema_view = JsonSchemaView(self.context, self.request)
         json_schema = json_schema_view.get_schema()
         self.columns = self.get_processed_keys(json_schema)
-        return self.columns
+        titles = self.extract_titles(json_schema, self.columns)
+        self.columns_titles = [titles.get(key, key) for key in self.columns]
+
+        return (self.columns, self.columns_titles)
