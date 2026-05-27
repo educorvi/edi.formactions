@@ -1,13 +1,14 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <object xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    name="Form"
-    meta_type="Dexterity FTI"
-    i18n:domain="edi.jsonforms">
+        meta_type="Dexterity FTI"
+        name="Form"
+        i18n:domain="edi.jsonforms"
+>
 
-  <property name="view_methods" purge="false">
-    <element value="annotations-view"/>
-    <element value="annotations-table-view"/>
+  <property name="view_methods"
+            purge="false"
+  >
+    <element value="annotations-view" />
+    <element value="annotations-table-view" />
   </property>
 </object>
-
-

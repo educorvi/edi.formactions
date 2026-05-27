@@ -1,16 +1,15 @@
 from abc import abstractmethod
-import csv
-from html import escape
-import io
-from typing import Any
-from urllib.parse import unquote
-
+from edi.formactions import _
 from edi.formactions.views.annotations_view import AnnotationsView
 from edi.jsonforms.views.json_schema_view import JsonSchemaView
+from html import escape
+from typing import Any
+from urllib.parse import unquote
 from zope.interface import implementer
 from zope.interface import Interface
 
-from edi.formactions import _
+import csv
+import io
 
 
 class IAnnotationsTableView(Interface):
@@ -74,7 +73,9 @@ class AnnotationsTableHelper:
         Process the uploads in the data and replace the file data with the filename.
 
         Example:
-            {"file": "data:application/pdf;name=example.pdf;base64,..." } -> {"file": "example.pdf"}
+            {"file": "data:application/pdf;name=example.pdf;base64,..." }
+            ->
+            {"file": "example.pdf"}
         """
         for key, value in data.items():
             if isinstance(value, str):
@@ -128,7 +129,8 @@ class AnnotationsTableHelper:
 
     def extract_titles(self, schema: dict[str, Any], keys: list[str]) -> dict[str, str]:
         """
-        searches for the keys in the schema and extracts the title for the key if it exists
+        searches for the keys in the schema and extracts the title for the
+        key if it exists
         """
         titles: dict[str, str] = {}
         for key in keys:
@@ -174,9 +176,9 @@ class AnnotationsTableHelper:
 
         writer.writerow(columns)
         for element in data_list:
-            writer.writerow(
-                [self._as_tsv_cell(element.get(field, "")) for field in columns]
-            )
+            writer.writerow([
+                self._as_tsv_cell(element.get(field, "")) for field in columns
+            ])
         return output.getvalue()
 
     def process_json_data(self, json_data: dict, upload_fields_as_links: bool) -> dict:
@@ -199,7 +201,8 @@ class AnnotationsTableHelper:
 @implementer(IAnnotationsTableView)
 class AnnotationsTableView(AnnotationsTableHelper, AnnotationsView):
     """
-    View for a form (IForm) that contains annotations with the form data of the filled form (created by the formaction annotation_storage_handler)
+    View for a form (IForm) that contains annotations with the form data of the filled
+    form (created by the formaction annotation_storage_handler)
     """
 
     columns: list
@@ -221,8 +224,11 @@ class AnnotationsTableView(AnnotationsTableHelper, AnnotationsView):
 
     def get_columns(self) -> tuple[list[str], list[str]]:
         """
-        Get the columns for the table by flattening the JSON schema of the form and using the keys as column names.
-        Necessary because the json_data does not contain the order of the fields and the table should be displayed in the order of the JSON schema.
+        Get the columns for the table by flattening the JSON schema of the form and
+        using the keys as column names.
+
+        Necessary because the json_data does not contain the order of the fields and
+        the table should be displayed in the order of the JSON schema.
         """
         json_schema_view = JsonSchemaView(self.context, self.request)
         json_schema = json_schema_view.get_schema()

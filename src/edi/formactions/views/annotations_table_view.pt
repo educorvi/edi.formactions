@@ -1,39 +1,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
       i18n:domain="edi.formactions"
-      metal:use-macro="context/main_template/macros/master">
-<body>
+>
+  <body>
 
-  <metal:block fill-slot="content-core">
-    <div class="mb-3">
-      <a class="btn btn-primary" href="?download=tsv" i18n:translate="">Download TSV</a>
-    </div>
-    <div class="table-responsive">
-      <table class="table" tal:define="columns python: view.get_columns()">
-        <thead>
-          <tr>
-            <th scope="col" tal:repeat="idx python: range(len(columns[1]))">
-              <span tal:define="title python: columns[1][idx]; key python: columns[0][idx]"
-                    tal:attributes="title key">
-                <span tal:content="title"></span>
-              </span>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr tal:repeat="row python: view.get_rows()">
-            <td tal:repeat="column python: columns[0]">
-              <span tal:define="cell python: row.get(column, '')" tal:condition="python: not isinstance(cell, list)" tal:content="cell"></span>
-              <ul tal:define="cell python: row.get(column, '')" tal:condition="python: isinstance(cell, list)">
-                <li tal:repeat="element cell" tal:content="structure python: element"></li>
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <metal:block fill-slot="content-core">
+      <div class="mb-3">
+        <a class="btn btn-primary"
+           href="?download=tsv"
+           i18n:translate=""
+        >Download TSV</a>
+      </div>
+      <div class="table-responsive">
+        <table class="table"
+               tal:define="
+                 columns python: view.get_columns();
+               "
+        >
+          <thead>
+            <tr>
+              <th scope="col"
+                  tal:repeat="idx python: range(len(columns[1]))"
+              >
+                <span tal:define="
+                        title python: columns[1][idx];
+                        key python: columns[0][idx];
+                      "
+                      tal:attributes="
+                        title key;
+                      "
+                >
+                  <span tal:content="title"></span>
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr tal:repeat="row python: view.get_rows()">
+              <td tal:repeat="column python: columns[0]">
+                <span tal:define="
+                        cell python: row.get(column, '');
+                      "
+                      tal:condition="python: not isinstance(cell, list)"
+                      tal:content="cell"
+                ></span>
+                <ul tal:define="
+                      cell python: row.get(column, '');
+                    "
+                    tal:condition="python: isinstance(cell, list)"
+                >
+                  <li tal:repeat="element cell"
+                      tal:content="structure python: element"
+                  ></li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </metal:block>
-</body>
+  </body>
 </html>

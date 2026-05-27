@@ -48,7 +48,7 @@ class FormActionsEmailHandlerPost(Service):
                 recipient = user.getProperty("email", default="")
             if recipient == "":
                 raise BadRequest(
-                    "No email was sent, because user email address is not available or no user is logged in."
+                    "No email was sent, because user email address is not available or no user is logged in."  # noqa: E501
                 )
         # reply_to = self.request.form.get("reply_to_address", None)
         subject = self.request.form.get("subject", _("No Subject"))
@@ -107,7 +107,8 @@ class FormActionsWebserviceHandlerPost(Service):
                 f"endpoint-{i}-api-key-header-name", None
             )
 
-            # get api_key from endpoint object by extracting the endpoint's UID from the request header
+            # get api_key from endpoint object by extracting the endpoint's UID from the
+            # request header
             api_key = None
             endpoint_uid = self.request.get_header(f"endpoint-{i}-uid", None)
             with api.env.adopt_roles(["Manager"]):
