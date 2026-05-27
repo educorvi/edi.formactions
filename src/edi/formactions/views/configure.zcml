@@ -6,9 +6,19 @@
     i18n_domain="edi.formactions"
     >
 
-  <!-- -*- extra stuff goes here -*- -->
-
   <include package="plone.app.contentmenu" />
+
+  <browser:page
+    name="annotations-table-view"
+    for="edi.jsonforms.content.form.IForm"
+    class=".annotations_table_view.AnnotationsTableView"
+    template="annotations_table_view.pt"
+    permission="zope2.View"
+    layer="edi.formactions.interfaces.IEdiFormactionsLayer"
+    title="Annotation Table View"
+    menu="plone_displayviews"
+    i18n:domain="edi.formactions"
+    />
 
   <browser:page
       name="json-forms-document-view"

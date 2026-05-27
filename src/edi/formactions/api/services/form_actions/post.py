@@ -96,16 +96,24 @@ class FormActionsWebserviceHandlerPost(Service):
         endpoints = []
         i = 1
         while True:
-            if f"endpoint_{i}_url" not in self.request.form:
+            url = self.request.get_header(f"endpoint-{i}-url")
+            if url is None:
                 break
-            url = self.request.form.get(f"endpoint_{i}_url")
             endpoint = {
                 "url": url,
             }
-            api_key_header_name = self.request.form.get(
-                f"endpoint_{i}_api_key_header_name", None
+
+            api_key_header_name = self.request.get_header(
+                f"endpoint-{i}-api-key-header-name", None
             )
-            api_key = self.request.form.get(f"endpoint_{i}_api_key", None)
+
+            # get api_key from endpoint object by extracting the endpoint's UID from the request header
+            api_key = None
+            endpoint_uid = self.request.get_header(f"endpoint-{i}-uid", None)
+            with api.env.adopt_roles(["Manager"]):
+                endpoint_obj = api.content.get(UID=endpoint_uid)
+                api_key = getattr(endpoint_obj, "api_key", None)
+
             if api_key_header_name and api_key:
                 endpoint[api_key_header_name] = api_key
             endpoints.append(endpoint)

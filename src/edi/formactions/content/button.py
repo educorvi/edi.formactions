@@ -12,9 +12,7 @@ from zope import schema
 from zope.interface import implementer
 
 
-class IButton(model.Schema):
-    """Marker interface and Dexterity Python Schema for Button"""
-
+class IGeneralButton(model.Schema):
     button_label = schema.TextLine(
         title=_("Label of the button"),
         description=_("What is displayed inside the button."),
@@ -29,6 +27,10 @@ class IButton(model.Schema):
         default="primary",
         vocabulary="plone.app.widgets.buttons:BUTTON_VARIANTS",
     )
+
+
+class IButton(IGeneralButton):
+    """Marker interface and Dexterity Python Schema for Button"""
 
     page_after_success = schema.URI(
         title=_("Page after success"),
