@@ -1,9 +1,14 @@
 from persistent.list import PersistentList
 from plone import api
 from zope.annotation.interfaces import IAnnotations
+import pytz
+from datetime import datetime
 
 # imports from edi.formactions
 from edi.formactions.config import ANNOTATION_KEY
+
+
+timezone = pytz.timezone("Europe/Berlin")
 
 
 class AnnotationData(object):
@@ -11,6 +16,8 @@ class AnnotationData(object):
 
     user_id: str
     json_data: dict
+    modified: datetime
+    created: datetime
     # json_schema: dict
     # ui_schema: dict
 
@@ -23,6 +30,8 @@ class AnnotationData(object):
     ):
         self.user_id = user_id
         self.json_data = json_data
+        self.created = datetime.now(timezone)
+        self.modified = datetime.now(timezone)
         # self.json_schema = json_schema
         # self.ui_schema = ui_schema
 
@@ -31,6 +40,8 @@ class AnnotationData(object):
         return {
             "user_id": self.user_id,
             "json_data": self.json_data,
+            "created": self.created.strftime("%Y-%m-%d %H:%M:%S %Z"),
+            "modified": self.modified.strftime("%Y-%m-%d %H:%M:%S %Z"),
             # "json_schema": self.json_schema,
             # "ui_schema": self.ui_schema,
         }

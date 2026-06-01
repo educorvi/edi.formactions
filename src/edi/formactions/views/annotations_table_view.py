@@ -217,6 +217,16 @@ class AnnotationsTableView(AnnotationsTableHelper, AnnotationsView):
             table_row = self.process_json_data(
                 annotation["json_data"], upload_fields_as_links
             )
+            table_row.update(
+                {
+                    _("created"): annotation["created"]
+                    if "created" in annotation
+                    else "",
+                    _("modified"): annotation["modified"]
+                    if "modified" in annotation
+                    else "",
+                }
+            )
             table_rows.append(table_row)
 
         return table_rows
@@ -230,6 +240,11 @@ class AnnotationsTableView(AnnotationsTableHelper, AnnotationsView):
         json_schema = json_schema_view.get_schema()
         self.columns = self.get_processed_keys(json_schema)
         titles = self.extract_titles(json_schema, self.columns)
-        self.columns_titles = [titles.get(key, key) for key in self.columns]
+        self.columns_titles = [titles.get(key, key) for key in self.columns] + [
+            _("Erstellt"),
+            _("Geändert"),
+        ]
+
+        self.columns += [_("created"), _("modified")]
 
         return (self.columns, self.columns_titles)
