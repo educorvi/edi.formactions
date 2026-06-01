@@ -168,14 +168,16 @@ class AnnotationsTableHelper:
             return " | ".join(str(v) for v in value)
         return value if value is not None else ""
 
-    def _build_tsv(self, data_list: list[dict[str, Any]], columns: list[str]) -> str:
+    def _build_tsv(
+        self, data_list: list[dict[str, Any]], columns: tuple[list[str], list[str]]
+    ) -> str:
         output = io.StringIO()
         writer = csv.writer(output, delimiter="\t")
 
-        writer.writerow(columns)
+        writer.writerow(columns[1])
         for element in data_list:
             writer.writerow(
-                [self._as_tsv_cell(element.get(field, "")) for field in columns]
+                [self._as_tsv_cell(element.get(field, "")) for field in columns[0]]
             )
         return output.getvalue()
 
@@ -188,7 +190,7 @@ class AnnotationsTableHelper:
         return table_data
 
     @abstractmethod
-    def get_columns(self) -> list:
+    def get_columns(self) -> tuple[list[str], list[str]]:
         pass
 
     @abstractmethod
