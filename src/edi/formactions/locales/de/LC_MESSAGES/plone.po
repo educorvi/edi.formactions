@@ -1,0 +1,19 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Button Group"
+msgstr "Button Gruppe"
+
+msgid "Email Handler"
+msgstr "E-Mail-Handler"
+
+msgid "Endpoint"
+msgstr "Endpunkt"
+
+msgid "Reset Button"
+msgstr "Zurücksetzen-Button"
+
+msgid "Webservice Handler"
+msgstr "Webservice-Handler"
