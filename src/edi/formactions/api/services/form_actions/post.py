@@ -120,7 +120,7 @@ class FormActionsWebserviceHandlerPost(Service):
                 with api.env.adopt_roles(["Manager"]):
                     endpoint_obj = api.content.get(UID=endpoint_uid)
                     api_key = getattr(endpoint_obj, "api_key", None) or None
-                    timeout = getattr(endpoint_obj, "timeout", 30) or 30
+                    timeout = getattr(endpoint_obj, "timeout", 5) or 5
 
             if api_key_header_name and api_key:
                 endpoint[api_key_header_name] = api_key
@@ -143,7 +143,7 @@ class FormActionsWebserviceHandlerPost(Service):
                 url=endpoint["url"],
                 headers=headers,
                 data=json.dumps(payload),
-                timeout=endpoint.get("timeout", 30),
+                timeout=endpoint.get("timeout", 5),
             )
 
             if response.status_code != 200:

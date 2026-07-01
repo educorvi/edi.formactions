@@ -40,7 +40,7 @@ class IEndpoint(model.Schema):
         title=_("Timeout (seconds)"),
         description=_("The timeout in seconds for requests to this endpoint."),
         required=False,
-        default=30,
+        default=5,
     )
 
 
