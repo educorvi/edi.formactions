@@ -36,9 +36,9 @@ class JsonFormsDocumentView(BrowserView):
                 if buttongroup["type"] == "Buttongroup" and "buttons" in buttongroup:
                     button = buttongroup["buttons"][0]
                     if "options" in button:
-                        ui_schema["layout"]["elements"][-1]["buttons"][0]["options"][
-                            "disabled"
-                        ] = disable_save_button  # disable the save button if the user
+                        ui_schema["layout"]["elements"][-1]["buttons"][0]["options"]["disabled"] = (
+                            disable_save_button  # disable the save button if the user
+                        )
                         # is not allowed to edit the content
         return json.dumps(
             ui_schema,

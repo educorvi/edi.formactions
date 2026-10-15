@@ -36,9 +36,7 @@ def load_form_action_data(handler_post: Service) -> str:
 class FormActionsEmailHandlerPost(Service):
     def reply(self):
         alsoProvides(self.request, IDisableCSRFProtection)
-        default_sender = api.portal.get_registry_record(
-            "plone.email_from_address", default="noreply@plone.org"
-        )
+        default_sender = api.portal.get_registry_record("plone.email_from_address", default="noreply@plone.org")
         data = load_form_action_data(self)
 
         recipient = self.request.form.get("to_address")
@@ -48,7 +46,7 @@ class FormActionsEmailHandlerPost(Service):
                 recipient = user.getProperty("email", default="")
             if recipient == "":
                 raise BadRequest(
-                    "No email was sent, because user email address is not available or no user is logged in."  # noqa: E501
+                    "No email was sent, because user email address is not available or no user is logged in."
                 )
         # reply_to = self.request.form.get("reply_to_address", None)
         subject = self.request.form.get("subject", _("No Subject"))
@@ -103,9 +101,7 @@ class FormActionsWebserviceHandlerPost(Service):
                 "url": url,
             }
 
-            api_key_header_name = self.request.get_header(
-                f"endpoint-{i}-api-key-header-name", None
-            )
+            api_key_header_name = self.request.get_header(f"endpoint-{i}-api-key-header-name", None)
 
             # get api_key from endpoint object by extracting the endpoint's UID from the
             # request header
@@ -149,9 +145,7 @@ class FormActionsWebserviceHandlerPost(Service):
                 error_message += f"{endpoint['url']}: {response.text}, "
 
         if error_occurred:
-            api.portal.show_message(
-                message=error_message, request=self.request, type="error"
-            )
+            api.portal.show_message(message=error_message, request=self.request, type="error")
         elif page_after_success:
             self.request.response.redirect(page_after_success)
         else:
@@ -203,9 +197,7 @@ class FormActionsFileStorageHandlerPost(Service):
 
         # get content object title from request form, validate it and render it as
         # jinja2 template with form data as variables
-        content_object_title = self.request.form.get(
-            "content_object_title", _("Form submission")
-        )
+        content_object_title = self.request.form.get("content_object_title", _("Form submission"))
         env = SandboxedEnvironment()
         try:
             obj_title = env.from_string(content_object_title).render(
@@ -266,7 +258,7 @@ class FormActionsFileStorageHandlerPost(Service):
                             "submitOptions": {
                                 "action": "request",
                                 "request": {
-                                    "url": f"{jsonformsdocument.absolute_url()}/@edit-jsonformsdocument",  # noqa: E501
+                                    "url": f"{jsonformsdocument.absolute_url()}/@edit-jsonformsdocument",
                                     "method": "POST",
                                     "headers": {
                                         "Accept": "application/json",
@@ -279,9 +271,7 @@ class FormActionsFileStorageHandlerPost(Service):
                 ],
             }
             ui_schema["layout"]["elements"].append(new_button_group)
-            jsonformsdocument.ui_schema = json.dumps(
-                ui_schema, ensure_ascii=False, indent=4
-            )
+            jsonformsdocument.ui_schema = json.dumps(ui_schema, ensure_ascii=False, indent=4)
         except Exception as e:
             logging.error(f"Error processing UI schema: {e}")
             raise BadRequest("Error processing UI schema.") from e
@@ -294,9 +284,7 @@ class FormActionsFileStorageHandlerPost(Service):
                 if api.content.get_state(jsonformsdocument) != "private":
                     api.content.transition(obj=jsonformsdocument, to_state="private")
             except Exception as e:
-                logging.debug(
-                    "Failed to transition JsonFormsDocument to 'private' state: %s", e
-                )
+                logging.debug("Failed to transition JsonFormsDocument to 'private' state: %s", e)
 
         page_after_success = self.request.form.get("page_after_success", None)
 

@@ -30,9 +30,7 @@ class AnnotationsTableHelper:
 
         return None
 
-    def _format_upload_value(
-        self, raw_value: str, filename: str, upload_fields_as_links: bool
-    ) -> str:
+    def _format_upload_value(self, raw_value: str, filename: str, upload_fields_as_links: bool) -> str:
         if not upload_fields_as_links:
             return filename
 
@@ -40,9 +38,7 @@ class AnnotationsTableHelper:
         safe_filename = escape(filename, quote=True)
         return f'<a href="{safe_href}" download="{safe_filename}">{safe_filename}</a>'
 
-    def flatten_dict(
-        self, data: dict[str, Any], parent_key: str = ""
-    ) -> dict[str, Any]:
+    def flatten_dict(self, data: dict[str, Any], parent_key: str = "") -> dict[str, Any]:
         """
         Flatten nested dict keys using dot notation.
 
@@ -66,9 +62,7 @@ class AnnotationsTableHelper:
 
         return flattened
 
-    def process_uploads(
-        self, data: dict[str, Any], upload_fields_as_links: bool
-    ) -> dict[str, Any]:
+    def process_uploads(self, data: dict[str, Any], upload_fields_as_links: bool) -> dict[str, Any]:
         """
         Process the uploads in the data and replace the file data with the filename.
 
@@ -81,21 +75,15 @@ class AnnotationsTableHelper:
             if isinstance(value, str):
                 filename = self._extract_upload_filename(value)
                 if filename:
-                    data[key] = self._format_upload_value(
-                        value, filename, upload_fields_as_links
-                    )
+                    data[key] = self._format_upload_value(value, filename, upload_fields_as_links)
                 elif value.startswith("data:") and ";base64," in value:
-                    data[key] = self._format_upload_value(
-                        value, _("Unbekannter Dateiname"), upload_fields_as_links
-                    )
+                    data[key] = self._format_upload_value(value, _("Unbekannter Dateiname"), upload_fields_as_links)
             elif isinstance(value, list):
                 for index, item in enumerate(value):
                     if isinstance(item, str):
                         filename = self._extract_upload_filename(item)
                         if filename:
-                            value[index] = self._format_upload_value(
-                                item, filename, upload_fields_as_links
-                            )
+                            value[index] = self._format_upload_value(item, filename, upload_fields_as_links)
                         elif item.startswith("data:") and ";base64," in item:
                             value[index] = self._format_upload_value(
                                 item, _("Unbekannter Dateiname"), upload_fields_as_links
@@ -153,15 +141,9 @@ class AnnotationsTableHelper:
 
     def __call__(self):
         if self.request.form.get("download") == "tsv":
-            tsv_content = self._build_tsv(
-                self.get_rows(upload_fields_as_links=False), self.get_columns()
-            )
-            self.request.response.setHeader(
-                "Content-Type", "text/tab-separated-values; charset=utf-8"
-            )
-            self.request.response.setHeader(
-                "Content-Disposition", 'attachment; filename="annotations.tsv"'
-            )
+            tsv_content = self._build_tsv(self.get_rows(upload_fields_as_links=False), self.get_columns())
+            self.request.response.setHeader("Content-Type", "text/tab-separated-values; charset=utf-8")
+            self.request.response.setHeader("Content-Disposition", 'attachment; filename="annotations.tsv"')
             return "\ufeff" + tsv_content
         return self.index()
 
@@ -170,17 +152,13 @@ class AnnotationsTableHelper:
             return " | ".join(str(v) for v in value)
         return value if value is not None else ""
 
-    def _build_tsv(
-        self, data_list: list[dict[str, Any]], columns: tuple[list[str], list[str]]
-    ) -> str:
+    def _build_tsv(self, data_list: list[dict[str, Any]], columns: tuple[list[str], list[str]]) -> str:
         output = io.StringIO()
         writer = csv.writer(output, delimiter="\t")
 
         writer.writerow(columns[1])
         for element in data_list:
-            writer.writerow([
-                self._as_tsv_cell(element.get(field, "")) for field in columns[0]
-            ])
+            writer.writerow([self._as_tsv_cell(element.get(field, "")) for field in columns[0]])
         return output.getvalue()
 
     def process_json_data(self, json_data: dict, upload_fields_as_links: bool) -> dict:
@@ -217,9 +195,7 @@ class AnnotationsTableView(AnnotationsTableHelper, AnnotationsView):
         annotations = self.get_annotations()
         table_rows = []
         for annotation in annotations:
-            table_row = self.process_json_data(
-                annotation["json_data"], upload_fields_as_links
-            )
+            table_row = self.process_json_data(annotation["json_data"], upload_fields_as_links)
             table_row.update({
                 _("created"): annotation.get("created", ""),
                 _("modified"): annotation.get("modified", ""),

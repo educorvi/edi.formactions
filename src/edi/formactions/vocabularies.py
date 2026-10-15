@@ -32,8 +32,5 @@ class ButtonVariantsVocabulary:
     """
 
     def __call__(self, context):
-        terms = [
-            SimpleTerm(value=key, token=key, title=title)
-            for key, title in BOOTSTRAP_BUTTON_VARIANTS
-        ]
+        terms = [SimpleTerm(value=key, token=key, title=title) for key, title in BOOTSTRAP_BUTTON_VARIANTS]
         return SimpleVocabulary(terms)
