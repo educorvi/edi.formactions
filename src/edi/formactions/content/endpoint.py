@@ -33,6 +33,13 @@ class IEndpoint(model.Schema):
         required=False,
     )
 
+    timeout = schema.Int(
+        title=_("Timeout (seconds)"),
+        description=_("The timeout in seconds for requests to this endpoint."),
+        required=False,
+        default=5,
+    )
+
 
 @implementer(IEndpoint)
 class Endpoint(Container):

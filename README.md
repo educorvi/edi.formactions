@@ -252,7 +252,8 @@ Configure this record via the Plone control panel or programmatically:
 
 ```python
 from plone import api
-api.portal.set_registry_record('plone.email_from_address', 'noreply@example.com')
+
+api.portal.set_registry_record("plone.email_from_address", "noreply@example.com")
 ```
 
 ### GenericSetup Profile

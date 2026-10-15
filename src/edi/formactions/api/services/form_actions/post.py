@@ -84,7 +84,7 @@ class FormActionsEmailHandlerPost(Service):
 
 
 class FormActionsWebserviceHandlerPost(Service):
-    def reply(self):
+    def reply(self):  # noqa: C901
         alsoProvides(self.request, IDisableCSRFProtection)
         data = load_form_action_data(self)
 
@@ -110,13 +110,18 @@ class FormActionsWebserviceHandlerPost(Service):
             # get api_key from endpoint object by extracting the endpoint's UID from the
             # request header
             api_key = None
+            timeout = None
             endpoint_uid = self.request.get_header(f"endpoint-{i}-uid", None)
-            with api.env.adopt_roles(["Manager"]):
-                endpoint_obj = api.content.get(UID=endpoint_uid)
-                api_key = getattr(endpoint_obj, "api_key", None)
+            if endpoint_uid:
+                with api.env.adopt_roles(["Manager"]):
+                    endpoint_obj = api.content.get(UID=endpoint_uid)
+                    api_key = getattr(endpoint_obj, "api_key", None) or None
+                    timeout = getattr(endpoint_obj, "timeout", 5) or 5
 
             if api_key_header_name and api_key:
                 endpoint[api_key_header_name] = api_key
+            if timeout:
+                endpoint["timeout"] = timeout
             endpoints.append(endpoint)
             i += 1
 
@@ -128,13 +133,13 @@ class FormActionsWebserviceHandlerPost(Service):
         error_message = _("Error sending request to: ")
         error_occurred = False
         for endpoint in endpoints:
-            headers = {k: v for k, v in endpoint.items() if k != "url"}
+            headers = {k: v for k, v in endpoint.items() if k not in ["url", "timeout"]}
             headers["Referer"] = "https://plone.org"  # self.context.absolute_url()
             response = requests.post(
                 url=endpoint["url"],
                 headers=headers,
                 data=json.dumps(payload),
-                timeout=15,
+                timeout=endpoint.get("timeout", 5),
             )
 
             if response.status_code != 200:
